@@ -10,7 +10,7 @@ let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
 
-const typingSpeed = 50;
+const typingSpeed = 100;
 const deletingSpeed = 25;
 const pauseAfterTyping = 1500;
 const pauseAfterDeleting = 500;

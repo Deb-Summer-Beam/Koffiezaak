@@ -1,8 +1,8 @@
 body {
   font-family: "Comic Neue", cursive;
-  color: rgb(151, 108, 52);
+  color: #4B2915;
   line-height: 1.6;
-  background-color: #fffaf3;
+  background-color: #EAD8BE;
 }
 
 .comic-neue-light {
@@ -42,7 +42,7 @@ body {
 }
 
 header {
-  background-color: #faf3e8;
+  background-color: #D5B797;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -79,28 +79,30 @@ header {
   height: 340px;
   object-fit: cover;
   border-radius: 20px;
+  border: 2px solid #b9804f
 
 }
 
 .achtergrond {
-  background: linear-gradient(to bottom, #faf3e8 0px, #faf3e8 450px, transparent 450px);
+  background: linear-gradient(to bottom, #D5B797 0px, #D5B797 450px, transparent 450px);
 
 }
 
   nav a {
-    color: #3b2a20;
+    color: #fff3e2;
     text-decoration: none;
     margin: 0 10px;
     background-color: #ead8c0;
     margin: 5px;
     padding: 10px 15px;
-    border: 1px solid #3b2a20;
+    border: 1px solid #60391F;
     border-radius: 10px;
 
   }
 
   nav a:hover {
-    color: rgb(214, 172, 117);
+    color: #fff3e2;
+    background-color: #595b36;
     text-decoration: underline;
   }
 
