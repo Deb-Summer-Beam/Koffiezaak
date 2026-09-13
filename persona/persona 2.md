@@ -46,9 +46,7 @@ Naam rol                    Marketingmedewerker
 
 Jaren ervaring              5
 
-Werkzaamheden               Marketingcampagnes bedenken en uitvoeren,
-
-                          content maken en klantcontact onderhouden
+Werkzaamheden               Marketingcampagnes bedenken en uitvoeren, content maken en klantcontact onderhouden
 
 
 

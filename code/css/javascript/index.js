@@ -1,8 +1,7 @@
 const words = [
-    "Design with purpose.",
-    "Code with precision.",
-    "Create memorable experiences.",
-    "Thanks for stopping by."
+    "CozyBrew",
+    "Warm, Cozy, Sustainable",
+    "Bedankt voor je bezoek"
 ];
 
 const textElement = document.getElementById("text");
