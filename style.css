@@ -6,12 +6,22 @@ body{
 header{
     background-color:black;
     text-align: center;
+    padding: 10px
 }
 
 header nav a{
     color:lightgray;
+    background-color: rgb(75, 75, 75);
     text-decoration: none;
+    display:inline-block;
     padding: 10px;
+    border-radius: 5px;
+
+    &:hover{
+        background-color: rgb(182, 33, 33);
+        transition: 0.2s;
+    }
+
 }
 
 main{
@@ -27,11 +37,11 @@ footer{
 
 h1{
     color:rgb(182, 33, 33);
-    font:bold;
+    font-weight: bold;
 }
 
 h2{
-    font:bold;
+    font-weight: bold;
 }
 
 .menukaart{
