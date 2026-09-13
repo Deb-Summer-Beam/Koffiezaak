@@ -48,7 +48,7 @@ Jaren ervaring              5
 
 Werkzaamheden               Marketingcampagnes bedenken en uitvoeren,
 
-&#x20;                           content maken en klantcontact onderhouden
+                          content maken en klantcontact onderhouden
 
 
 
