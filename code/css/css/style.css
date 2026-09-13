@@ -109,6 +109,61 @@ header {
     font-size: 2.5rem;
     text-align: center;
     padding: 50px 20px 20px 20px;
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800');
+:root {
+	--bg: #0D1117;
+	--text: #D7CBE8;
+	--cursor: #6EE7B7;
+	--glow: rgba(52, 211, 153, .68);
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Manrope", sans-serif;
+	color: var(--text);
+	background: var(--bg);
+	background: linear-gradient(
+			180deg,
+			#0F1117,
+			#151922
+	);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+}
+.typewriter {
+	width: 100%;
+	max-width: 900px;
+	text-align: center;
+	font-size: clamp(1.4rem, 3vw, 2.4rem);
+	font-weight: 600;
+	letter-spacing: 1px;
+	line-height: 1.4;
+	text-transform: capitalize;
+	text-shadow: 0 0 18px var(--glow);
+	overflow-wrap: break-word;
+	overflow: hidden;
+}
+.cursor {
+    display: inline-block;
+    width: 3px;
+    height: 1em;
+    background: var(--cursor);
+    box-shadow:
+        0 0 8px var(--cursor),
+        0 0 30px var(--cursor);
+    margin-left: 5px;
+    animation: blink .7s infinite;
+}
+@keyframes blink {
+		50% {
+				opacity: 0;
+		}
+}
   }
 
   h2 {
