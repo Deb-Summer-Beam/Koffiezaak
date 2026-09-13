@@ -6,7 +6,8 @@ body{
 header{
     background-color:black;
     text-align: center;
-    padding: 10px
+    padding: 10px;
+    border-radius: 5px;
 }
 
 header nav a{
@@ -33,11 +34,15 @@ footer{
     background-color:black;
     text-align: center;
     padding: 10px;
+    border-radius: 5px;
 }
 
 h1{
     color:rgb(182, 33, 33);
     font-weight: bold;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
 }
 
 h2{
@@ -46,6 +51,7 @@ h2{
 
 .menukaart{
     background-color: darkgray;   
+    border-radius: 5px;
 }
 
 table{
