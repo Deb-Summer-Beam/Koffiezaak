@@ -137,6 +137,26 @@ h2 {
   text-align: center;
 }
 
+.uitgelicht {
+  background-color: #d5b797;
+  padding: 16px;
+
+}
+
+.gedraaid {
+  transform: rotate(180deg);
+  display: inline-block;
+}
+
+.werkfoto {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 2px solid #b9804f
+}
+
 main {
   max-width: 1150px;
   margin: 0 auto;

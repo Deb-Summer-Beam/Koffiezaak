@@ -1,3 +1,33 @@
+const werkenbij = document.getElementById("werkenbij");
+if (werkenbij) {
+    werkenbij.style.color = "green";
+
+}
+
+
+function wisselOpmaak() {
+    document.getElementById("oefenen").classList.toggle("uitgelicht");
+
+}
+
+function draaifoto() {
+    document.getElementById("werkfoto").classList.add("gedraaid");
+}
+
+function fotorechtop() {
+    document.getElementById("werkfoto").classList.remove("gedraaid");
+}
+
+function berekeninhoud(lengte, breedte, hoogte) {
+    return lengte * breedte * hoogte;
+
+}
+
+  const resultaat = berekeninhoud(8, 3, 2);
+    if(document.getElementById("antwoord")){
+        document.getElementById("antwoord").textContent = resultaat;
+    }
+
 const words = [
     "CozyBrew",
     "Warm, Cozy, Sustainable",
@@ -50,5 +80,6 @@ function typeWriter() {
     }
 }
 
-typeWriter();
-
+if (textElement) {
+    typeWriter();
+}
