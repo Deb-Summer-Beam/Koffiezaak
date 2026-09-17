@@ -11,23 +11,15 @@ Deze website is bedoeld voor bezoekers en potentiële klanten van de koffiezaak,
 📋 Menu
 
 ☕ Koffie
-
 Product	Prijs
-
-
 - Espresso	€ 2,50
-
-
 - Americano	€ 3,00- -
-
 - Cappuccino	€ 3,50
 - Latte Macchiato	€ 3,75
 - Flat White	€ 3,75
 - IJskoffie	€ 3,75
 
 -🍵 Thee
-
-
 Product	Prijs
 - Zwarte thee	€ 2,50
 - Groene thee	€ 3,00
@@ -36,7 +28,6 @@ Product	Prijs
 - Chai Latte	€ 3,75
 - Vruchtenthee	€ 3,75
 
-- 
 🍰 Gebak & Zoetigheden
 Product	Prijs
 - Appeltaart	€ 4,00
@@ -222,3 +213,10 @@ Dit project is ontwikkeld als onderdeel van een webdevelopment-project.
 📄 Licentie
 
 Dit project is bedoeld voor educatieve doeleinden.
+
+
+## Controle week 2
+Welke bestanden zijn aangepast en wat was verbeterd.
+
+## Ontwerp week 3
+Site structuur, navigatie en design keuzes. 
