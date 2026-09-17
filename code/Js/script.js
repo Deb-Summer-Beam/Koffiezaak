@@ -1,4 +1,4 @@
-// Draai de afbeelding wanneer erop wordt geklikt
+// Rotate the coffee image
 const afbeelding = document.querySelector(".draai-afbeelding");
 
 if (afbeelding) {
@@ -17,17 +17,21 @@ if (afbeelding) {
 }
 
 
-// Toon of verberg de gebaklijst
-const menuKnop = document.querySelector(".menu-knop");
-const gebakLijst = document.querySelector("#gebak-lijst");
+// Hide or show the drinks and pastries lists
+const menuKnoppen = document.querySelectorAll(".menu-knop");
 
-if (menuKnop && gebakLijst) {
-  menuKnop.addEventListener("click", function () {
-    gebakLijst.hidden = !gebakLijst.hidden;
+menuKnoppen.forEach(function (menuKnop) {
+  const lijstId = menuKnop.getAttribute("aria-controls");
+  const lijst = document.getElementById(lijstId);
 
-    menuKnop.setAttribute(
-      "aria-expanded",
-      String(!gebakLijst.hidden)
-    );
-  });
-}
+  if (lijst) {
+    menuKnop.addEventListener("click", function () {
+      lijst.hidden = !lijst.hidden;
+
+      menuKnop.setAttribute(
+        "aria-expanded",
+        String(!lijst.hidden)
+      );
+    });
+  }
+});
