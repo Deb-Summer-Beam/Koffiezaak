@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
     <title>Cozybrew</title>
 </head>
 
-<body>
+<body id="test">
     <header>
-        <section>
-            Locatie + telefoonnummer
-        </section>
-        <img src="pictures/cozybrewlogo.png" alt="logo Cozybrew">
+        <p>Locatie + telefoonnummer</p>
+        <img id="header_logo" src="pictures/cozybrewlogo.png" alt="logo Cozybrew">
         <nav>
             <a href="index.html">Home</a>
             <a href="menus.html">Menus</a>
@@ -21,12 +21,27 @@
 
     <main>
         <h1>Home</h1>
-        <h2>Reserveren</h2>
-        <p>Reserveer gemakkelijk online voor ontbijt of lunch.</p>
-        <h2><a href="menus.html">Menus</a></h2>
-        <p>Bekijk ons menu.</p>
-        <h2>Takeout</h2>
-        <p>Bestel direct online en plan uw afhaal.</p>
+        <div class="card">
+            <h2>Reserveren</h2>
+            <p>Reserveer gemakkelijk online voor ontbijt of lunch.</p>
+        </div>
+        <div class="card">
+            <h2><a id="bodylink" href="menus.html">Menus</a></h2>
+            <p>Bekijk ons menu.</p>
+        </div>
+        <div class="card">
+            <h2>Takeout</h2>
+            <p>Bestel direct online en plan uw afhaal.</p>
+        </div>
+        <img class="testimage" src="pictures/koekjesfoto.png" alt="rotating image of cookies">
+        <br>
+        <button onclick="toggleBackground()">Klik hier om de achtergrond te togglen</button>
+        <button onclick="normalizeImage()">Klik hier om de afbeelding terug te zetten naar normaal</button>
+        <button onclick="rotateImage()">Klik hier om de afbeelding te draaien naar rechts</button>
+        <br>
+        <p id = "demo"></p>
+
+        <script>calculateVolume(8, 3, 2)</script>
     </main>
     <footer>
         <p>Meer informatie zoals locatie, contact, online bestellen, reserveren</p>

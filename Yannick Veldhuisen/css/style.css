@@ -1,0 +1,80 @@
+body {
+    background-color: blanchedalmond;
+    font-family: 'Courier New', Courier, monospace;
+    color: midnightblue;
+    line-height: 1.5;
+}
+
+.myStyle {
+    background-color: aqua;
+}
+
+.rotateImage {
+    transform: rotate(180deg);
+}
+
+
+h1 {
+    text-align: center;
+    line-height: 1.0;
+}
+
+h2 {
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+h3 {
+    line-height: 1.2;
+    font-weight: 500;
+}
+
+nav {
+    background-color: midnightblue;
+    padding: 1%;
+}
+
+header {
+    text-align: center;
+}
+
+nav a {
+    color: azure;
+    margin: 30px;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+#bodylink {
+    color: midnightblue;
+}
+
+#bodylink:hover {
+    color: black;
+}
+
+nav a:hover {
+    background-color: aqua;
+    color: brown;
+
+}
+
+#header_logo {
+    height: 150px;
+}
+
+footer {
+    text-align: center;
+}
+
+.card {
+    padding: 20px;
+    background-color: burlywood;
+    margin: 10px;
+}
+
+.testimage {
+    width: 50%;
+}
