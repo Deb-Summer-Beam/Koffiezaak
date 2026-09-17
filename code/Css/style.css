@@ -93,3 +93,17 @@ footer {
 footer p {
   margin: 0;
 }
+
+.menu-knop {
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+.menu-knop:hover,
+.menu-knop:focus {
+  color: #c25b18;
+}
