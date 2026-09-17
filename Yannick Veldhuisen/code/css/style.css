@@ -78,3 +78,13 @@ footer {
 .testimage {
     width: 50%;
 }
+
+.hidemap {
+    display: none;
+}
+
+.map {
+    width: 30%;
+    display: block;
+    margin: 10px;
+}
