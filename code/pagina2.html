@@ -3,19 +3,53 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic HTML</title>
+  <title>Dranken | Koffie en Gebak</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <h1>Dranken</h1>
-  <h2>dit is de pagina voor dranken</h2>
-    <img src="C:\Users\Mitchell\Documents\Koffie group\code\img\Koffie-blog-pH.gif" alt="Coffee beans" width="100" height="100">
-      <ul>
-        <li>coffee</li>
-        <li>Water</li>
-        <li>Thee</li>
-      </ul>
-  <nav> 
-    <a href="index.html">Homepage</a>
+  <header>
+    <div class="container">
+      <h1>Dranken</h1>
+      <p>Bekijk onze warme en koude dranken.</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">Terug naar de homepage</a>
+      <a href="pagina2.html" aria-current="page">Dranken</a>
+      <a href="pagina3.html">Bekijk ons gebak</a>
+    </div>
   </nav>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Ons drankenmenu</h2>
+      <p>Wij serveren koffie, thee en andere dranken.</p>
+      <img
+        src="img/Koffie-blog-pH.gif"
+        alt="Koffie die in een kopje wordt geschonken"
+        width="300"
+      />
+    </section>
+
+    <section>
+      <h2>Koffie en thee</h2>
+      <ul>
+        <li>Espresso</li>
+        <li>Cappuccino</li>
+        <li>Latte macchiato</li>
+        <li>Zwarte thee</li>
+        <li>Groene thee</li>
+        <li>Muntthee</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Koffie en Gebak. Schoolproject.</p>
+    </div>
+  </footer>
 </body>
 </html>

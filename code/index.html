@@ -3,22 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Basic HTML</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <title>Home | Koffie en Gebak</title>
+  <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header>
-    <h1>Koffie en gebakken</h1>
+    <div class="container">
+      <h1>Koffie en Gebak</h1>
+      <p>Een gezellige plek voor koffie, thee en vers gebak.</p>
+    </div>
   </header>
-    <h2>dit is de homepagina</h2>
-    <p><a href="pagina2.html">dranken</a></p>
-    <p><a href="pagina3.html">gebakken</a></p>
+
+  <nav>
+    <div class="container">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="pagina2.html">Bekijk onze dranken</a>
+      <a href="pagina3.html">Bekijk ons gebak</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="intro">
+      <h2>Welkom bij onze koffiezaak</h2>
+      <p>
+        Bij ons kun je genieten van verschillende soorten koffie en thee,
+        samen met vers gebak. Bekijk ons assortiment via de pagina's hieronder.
+      </p>
+    </section>
+
+    <section>
+      <h2>Ons assortiment</h2>
+      <h3>Dranken</h3>
+      <p>Van espresso en cappuccino tot thee en water.</p>
+      <p><a href="pagina2.html">Ga naar het drankenmenu</a></p>
+
+      <h3>Gebak</h3>
+      <p>Kies uit taart, cakejes en andere zoetigheden.</p>
+      <p><a href="pagina3.html">Ga naar het gebakmenu</a></p>
+    </section>
+  </main>
+
   <footer>
-      <p>&copy; 2023 Koffie en gebakken. All rights reservedtest.</p>
+    <div class="container">
+      <p>&copy; 2026 Koffie en Gebak. Schoolproject.</p>
+    </div>
   </footer>
 </body>
-  
 </html>
-
-
-<!-- test -->
