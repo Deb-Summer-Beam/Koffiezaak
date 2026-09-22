@@ -1,4 +1,4 @@
--
+
 # Koffiezaak project
 ☕ Koffiezaak
 
@@ -62,9 +62,8 @@ De website kan bezoekers informeren over:
 🍰 Het assortiment gebak
 
 
-
-
 🍪 Koekjes en kleine gebakjes
+
 💶 De prijzen van alle producten
 
 
@@ -88,84 +87,29 @@ Git / GitHub – voor versiebeheer
 
 📁 Projectstructuur
 
-
-koffiezaak/
-
-
-
-
-
-├── index.html
-
-
-├── README.md
-
-
-├── css/    
-
-   └── style.css
-
-
-
-├── js/
-   
-
-└── script.js
-
-
-
-├── images/
-   
-
-├── koffie/
-   
-
-├── thee/
-   
-
-└── gebak/
-
-
-
-└── wireframes/
-
-
-    └── ...
-
+├── docs/
+|   ├── assets
+|   ├── ontwerp/
+│   │   └── week03-moodboard.png/
+│   ├── project/
+│   │   └── ondernemingsplan-en-informatieplan.md/
+│   ├── testing/
+│   │   └── deel1-testoverzicht.md/
+│   └── uml/|
+|         └── wireframes/
+|
+|
+├── src/
+|   ├── .gitignore
+|   ├── html/ 
+│   ├── README.md/
+│   ├── js/
+│   └── css/|
+        
 
    🚀 Installatie en gebruik
     
     
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 1. Clone het project naar je computer:
 git clone < repository -url > 
 

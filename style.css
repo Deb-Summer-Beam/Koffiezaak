@@ -1,29 +1,52 @@
-header{
+/*header{
     text-align: center;
     width: 100%;
-}
+    height: 50px;
+}*/
  
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: 800px;
+}
 
 /* --- Algemene basisstijl met fonts --- */
 body {
-    font-family:"Cormorant Garamond", sans-serif;
+    font-family:"Great Vibes", cursive;
     margin: 0;
     padding: 0;
-    background: #f5f2ee;
+    background: #e4ceaf;
     color: #333;
+    background-image: url(https://www.alternatieven.com/media/cat/koffie.webp);
+    background-size: cover;
 }
 
 /* --- Header styling --- */
 header {
-    background: #d4700c;
+    font-family: "Great Vibes", cursive;
     padding: 20px;
+    height: 75px;
     margin-bottom: 20px;
     text-align: center;
+    background-image: url('https://media.product.which.co.uk/prod/images/1080_999999/gm-47f4c4b6-7ca0-4851-a9f5-b45ade3a6c4d-coffee-beans.jpeg');
+
 }
 
-header h1 {
-    margin: 0;
+h1{ 
+    color: #f5f0f0;
+    margin: 30px;
+    text-align: center;
+    justify-content: bottom;
+    font-size: 50px;
+    font-family: "Great Vibes", cursive;
 }
+p{
+    font-family: "Great Vibes", cursive;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f5f0f0;
+}
+
 
 /* --- Navigatie links --- */
 nav a {
@@ -32,6 +55,9 @@ nav a {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 5px; 
+    height: 20x;
+    text-align: center;
+    font-size: 1000px;
     
 }
 
@@ -48,18 +74,21 @@ nav a[href="menu.html"] {
 } */
 
 a.nav-btn {
-    background: #a37b73;
-    color: #170f0f;
+    background: #291c19;
+    color: #fbfafa;
     padding: 12px 25px;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     border-radius: 8px; 
     text-decoration: none;
-    margin-top: 100px;
+    margin-top: 10px;
     display: inline-block;
     margin: 20px;
-    border: 2px solid #f1b510;
+    border: 3px solid #e87aba;
+   
+    
 }
+
 
 
 /* Hover-effect voor alle links */
@@ -75,6 +104,8 @@ nav a:hover {
 /* --- Main layout --- */
 main {
     padding: 20px;
+    color: #f5f0f0;
+    font-size: 30px;
 }
 
 /* Secties met flexbox */
@@ -93,22 +124,63 @@ main section:nth-of-type(2) div {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-family: "Great Vibes", cursive;
 }
 
 /* Afbeeldingen responsive */
 img {
-    display: block;
-    max-width: 100%;
+    display: inline;
+    max-width: auto;
     height: auto;
+    border-radius: 50px;
+    padding: 5px;
+    height: 300px;
+    width: 400px;
+    margin-left: 50px;
+   
+
+}
+.h2{
+    color: #f5f0f0;
+    text-align: center;
+    height: 600x;
+    width: 2000px;
+    background-image: url(https://201409loria.wordpress.com/wp-content/uploads/2015/10/41ef79b0f89e56507b6626ed1dde3baf.jpg);
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.h3{
+    font-family: "Great Vibes", cursive;
+    text-align: center;
+    height: 100px;
+    color: #f5f0f0;
+    font-weight: bold;
+    height: 5%;
+    width: 1000px;
+   
+}
+
+section{
+    font-family: "Great Vibes", cursive;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #f5f0f0;
+    font-size: 30px;
+}
+div{
+    font-family: "Great Vibes", cursive;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 250px;
+    margin-right: 250px;
+    color: #f5f0f0;
+    padding: 1px;
+    background-color:none;
     border-radius: 8px;
 }
-.koffiebeeld {
-    width: 30px;
-    border: 3px solid #a36464;
-    max-width: 100px;
-    margin: 20px auto;
-    display: block;
-}
+
 .cheesecakebeeld {
     width: 30px;
     border: 3px solid #a36464;
@@ -119,9 +191,11 @@ img {
 
 /* Footer */
 footer {
+    font-family: "Great Vibes", cursive;
     background: #d2b48c;
     text-align: center;
     padding: 15px;
     margin-top: 40px;
+    color: #f5f0f0;
 }
 
