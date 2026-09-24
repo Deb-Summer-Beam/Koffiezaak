@@ -1,0 +1,148 @@
+body {
+    margin: 0;
+    background-color: #cfc9c2;
+}
+
+main {
+  text-align: center;
+}
+
+main img {
+  width: 150px;
+  height: 150px;
+}
+
+header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #9b897f;
+  color: white;
+  padding: 5px 20px;
+  font-weight: bold;
+}
+
+header a {
+  display: inline-block;
+  background-color: #b5a091;
+  color: rgb(52, 35, 35);
+  text-decoration: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+header nav {
+  display: flex;
+  gap: 12px;
+}
+
+.bestel-knop {
+  justify-self: end;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
+.menu-dropdown {
+  position: relative;
+}
+
+.menu-knop {
+  background-color: #b5a091;
+  color: rgb(52, 35, 35);
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 160px;
+  padding-top: 8px;
+  z-index: 10;
+}
+
+.submenu a {
+  display: block;
+}
+
+.submenu a+a {
+  margin-top: 6px;
+}
+
+.menu-dropdown:hover .submenu,
+.menu-dropdown:focus-within .submenu {
+  display: block;
+}
+
+.menu-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  text-align: left;
+  padding: 16px 0;
+   gap: 20px;
+}
+
+/* De volledige menukaart */
+.menukaart {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 32px;
+    color: #151d3b;
+    font-family: Arial, sans-serif;
+    text-align: left;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+}
+
+/* De paginatitel boven beide kolommen */
+.menukaart h1 {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+
+/* Een kader om elke categorie */
+.menukaart > section {
+    border: 1px solid #151d3b;
+    padding: 24px;
+}
+
+/* Eén kolom op een smal scherm */
+@media (max-width: 700px) {
+    .menukaart {
+        grid-template-columns: 1fr;
+        padding: 16px;
+    }
+}
+.menukaart h3 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.menukaart h2 {
+    margin: 0 0 20px;
+}
+
+.menukaart .menu-item p {
+    margin: 6px 0 0;
+    font-size: 14px;
+    line-height: 1.5;
+}
