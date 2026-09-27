@@ -5,7 +5,6 @@
   
 }
 
-/* --- Algemene basisstijl met fonts --- */
 body {
     font-family:"Great Vibes", cursive;
     margin: 0;
@@ -19,7 +18,6 @@ body {
     color: rgb(246, 235, 86);
 }
 
-/* --- Header styling --- */
 header {
     font-family: "Great Vibes", cursive;
     padding: 20px;
@@ -47,8 +45,6 @@ p{
     font-size: 40px;
 }
 
-
-/* --- Navigatie links --- */
 nav a {
     text-decoration: none;
     margin-top: 100px;
@@ -78,9 +74,6 @@ a.nav-btn {
     
 }
 
-
-
-/* Hover-effect voor alle links */
 nav a:hover {
     background: #7b4f3f;
     color: #cbe009;
@@ -102,19 +95,18 @@ nav a:hover {
     display: inline-block;
 }
 
-/* --- Main layout --- */
 main {
     padding: 20px;
     color: #f5f0f0;
     font-size: 30px;
 }
 
-/* Secties met flexbox */
+/* Hier komen de secties met flexbox */
 main section {
     margin-bottom: 40px;
 }
 
-/* Responsive grid voor specialiteiten */
+/* Dit is de responsive grid voor specialiteiten */
 main section:nth-of-type(2) {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 30px;
@@ -128,7 +120,6 @@ main section:nth-of-type(2) div {
     font-family: "Great Vibes", cursive;
 }
 
-/* Afbeeldingen responsive */
 img {
     display: inline;
     height: auto;
@@ -168,18 +159,6 @@ section{
     color:rgb(246, 235, 86);
     font-size: 30px;
 }
-/*div{
-    font-family: "Great Vibes", cursive;
-    text-align: center;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    margin-left: 250px;
-    margin-right: 250px;
-    color: #f5f0f0;
-    padding: 1px;
-    background-color:transparent;
-    border-radius: 8px;
-}*/
 
 .cheesecakebeeld {
     width: 30px;
@@ -189,7 +168,6 @@ section{
     display: block;
 }
 
-/* Footer */
 footer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -222,49 +200,30 @@ footer p {
     text-align: right;
 }
 
-/* =========================
-   BESTELLINGEN FORMULIER
-   ========================= */
-
-/* =========================
-   BESTELLINGEN FORMULIER
-   ========================= */
-
 #bestelFormulier {
     width: 900px;
     height: 700px;
     margin: 30px auto;
     padding: 30px;
     box-sizing: border-box;
-
     background-color: #ede0d4;
     border: 3px solid #7b4f3f;
     border-radius: 20px;
 }
 
-
-/* TITELS */
-
 .formulierTitel,
 #bestelFormulier h3 {
     margin: 10px 0;
     text-align: center;
-
     color: #7b4f3f;
     font-size: 28px;
 }
-
-
-/* =========================
-   KLANTGEGEVENS
-   ========================= */
 
 .klantgegevens {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-
-    margin: 0;
+     margin: 0;
 }
 
 .veld {
@@ -279,11 +238,6 @@ footer p {
     font-size: 20px;
     text-align: left;
 }
-
-
-/* =========================
-   INPUTS EN SELECT
-   ========================= */
 
 #bestelFormulier input,
 #bestelFormulier select {
@@ -301,12 +255,7 @@ footer p {
 
     font-size: 16px;
 }
-
-
-/* =========================
-   PRODUCT + AANTAL
-   ========================= */
-
+/*Hier we zien de producten en de aantalen*/
 .productRij {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -318,11 +267,6 @@ footer p {
 .productVeld {
     margin: 0;
 }
-
-
-/* =========================
-   BUTTONS
-   ========================= */
 
 #bestelFormulier button {
     height: 42px;
@@ -341,11 +285,6 @@ footer p {
 
     cursor: pointer;
 }
-
-
-/* =========================
-   BEREKENEN / TOTAAL / TOEVOEGEN
-   ========================= */
 
 .actieRij {
     display: grid;
@@ -368,33 +307,21 @@ footer p {
     text-align: center;
 }
 
-
-/* =========================
-   JOUW BESTELLING
-   ========================= */
-
 #winkelmandje {
     margin: 5px 0;
 }
 
 #totaalBestelling {
     margin: 10px 0;
-
-    color: #7b4f3f;
+     color: #7b4f3f;
     font-size: 22px;
     text-align: center;
 }
-
-
-/* =========================
-   LAATSTE BUTTONS
-   ========================= */
-
+/* Extra buttons in de form*/
 .bestelActies {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-
     margin-top: 10px;
 }
 

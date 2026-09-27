@@ -1,6 +1,6 @@
-// ========================
-// BESTELLINGEN - PRIJZEN
-// ========================
+
+// Hier zetten we de prijzen
+
 
 const prijzen = {
     espresso: 2.50,
