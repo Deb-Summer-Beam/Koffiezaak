@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+
+<html lang="nl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koffiezaak - Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Great+Vibes&family=Libre+Baskerville:ital,wght@0,400..700;1,400..700&family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <header>
+    </header>
+        
+        <h1>Cozy Brew</h1>
+       
+         <nav>
+                <a href="index.html" class="nav-btn">Home</a>
+                <a href="menu.html" class="nav-btn">Menu</a>
+                <a href="contact.html" class="nav-btn">Contact</a>
+                <a href="openingstijden.html" class="nav-btn">Over ons</a>
+                <a href="bestellingen.html" class="nav-btn">🛒 Bestellingen</a>
+        </nav>  
+        
+        <main>
+
+    <h2>🛒 Plaats je bestelling</h2>
+
+    <form id="bestelFormulier">
+
+        <h3>👤 Klantgegevens</h3>
+
+        <label for="naam">Naam:</label>
+        <input type="text" id="naam" name="naam" required>
+
+        <label for="email">E-mailadres:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="telefoon">Telefoonnummer:</label>
+        <input type="tel" id="telefoon" name="telefoon" required>
+
+        <label for="adres">Adres:</label>
+        <input type="text" id="adres" name="adres" required>
+
+        <label for="postcode">Postcode:</label>
+        <input type="text" id="postcode" name="postcode" required>
+
+        <label for="plaats">Plaats:</label>
+        <input type="text" id="plaats" name="plaats" required>
+
+
+        <h3>☕ Kies je product</h3>
+
+        <label for="product">Product:</label>
+
+        <select id="product" name="product">
+        <option value="">-- Kies een product --</option>
+
+        <optgroup label="☕ Koffie">
+            <option value="espresso">Espresso - €2,50</option>
+            <option value="americano">Americano - €3,00</option>
+            <option value="cappuccino">Cappuccino - €3,50</option>
+            <option value="latte">Latte Macchiato - €3,75</option>
+            <option value="flatwhite">Flat White - €3,75</option>
+            <option value="ijskoffie">IJskoffie - €3,75</option>
+        </optgroup>
+
+        <optgroup label="🍵 Thee">
+            <option value="zwartethee">Zwarte thee - €2,50</option>
+            <option value="groenethee">Groene thee - €3,00</option>
+            <option value="muntthee">Muntthee - €3,50</option>
+            <option value="kamillethee">Kamillethee - €3,50</option>
+            <option value="chailatte">Chai latte - €3,75</option>
+            <option value="vruchtenthee">Vruchtenthee - €3,75</option>
+        </optgroup>
+
+        <optgroup label="🍰 Gebak">
+            <option value="appeltaart">Appeltaart - €4,00</option>
+            <option value="cheesecake">Cheesecake - €5,00</option>
+            <option value="chocoladetaart">Chocoladetaart - €5,00</option>
+            <option value="muffin">Muffin / cupcake - €4,00</option>
+            <option value="croissant">Croissant - €2,75</option>
+            <option value="koekjes">Koekjes - €3,00</option>
+            <option value="gebakjes">Kleine gebakjes - €3,75</option>
+        </optgroup>
+
+        </select>
+
+        <label for="aantal">Aantal:</label>
+        <input 
+        type="number" 
+        id="aantal" 
+        name="aantal" 
+        min="1" 
+        value="1"
+        >
+
+    </form>
+
+</main>
+        

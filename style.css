@@ -1,13 +1,8 @@
-/*header{
-    text-align: center;
-    width: 100%;
-    height: 50px;
-}*/
- 
 .great-vibes-regular {
   font-family: "Great Vibes", cursive;
   font-weight: 400;
-  font-style: 800px;
+  font-style: italic;
+  
 }
 
 /* --- Algemene basisstijl met fonts --- */
@@ -19,6 +14,9 @@ body {
     color: #333;
     background-image: url(https://www.alternatieven.com/media/cat/koffie.webp);
     background-size: cover;
+}
+.title{
+    color: rgb(246, 235, 86);
 }
 
 /* --- Header styling --- */
@@ -33,10 +31,10 @@ header {
 }
 
 h1{ 
-    color: #f5f0f0;
+    color:  rgb(246, 235, 86);
     margin: 30px;
     text-align: center;
-    justify-content: bottom;
+    
     font-size: 50px;
     font-family: "Great Vibes", cursive;
 }
@@ -44,7 +42,9 @@ p{
     font-family: "Great Vibes", cursive;
     text-align: center;
     margin-bottom: 20px;
-    color: #f5f0f0;
+    color: rgb(246, 235, 86);
+    font-weight: 500;
+    font-size: 40px;
 }
 
 
@@ -52,30 +52,19 @@ p{
 nav a {
     text-decoration: none;
     margin-top: 100px;
-    display: inline-block;
+    display: center;
     padding: 10px 20px;
     border-radius: 5px; 
-    height: 20x;
+    height: 20px;
     text-align: center;
     font-size: 1000px;
+    color:rgb(246, 235, 86);
     
 }
 
-/* Home-knop speciale stijl voor de homepagina 
-nav  a[href="index.html"] {
-    background: #a37b73;
-    color: #170f0f;
-}*/
-/* Home-knop speciale stijl voor het menu
-nav a[href="menu.html"] {
-    background: #a37b73;
-    color: #170f0f;
-    padding: 10px 20px;
-} */
-
 a.nav-btn {
-    background: #291c19;
-    color: #fbfafa;
+    background: moccasin;
+    color: black;
     padding: 12px 25px;
     font-size: 30px;
     font-weight: bold;
@@ -84,7 +73,7 @@ a.nav-btn {
     margin-top: 10px;
     display: inline-block;
     margin: 20px;
-    border: 3px solid #e87aba;
+    border: 3px solid rgb(246, 235, 86);
    
     
 }
@@ -99,6 +88,18 @@ nav a:hover {
     transform:translateY(-5px);
     transition: 1s ease-in-out;
 
+}
+.welkom{
+    color:rgb(246, 235, 86);
+}
+.onze{
+    color: rgb(246, 235, 86);
+}
+.menu{
+    color:rgb(246, 235, 86);
+}
+.menu-fotos{
+    display: inline-block;
 }
 
 /* --- Main layout --- */
@@ -130,7 +131,6 @@ main section:nth-of-type(2) div {
 /* Afbeeldingen responsive */
 img {
     display: inline;
-    max-width: auto;
     height: auto;
     border-radius: 50px;
     padding: 5px;
@@ -141,9 +141,9 @@ img {
 
 }
 .h2{
-    color: #f5f0f0;
+    color: rgb(246, 235, 86);
     text-align: center;
-    height: 600x;
+    height: 600px;
     width: 2000px;
     background-image: url(https://201409loria.wordpress.com/wp-content/uploads/2015/10/41ef79b0f89e56507b6626ed1dde3baf.jpg);
     font-weight: bold;
@@ -165,7 +165,7 @@ section{
     font-family: "Great Vibes", cursive;
     text-align: center;
     margin-bottom: 20px;
-    color: #f5f0f0;
+    color:rgb(246, 235, 86);
     font-size: 30px;
 }
 div{
@@ -177,7 +177,7 @@ div{
     margin-right: 250px;
     color: #f5f0f0;
     padding: 1px;
-    background-color:none;
+    background-color:transparent;
     border-radius: 8px;
 }
 
@@ -191,11 +191,38 @@ div{
 
 /* Footer */
 footer {
-    font-family: "Great Vibes", cursive;
-    background: #d2b48c;
-    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+
+    background: moccasin;
     padding: 15px;
     margin-top: 40px;
-    color: #f5f0f0;
+    font-family: "Great Vibes", cursive;
 }
+
+/* Alle teksten binnen dezelfde footer */
+footer p {
+    background: transparent;
+    color: black;
+    margin: 0;
+    padding: 0;
+    font-size: 25px;
+}
+
+.footer-email {
+    text-align: left;
+}
+
+.footer-copy {
+    text-align: center;
+}
+
+.footer-phone {
+    text-align: right;
+}
+
+
+
+
 

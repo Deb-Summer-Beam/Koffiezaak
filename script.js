@@ -1,52 +1,30 @@
-console.log("js werkt!!");
+// ========================
+// BESTELLINGEN - PRIJZEN
+// ========================
 
-// 1 - h1 tijdelijk groen maken
-const maakTitelGroen = () => {
-    const titel = document.querySelector("h1");
-    titel.style.color = "green";
-    console.log("h1 is groen gemaakt");
+const prijzen = {
+    espresso: 2.50,
+    americano: 3.00,
+    cappuccino: 3.50,
+    latte: 3.75,
+    flatwhite: 3.75,
+    ijskoffie: 3.75,
+
+    zwartethee: 2.50,
+    groenethee: 3.00,
+    muntthee: 3.50,
+    kamillethee: 3.50,
+    chailatte: 3.75,
+    vruchtenthee: 3.75,
+
+    appeltaart: 4.00,
+    cheesecake: 5.00,
+    chocoladetaart: 5.00,
+    muffin: 4.00,
+    croissant: 2.75,
+    koekjes: 3.00,
+    gebakjes: 3.75
 };
-maakTitelGroen();
-
-// 2 - Afbeelding rechtop / draaien
-function zetRechtop() {
-    const foto = document.getElementById("foto");
-    foto.classList.remove("rotate180");
-    foto.classList.add("rotate0");
-}
-
-function draai180() {
-    const foto = document.getElementById("foto");
-    foto.classList.remove("rotate0");
-    foto.classList.add("rotate180");
-}
-
-document.getElementById("rechtopBtn").onclick = zetRechtop;
-document.getElementById("draaiBtn").onclick = draai180;
-
-// 3 - Balk berekenen
-function inhoudBalk(l, b, h) {
-    return l * b * h;
-}
-
-function toonInhoud() {
-    const resultaat = inhoudBalk(8, 3, 2);
-    document.getElementById("inhoudResultaat").innerText =
-        "De inhoud van de balk is: " + resultaat;
-}
-toonInhoud();
-
-// 4 - Toggle button kleur
-const btn = document.getElementById("colorBtn");
-btn.addEventListener("click", function () {
-    btn.classList.toggle("green");
-});
-
-// 5 - Paragraaf togglen
-function toggleParagraph() {
-    const p = document.getElementById("paragraph");
-    p.classList.toggle("paragraph-style");
-}
 
 
 
