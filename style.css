@@ -15,7 +15,7 @@ body {
     background-size: cover;
 }
 .title{
-    color: rgb(246, 235, 86);
+    color: #7b4f3f;
 }
 
 header {
@@ -29,7 +29,7 @@ header {
 }
 
 h1{ 
-    color:  rgb(246, 235, 86);
+    color:  #7b4f3f;
     margin: 30px;
     text-align: center;
     
@@ -40,36 +40,38 @@ p{
     font-family: "Great Vibes", cursive;
     text-align: center;
     margin-bottom: 20px;
-    color: rgb(246, 235, 86);
+    color: #7b4f3f;
     font-weight: 500;
     font-size: 40px;
 }
 
 nav a {
     text-decoration: none;
-    margin-top: 100px;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px 20px;
     border-radius: 5px; 
     height: 20px;
     text-align: center;
     font-size: 100px;
-    color:rgb(246, 235, 86);
+    color:#7b4f3f;
     
 }
 
 a.nav-btn {
     background: moccasin;
-    color: black;
+    color: #7b4f3f;
     padding: 12px 25px;
     font-size: 30px;
     font-weight: bold;
+    line-height: 1;
     border-radius: 8px; 
     text-decoration: none;
     margin-top: 10px;
     display: inline-block;
     margin: 20px;
-    border: 3px solid rgb(246, 235, 86);
+    border: 3px solid #7b4f3f;
    
     
 }
@@ -83,13 +85,13 @@ nav a:hover {
 
 }
 .welkom{
-    color:rgb(246, 235, 86);
+    color:#7b4f3f;
 }
 .onze{
-    color: rgb(246, 235, 86);
+    color: #7b4f3f;
 }
 .menu{
-    color:rgb(246, 235, 86);
+    color:#7b4f3f;;
 }
 .menu-fotos{
     display: inline-block;
@@ -132,7 +134,7 @@ img {
 
 }
 .h2{
-    color: rgb(246, 235, 86);
+    color: #7b4f3f;
     text-align: center;
     height: 600px;
     width: 2000px;
@@ -156,7 +158,7 @@ section{
     font-family: "Great Vibes", cursive;
     text-align: center;
     margin-bottom: 20px;
-    color:rgb(246, 235, 86);
+    color:#7b4f3f;
     font-size: 30px;
 }
 
@@ -182,7 +184,7 @@ footer {
 /* Alle teksten binnen dezelfde footer */
 footer p {
     background: transparent;
-    color: black;
+    color: #7b4f3f;
     margin: 0;
     padding: 0;
     font-size: 25px;
@@ -202,14 +204,94 @@ footer p {
 
 #bestelFormulier {
     width: 900px;
-    height: 700px;
+    min-height: 700px;
     margin: 30px auto;
     padding: 30px;
     box-sizing: border-box;
     background-color: #ede0d4;
-    border: 3px solid #7b4f3f;
+    /*border: 4px dashed #7b4f3f;*/
+    border: none;
     border-radius: 20px;
+    position: relative;
+    color: #7b4f3f;
 }
+
+/* =========================
+   ✦ SIERSTEEK RAND ✦
+   ========================= */
+
+.sterren {
+    position: absolute;
+    color: #7b4f3f;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 2;
+}
+
+
+/* BOVEN */
+
+.sterren.boven {
+    top: 5px;
+    left: 20px;
+    right: 20px;
+
+    height: 18px;
+    white-space: nowrap;
+
+    letter-spacing: 8px;
+}
+
+
+/* ONDER */
+
+.sterren.onder {
+    bottom: 5px;
+    left: 20px;
+    right: 20px;
+
+    height: 18px;
+    white-space: nowrap;
+
+   letter-spacing: 8px;
+}
+
+
+/* LINKS */
+
+.sterren.links {
+    top: 25px;
+    bottom: 25px;
+    left: 10px;
+
+    width: 15px;
+
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+}
+
+
+/* RECHTS */
+
+.sterren.rechts {
+    top: 25px;
+    bottom: 25px;
+    right: 10px;
+
+    width: 15px;
+
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+}
+.sterren.links,
+.sterren.rechts {
+    letter-spacing: 10px;
+}
+
+
+
 
 .formulierTitel,
 #bestelFormulier h3 {
@@ -327,4 +409,7 @@ footer p {
 
 .bestelActies button {
     width: 100%;
+}
+.verwijderBtn {
+    margin-left: 25px !important;
 }
