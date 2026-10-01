@@ -54,6 +54,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 10;
+  align-items: center;
 }
 
 .logo {
@@ -87,6 +88,11 @@ header {
 .achtergrond {
   background: linear-gradient(to bottom, #D5B797 0px, #D5B797 450px, transparent 450px);
 
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 nav a {
@@ -164,4 +170,20 @@ main {
   padding: 60px 24px;
 
 
+}
+
+@media screen and (max-width: 600px){
+  header {
+    position: static;
+    gap: 10px;
+    justify-content: space-evenly;
+  }
+  .logo {
+    width: 150px;
+  }
+  nav a {
+    padding: 4px;
+    margin: 2px;
+    font-size: 1rem
+  }
 }
