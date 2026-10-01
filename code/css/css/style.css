@@ -1,0 +1,167 @@
+body {
+  font-family: "Comic Neue", cursive;
+  color: #4B2915;
+  line-height: 1.6;
+  background-color: #EAD8BE;
+  margin: 0;
+}
+
+.comic-neue-light {
+  font-family: "Comic Neue", cursive;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.comic-neue-regular {
+  font-family: "Comic Neue", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.comic-neue-bold {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.comic-neue-light-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.comic-neue-regular-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.comic-neue-bold-italic {
+  font-family: "Comic Neue", cursive;
+  font-weight: 700;
+  font-style: italic;
+}
+
+header {
+  background-color: #D5B797;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: center;
+  padding-bottom: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  width: 325px;
+  height: auto;
+  padding: 1.0px;
+
+}
+
+.fotos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+
+}
+
+.opmaak {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  width: 300px;
+  max-width: 100%;
+  height: 340px;
+  object-fit: cover;
+  border-radius: 20px;
+  border: 2px solid #b9804f
+}
+
+.achtergrond {
+  background: linear-gradient(to bottom, #D5B797 0px, #D5B797 450px, transparent 450px);
+
+}
+
+nav a {
+  font-size: 1.25rem;
+  color: #4B2915;
+  text-decoration: none;
+  background-color: #dcc3a5;
+  margin: 15px;
+  padding: 25px 25px;
+  border: 1px solid #60391F;
+  border-radius: 10px;
+
+}
+
+nav a:hover {
+  color: #4b2915;
+  background-color: #c9a681;
+  text-decoration: underline;
+}
+
+
+
+h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 50px 20px 20px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 1em;
+  background-color: currentColor;
+  margin-left: 5px;
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  padding: 10px 20px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.uitgelicht {
+  background-color: #d5b797;
+  padding: 16px;
+
+}
+
+.gedraaid {
+  transform: rotate(180deg);
+  display: inline-block;
+}
+
+.werkfoto {
+  width: 300px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 2px solid #b9804f
+}
+
+main {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 60px 24px;
+
+
+}
