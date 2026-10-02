@@ -4,7 +4,6 @@
   font-style: italic;
   
 }
-
 body {
     font-family:"Great Vibes", cursive;
     margin: 0;
@@ -216,9 +215,9 @@ footer p {
     color: #7b4f3f;
 }
 
-/* =========================
+/*
    ✦ SIERSTEEK RAND ✦
-   ========================= */
+    */
 
 .sterren {
     position: absolute;
@@ -231,8 +230,6 @@ footer p {
 }
 
 
-/* BOVEN */
-
 .sterren.boven {
     top: 5px;
     left: 20px;
@@ -243,9 +240,6 @@ footer p {
 
     letter-spacing: 8px;
 }
-
-
-/* ONDER */
 
 .sterren.onder {
     bottom: 5px;
@@ -258,9 +252,6 @@ footer p {
    letter-spacing: 8px;
 }
 
-
-/* LINKS */
-
 .sterren.links {
     top: 25px;
     bottom: 25px;
@@ -271,9 +262,6 @@ footer p {
     writing-mode: vertical-rl;
     white-space: nowrap;
 }
-
-
-/* RECHTS */
 
 .sterren.rechts {
     top: 25px;
@@ -412,4 +400,104 @@ footer p {
 }
 .verwijderBtn {
     margin-left: 25px !important;
+}
+@media (max-width: 768px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    main {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    /* Bestelformulier aanpassen aan mobiel */
+    #bestelFormulier {
+        width: 100%;
+        max-width: 100%;
+        min-height: auto;
+
+        margin: 30px auto;
+        padding: 25px;
+
+        box-sizing: border-box;
+    }
+
+    /* Afbeeldingen */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Footer */
+    footer {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        width: 100%;
+        max-width: 100%;
+
+        margin-left: 0;
+        margin-right: 0;
+        padding: 15px;
+
+        box-sizing: border-box;
+        gap: 10px;
+    }
+
+    footer p,
+    .footer-email,
+    .footer-copy,
+    .footer-phone {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+
+    main h2,
+    main p {
+        text-shadow:
+            1px 1px 2px #fffaf0,
+            -1px -1px 2px #fffaf0;
+    }
+    /* Onderkant bestelformulier op mobiel */
+
+.actieRij {
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.bestelActies {
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.actieRij button,
+.bestelActies button,
+#bestelFormulier button {
+    width: 100%;
+    height: auto;
+    min-height: 42px;
+    white-space: normal;
+}
+
+.productRij {
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+}
+
+.verwijderBtn {
+    margin-left: 0 !important;
+}
+}
+
+
+h1,
+h2,
+h3,
+p {
+    text-shadow:
+        1px 1px 2px #fffaf0,
+        -1px -1px 2px #fffaf0;
 }
