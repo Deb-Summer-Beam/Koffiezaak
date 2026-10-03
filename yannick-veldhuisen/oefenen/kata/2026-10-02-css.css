@@ -1,0 +1,27 @@
+body {
+    font-family: Inter, Poppins, Manrope, Satoshi, sans-serif;
+    background-color: teal;
+}
+
+.primaryTitles {
+    font-family: Verdana;
+    font-size: 1.25rem;
+    color: orange;
+}
+
+#secondaryTitles {
+    text-align: center;
+    color: lightgreen;
+}
+
+section {
+    padding: 50px;
+    border: 2px;
+    border-style: dotted;
+    margin: 20px;
+    text-align: center;
+}
+
+#linktest:hover {
+    color: white;
+}
