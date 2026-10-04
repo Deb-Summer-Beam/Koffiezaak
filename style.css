@@ -492,12 +492,26 @@ footer p {
 }
 }
 
-
+/* Glow menu - specifieke selectors behouden omdat
+   dit op de verschillende achtergronden het beste resultaat geeft */
+#koffieLijst h3,
+#koffieLijst p,
+#gebakLijst h3,
+#gebakLijst p,
 h1,
 h2,
 h3,
 p {
     text-shadow:
-        1px 1px 2px #fffaf0,
-        -1px -1px 2px #fffaf0;
+        2px 2px 5px #fffaf0,
+        -2px -2px 5px #fffaf0,
+        0 0 8px #fffaf0;
+}
+
+#koffieLijst p,
+#theeLijst h3,
+#theeLijst p{
+    text-shadow:
+      1px 1px 1px #fffaf0,
+        -1px -1px 1px #fffaf0;
 }
