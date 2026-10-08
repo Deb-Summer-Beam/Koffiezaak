@@ -1,5 +1,5 @@
-const menukaart = document.getElementById('kaart-lijst');
-console.log(menukaart);
+const menukaarten = document.getElementById('kaart-lijst');
+console.log(menukaarten);
 
 const onderdelen = [
     {
@@ -34,6 +34,30 @@ const onderdelen = [
     }
 ]
 
-function createCards() {
-    
+function createCards(drank) {
+
+    const newArticle = document.createElement('article');
+    newArticle.classList.add('menukaartStyle');
+    const newHeader = document.createElement('h3');
+    newHeader.textContent = drank.titel;
+
+    const newContent1 = document.createElement('p');
+    newContent1.textContent = drank.beschrijving;
+
+    const newContent2 = document.createElement('p');
+    newContent2.textContent = drank.prijs;
+
+    newArticle.appendChild(newHeader);
+    newArticle.appendChild(newContent1);
+    newArticle.appendChild(newContent2);
+
+    return newArticle;
+
 }
+
+function appendCards(drink) {
+    menukaarten.appendChild(createCards(drink));
+}
+
+onderdelen.forEach(appendCards);
+

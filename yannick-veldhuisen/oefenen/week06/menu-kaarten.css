@@ -1,0 +1,23 @@
+.menukaartStyle {
+    color: red;
+    border-style: ridge;
+    border-width: 2px;
+    border-color: magenta;
+    padding: 5px;
+    margin: 5px;
+}
+
+#kaart-lijst {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+@media screen and (max-width: 600px){
+    #kaart-lijst {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+h1 {
+    margin: 5px;
+}
