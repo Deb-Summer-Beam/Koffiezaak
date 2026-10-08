@@ -38,6 +38,7 @@ function createCards(drank) {
 
     const newArticle = document.createElement('article');
     newArticle.classList.add('menukaartStyle');
+    
     const newHeader = document.createElement('h3');
     newHeader.textContent = drank.titel;
 
