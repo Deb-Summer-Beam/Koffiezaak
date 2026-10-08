@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overig | Koffie en Gebak</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Overig</h1>
+      <p>Bekijk ons overige aanbod.</p>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">Terug naar de homepage</a>
+      <a href="pagina2.html">Bekijk onze dranken</a>
+      <a href="pagina3.html">Bekijk ons gebak</a>
+      <a href="pagina4.html" aria-current="page">Overig</a>
+    </div>
+  </nav>
+
+  <main class="container oefeningen">
+    <section class="intro">
+      <h2 class="accent">Ons overige aanbod</h2>
+      <p>Naast koffie, thee en gebak zijn er ook andere producten.</p>
+    </section>
+
+    <section>
+      <h2 class="accent">
+        <button
+          class="menu-knop"
+          type="button"
+          aria-expanded="false"
+          aria-controls="overig-lijst"
+        >
+          Overige producten
+        </button>
+      </h2>
+      <ul id="overig-lijst" hidden>
+        <li>Water</li>
+        <li>Frisdrank</li>
+        <li>Warme chocolademelk</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Afbeelding omdraaien</h2>
+      <p>Klik op de knop om de afbeelding ondersteboven of rechtop te zetten.</p>
+      <img
+        id="overig-afbeelding"
+        src="img/Koffie-blog-pH.gif"
+        alt="Koffie die in een kopje wordt geschonken"
+        width="300"
+      />
+      <p>
+        <button
+          id="omdraai-knop"
+          class="actie-knop"
+          type="button"
+          aria-controls="overig-afbeelding"
+          aria-pressed="false"
+        >
+          Zet ondersteboven
+        </button>
+      </p>
+    </section>
+
+    <section>
+      <h2>Inhoud van een balk</h2>
+      <p>De inhoud van een balk is lengte × breedte × hoogte.</p>
+      <p>Lengte: 8, breedte: 3, hoogte: 2.</p>
+      <p>8 × 3 × 2 = <span id="balk-uitkomst"></span></p>
+    </section>
+
+    <section>
+      <h2>Oefenen met koppen</h2>
+      <p>De eerste twee h2-koppen hebben in HTML de class accent.</p>
+      <p>Tel alle koppen of wissel het accent op de overige koppen.</p>
+      <p class="oefening-bediening">
+        <button id="tel-koppen-knop" class="actie-knop" type="button">
+          Tel alle h2-koppen
+        </button>
+        <button
+          id="accent-knop"
+          class="actie-knop"
+          type="button"
+          aria-pressed="false"
+        >
+          Accent toevoegen aan overige koppen
+        </button>
+      </p>
+      <p id="koppen-uitkomst" aria-live="polite">Klik op de telknop om het aantal koppen te tonen.</p>
+    </section>
+
+    <section>
+      <h2>Prijs en aantal berekenen</h2>
+      <p>Een cappuccino kost € 3,50. Het totaal is de prijs vermenigvuldigd met het aantal.</p>
+      <p id="prijs-voorbeeld"></p>
+
+      <label for="aantal-invoer">Hoeveel cappuccino's wil je?</label>
+      <p class="oefening-bediening">
+        <input
+          id="aantal-invoer"
+          class="aantal-invoer"
+          type="text"
+          inputmode="numeric"
+          placeholder="Bijvoorbeeld 2"
+          aria-describedby="aantal-uitleg"
+        />
+        <button id="bereken-prijs-knop" class="actie-knop" type="button">
+          Bereken totaalprijs
+        </button>
+      </p>
+      <p id="aantal-uitleg">Voer een positief geheel getal in, bijvoorbeeld 1, 2 of 3.</p>
+      <p id="prijs-melding" aria-live="polite"></p>
+    </section>
+
+    <section class="gedragsschets">
+      <h2>Activiteitendiagram: aantal controleren</h2>
+      <p>Dit diagram beschrijft precies wat de knop Bereken totaalprijs hierboven doet.</p>
+      <img
+        class="activiteitendiagram"
+        src="img/activiteitendiagram.svg"
+        alt="Start, klik en lees invoer. Bij lege invoer: vraag om een aantal. Bij een ongeldig aantal: toon een foutmelding. Bij een geldig positief geheel getal: bereken en toon de totaalprijs. Alle routes eindigen daarna."
+      />
+      <p><a href="img/activiteitendiagram.svg">Bekijk het diagram op volledige grootte</a></p>
+      <ul>
+        <li>Leeg: toon Vul een aantal in.</li>
+        <li>Ongeldig: vraag om een positief geheel getal.</li>
+        <li>Geldig: bereken prijs × aantal en toon de totaalprijs.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Koffie en Gebak. Schoolproject.</p>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+</html>

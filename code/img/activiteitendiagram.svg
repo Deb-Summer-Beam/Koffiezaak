@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 960" role="img" aria-labelledby="titel beschrijving">
+  <title id="titel">Activiteitendiagram: aantal controleren</title>
+  <desc id="beschrijving">Lees de invoer na een klik. Toon een melding bij lege of ongeldige invoer. Bereken bij een geldig positief geheel getal de totaalprijs. Daarna eindigt de handeling.</desc>
+  <defs>
+    <marker id="pijl" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#35261d" />
+    </marker>
+  </defs>
+  <rect width="420" height="960" fill="#ffffff" />
+
+  <!-- Pijlen: de voorwaarden staan naast de routes uit de keuzes. -->
+  <g fill="none" stroke="#35261d" stroke-width="2" marker-end="url(#pijl)">
+    <path d="M210,29 V55" />
+    <path d="M210,125 V155" />
+    <path d="M140,210 H80 V295" />
+    <path d="M210,265 V295 H270 V345" />
+    <path d="M200,410 H80 V520" />
+    <path d="M270,475 V560" />
+    <path d="M270,630 V680" />
+    <path d="M80,365 H30 V850 H210" />
+    <path d="M80,610 V850 H210" />
+    <path d="M270,750 V850 H210" />
+    <path d="M210,850 V911" />
+  </g>
+
+  <!-- Gevuld rondje: start. Rondje met rand: einde. -->
+  <circle cx="210" cy="20" r="9" fill="#35261d" />
+  <circle cx="210" cy="925" r="14" fill="#ffffff" stroke="#35261d" stroke-width="2" />
+  <circle cx="210" cy="925" r="9" fill="#35261d" />
+
+  <!-- Activiteiten hebben afgeronde hoeken. -->
+  <g fill="#fff0d9" stroke="#6f4e37" stroke-width="2">
+    <rect x="135" y="55" width="150" height="70" rx="12" />
+    <rect x="10" y="295" width="145" height="70" rx="12" />
+    <rect x="10" y="520" width="145" height="90" rx="12" />
+    <rect x="190" y="560" width="160" height="70" rx="12" />
+    <rect x="190" y="680" width="160" height="70" rx="12" />
+  </g>
+
+  <!-- Ruiten: keuzes. -->
+  <g fill="#fffaf3" stroke="#6f4e37" stroke-width="2">
+    <path d="M210,155 L280,210 L210,265 L140,210 Z" />
+    <path d="M270,345 L340,410 L270,475 L200,410 Z" />
+  </g>
+
+  <g font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#35261d" text-anchor="middle">
+    <text x="210" y="83">Klik op knop</text>
+    <text x="210" y="108">Lees invoer</text>
+    <text x="210" y="204">Invoer</text>
+    <text x="210" y="228">leeg?</text>
+    <text x="82" y="324">Vul een</text>
+    <text x="82" y="348">aantal in.</text>
+    <text x="270" y="390">Positief</text>
+    <text x="270" y="414">geheel</text>
+    <text x="270" y="438">getal?</text>
+    <text x="82" y="547">Voer een geldig</text>
+    <text x="82" y="571">positief geheel</text>
+    <text x="82" y="595">getal in.</text>
+    <text x="270" y="588">Bereken</text>
+    <text x="270" y="612">prijs × aantal</text>
+    <text x="270" y="709">Toon aantal</text>
+    <text x="270" y="733">en totaalprijs</text>
+    <text x="253" y="940">Einde</text>
+  </g>
+  <g font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#35261d">
+    <text x="36" y="195">[leeg]</text>
+    <text x="224" y="284">[ingevuld]</text>
+    <text x="87" y="452">[ongeldig]</text>
+    <text x="277" y="510">[geldig]</text>
+  </g>
+</svg>
