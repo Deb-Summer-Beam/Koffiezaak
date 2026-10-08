@@ -22,6 +22,9 @@ const prijzen = {
     koekjes: 3.00,
     gebakjes: 3.75
 };
+function berekenTotaal(prijs, aantal) {
+    return prijs * aantal;
+}
 
 const product = document.getElementById("product");
 const aantal = document.getElementById("aantal");
@@ -37,9 +40,18 @@ toevoegenBtn.addEventListener("click", () => {
     const gekozenProduct = product.value;
     const gekozenAantal = Number(aantal.value);
 
-    const prijs = prijzen[gekozenProduct];
-    const totaal = prijs * gekozenAantal;
+    if (gekozenProduct === "") {
+    alert("Kies eerst een product.");
+    return;
+    }
+    if (!Number.isInteger(gekozenAantal) || gekozenAantal < 1) {
+    alert("Kies een geldig heel aantal vanaf 1.");
+    return;
+    }
 
+    const prijs = prijzen[gekozenProduct];
+    const totaal = berekenTotaal(prijs, gekozenAantal);
+    
     const regel = document.createElement("li");
 
     regel.textContent =
@@ -49,6 +61,7 @@ toevoegenBtn.addEventListener("click", () => {
         totaal.toFixed(2);
 
     const verwijderBtn = document.createElement("button");
+    verwijderBtn.type = "button";
     
     verwijderBtn.textContent = "❌ Verwijderen";
     verwijderBtn.classList.add("verwijderBtn");
