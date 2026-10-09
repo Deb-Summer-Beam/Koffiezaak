@@ -56,6 +56,13 @@ header {
   z-index: 10;
 }
 
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 10px;
+  justify-content: center;
+}
+
 .logo {
   width: 325px;
   height: auto;
@@ -98,6 +105,9 @@ nav a {
   padding: 25px 25px;
   border: 1px solid #60391F;
   border-radius: 10px;
+  flex: 1 1 0;
+  text-align: center;
+
 
 }
 
@@ -163,5 +173,221 @@ main {
   margin: 0 auto;
   padding: 60px 24px;
 
+}
 
+
+.productenoverzicht {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 20px 60px;
+
+}
+
+.kaart {
+  display: flex;
+  flex-direction: column;
+  background-color: #dcc3a5;
+  border-radius: 19px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(75, 41, 21, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.kaart:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 22px rgba(75, 41, 21, 0.28);
+}
+
+.product-foto {
+  width: 100%;
+  line-height: 1.4;
+  text-align: center;
+  padding: 0 14px;
+  margin: 0 0 12px;
+}
+
+.winkelwagen-knop {
+  font-family: "Comic Neue", cursive;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #EAD8BE;
+  background-color: #4B2915;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+/*darkmode */
+
+body.donker {
+  background-color: #1E1410;
+  color: #F0E1CC;
+}
+
+body.donker header {
+  background-color: #2E1F17;
+}
+
+body.donker nav a {
+  color: #F0E1CC;
+  background-color: #3A271E;
+  border: 1px solid #C9A681;
+}
+
+body.donker nav a:hover {
+  color: #F0E1CC;
+  background-color: #4A3326;
+}
+
+body.donker .achtergrond {
+  background: linear-gradient(to bottom, #2E1F17 0px, #2E1F17 450px, transparent 450px);
+}
+
+body.donker .opmaak,
+body.donker .werkfoto {
+  border: 2px solid #D9A06B;
+}
+
+.dark-knop {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #4B2915;
+  background-color: #DCC3A5;
+  border: 1px solid #60371F;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+body.donker .dark-knop {
+  color: #F0E1CC;
+  background-color: #3A281E;
+  border: 1px solid #C9A681;
+}
+
+
+
+/* Tablet landscape / kleine laptop */
+@media (max-width: 1024px) {
+  main {
+    padding: 40px 20px;
+  }
+
+  .logo {
+    width: 260px;
+  }
+
+  nav a {
+    margin: 10px;
+    padding: 18px 20px;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 768px) {
+  header {
+    justify-content: center;
+    padding: 15px 15px 0.5px;
+  }
+
+  .logo {
+    width: 220px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a {
+    font-size: 1.1rem;
+    margin: 6px;
+    padding: 12px 16px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    padding: 30px 15px 15px;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+    margin: 30px auto;
+  }
+
+  main {
+    padding: 30px 16px;
+  }
+
+  .fotos {
+    gap: 15px;
+  }
+
+  body.donker .achtergrond {
+    background: #2e1F17;
+  }
+}
+
+/* Mobiel */
+@media (max-width: 480px) {
+  header {
+    position: static;
+    /* sticky header neemt anders te veel schermruimte in */
+    gap: 10px;
+  }
+
+  .logo {
+    width: 160px;
+  }
+
+  nav a {
+    font-size: 1rem;
+    margin: 4px;
+    padding: 10px 12px;
+  }
+
+  .productenoverzicht {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 14px 14px 40px;
+  }
+
+  .kaart h2 {
+    font-size: 1.05rem;
+  }
+
+  .kaart p {
+    font-size: 0.9rem;
+  }
+
+
+  h1 {
+    font-size: 1.6rem;
+    padding: 20px 10px 10px;
+  }
+
+  h2 {
+    font-size: 1.15rem;
+    margin: 20px auto;
+  }
+
+  .opmaak,
+  .werkfoto {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .opmaak {
+    height: auto;
+    aspect-ratio: 300 / 340;
+  }
+
+  .uitgelicht {
+    padding: 12px;
+  }
 }
