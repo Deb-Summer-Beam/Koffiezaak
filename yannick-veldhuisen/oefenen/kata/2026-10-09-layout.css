@@ -1,0 +1,23 @@
+#card-container-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cardGrid {
+    padding: 20px;
+}
+
+#card-container-flex {
+    display: flex;
+    gap: 10%;
+}
+
+@media screen and (max-width: 600px){
+    #card-container-grid {
+    grid-template-columns: repeat(1, 1fr);
+    }
+
+    .cardGrid {
+        padding: 10px;
+    }
+}
