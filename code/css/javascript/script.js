@@ -137,28 +137,28 @@ const producten = [
         omschrijving: "Classieke, aromatische thee met een frisse smaak.",
         prijs: 2.00
     },
-  {
+    {
         naam: "Verse muntthee",
         categorie: "Thee",
         afbeelding: "verse-muntthee.png",
         omschrijving: "Frisse, aromatische thee met een verse muntgeur.",
         prijs: 2.00
     },
-  {
+    {
         naam: "Rooibos Vanille",
         categorie: "Thee",
         afbeelding: "rooibos-vanille.png",
         omschrijving: "Natuurlijke, zoete thee met een rijke smaak.",
         prijs: 2.00
     },
-{
+    {
         naam: "Chai Latte",
         categorie: "Thee",
         afbeelding: "chai-latte.png",
         omschrijving: "Aromatische thee met een rijke smaak.",
         prijs: 2.00
     },
-  //Dranken
+    //Dranken
     {
         naam: "Verse Jus d'Orange",
         categorie: "Dranken",
@@ -166,36 +166,36 @@ const producten = [
         omschrijving: "Frisse, natuurlijke jus met een frisse smaak.",
         prijs: 3.00
     },
-  {
+    {
         naam: "Cola",
         categorie: "Dranken",
         afbeelding: "cola.png",
         omschrijving: "Frisse, koolzuurhoudende drank met een frisse smaak.",
         prijs: 2.50
     },
-  {
+    {
         naam: "Spa Rood",
         categorie: "Dranken",
         afbeelding: "spa-rood.png",
         omschrijving: "Drank met een frisse smaak.",
         prijs: 2.50
-    },  
-  {
+    },
+    {
         naam: "Ice Tea",
         categorie: "Dranken",
         afbeelding: "ice-tea.png",
         omschrijving: "Frisse, koolzuurhoudende drank met een frisse smaak.",
         prijs: 2.50
-    },  
-  {
+    },
+    {
         naam: "Appelsap",
         categorie: "Dranken",
         afbeelding: "appelsap.png",
         omschrijving: "Zoete, fruitige appelsap, ook favoriet bij kinderen.",
         prijs: 2.50
     },
-  //Gebak
-  {
+    //Gebak
+    {
         naam: "Appeltaart",
         categorie: "Gebak",
         afbeelding: "appeltaart.png",
@@ -230,7 +230,7 @@ const producten = [
         omschrijving: "Krokante, plantaardige cookie met een frisse smaak.",
         prijs: 2.50
     },
-  // Andere dranken
+    // Andere dranken
     {
         naam: "Warme chocolademelk",
         categorie: "Andere dranken",
@@ -305,5 +305,16 @@ const productenOverzicht = document.querySelector(".productenoverzicht");
 if (productenOverzicht) {
     producten.forEach(function (product) {
         productenOverzicht.appendChild(maakProductKaart(product));
+    });
+}
+
+// Darkmode functie
+
+const darkKnop = document.getElementById("dark-knop");
+
+if (darkKnop) {
+    darkKnop.addEventListener("click", function () {
+        document.body.classList.toggle("donker");
+
     });
 }

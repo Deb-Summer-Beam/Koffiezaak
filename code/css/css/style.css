@@ -221,6 +221,56 @@ main {
   transition: background-color 0.2s ease;
 }
 
+/*darkmode */
+
+body.donker {
+  background-color: #1E1410;
+  color: #F0E1CC;
+}
+
+body.donker header {
+  background-color: #2E1F17;
+}
+
+body.donker nav a {
+  color: #F0E1CC;
+  background-color: #3A271E;
+  border: 1px solid #C9A681;
+}
+
+body.donker nav a:hover {
+  color: #F0E1CC;
+  background-color: #4A3326;
+}
+
+body.donker .achtergrond {
+  background: linear-gradient(to bottom, #2E1F17 0px, #2E1F17 450px, transparent 450px);
+}
+
+body.donker .opmaak,
+body.donker .werkfoto {
+  border: 2px solid #D9A06B;
+}
+
+.dark-knop {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #4B2915;
+  background-color: #DCC3A5;
+  border: 1px solid #60371F;
+  border-radius: 10px;
+  padding: 10px 20px;
+}
+
+body.donker .dark-knop {
+  color: #F0E1CC;
+  background-color: #3A281E;
+  border: 1px solid #C9A681;
+}
+
+
+
 /* Tablet landscape / kleine laptop */
 @media (max-width: 1024px) {
   main {
@@ -277,12 +327,17 @@ main {
   .fotos {
     gap: 15px;
   }
+
+  body.donker .achtergrond {
+    background: #2e1F17;
+  }
 }
 
 /* Mobiel */
 @media (max-width: 480px) {
   header {
-    position: static; /* sticky header neemt anders te veel schermruimte in */
+    position: static;
+    /* sticky header neemt anders te veel schermruimte in */
     gap: 10px;
   }
 
@@ -301,7 +356,7 @@ main {
     gap: 14px;
     padding: 14px 14px 40px;
   }
-  
+
   .kaart h2 {
     font-size: 1.05rem;
   }
