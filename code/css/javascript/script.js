@@ -335,6 +335,7 @@ if (menuOverzicht) {
 
         } catch (error) {
             statusLine.textContent = 'Menu kon niet worden geladen, probeer het later opnieuw.';
+            console.error(`Something went wrong: ${error}`);
         }
     }
 
