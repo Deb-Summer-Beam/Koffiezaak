@@ -318,3 +318,16 @@ if (darkKnop) {
 
     });
 }
+
+
+// Accessibility functionaliteit
+
+const accessibilityKnop = document.querySelector('#accessibility-knop');
+
+if (accessibilityKnop) {
+    accessibilityKnop.addEventListener('click', toggleAccessibility);
+}
+
+function toggleAccessibility() {
+    document.documentElement.classList.toggle('accessibility');
+}
