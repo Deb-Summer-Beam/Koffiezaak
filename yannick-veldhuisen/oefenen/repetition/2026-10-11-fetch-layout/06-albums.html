@@ -1,0 +1,28 @@
+<!--
+  06 – Albums (from blank: you write the HTML, 06-albums.css and 06-albums.js yourself)
+  - A page with a heading "Albums", a button "Load albums", a status line and an empty container.
+  - Click → fetch https://jsonplaceholder.typicode.com/albums?_limit=6
+  - Response not okay → a clear error message on the page.
+  - Each album title goes in its own card.
+  - The cards sit in a grid: 1 column when narrow, 3 equal columns from 800px, with space between.
+  Done when: 6 cards, the first is "quidem molestiae enim"; 1 column at 375px, 3 at 1280px; Console clean.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="uft-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="06-albums.css">
+  <title>Albums</title>
+</head>
+<body>
+  <h1>Albums</h1>
+  <button id="loadAlbums">Load albums</button>
+  <p id="statusLine" aria-live="polite"></p>
+  <div id="albumContainer"></div>
+
+
+  <script src="06-albums.js"></script>
+</body>
+</html>

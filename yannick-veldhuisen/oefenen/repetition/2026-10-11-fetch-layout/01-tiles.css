@@ -1,0 +1,33 @@
+/* why: box-sizing so padding isn't added on top of the width */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, sans-serif;
+    margin: 0;
+    padding: 1rem;
+}
+
+.tiles {
+    display: grid;
+    /* why: mobile first – the base is one column that gets the full width */
+    grid-template-columns: 1fr;
+    /* why: gap puts space BETWEEN the tiles, not around the outside like margin does */
+    gap: 1rem;
+}
+
+.tile {
+    padding: 2rem 1rem;
+    background-color: #f1e4d3;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* why: min-width = "from this width and up", so this only applies on wider screens */
+@media (min-width: 600px) {
+    .tiles {
+        /* why: repeat(3, 1fr) = three columns that each get an equal share of the space */
+        /* ⬜ */grid-template-columns: repeat(3, 1fr);
+    }
+}

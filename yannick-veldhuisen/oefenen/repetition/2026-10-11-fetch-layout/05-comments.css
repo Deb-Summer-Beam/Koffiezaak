@@ -1,0 +1,10 @@
+/* 1. #comments: a grid with one column and space between the cards */
+
+/* 2. article (the card): a border, some padding and rounded corners */
+
+/* 3. from 700px: #comments gets 2 equal columns */
+
+* {
+    box-sizing: border-box;
+}
+
