@@ -28,6 +28,7 @@ if (document.getElementById("antwoord")) {
     document.getElementById("antwoord").textContent = resultaat;
 }
 
+// Typewriter effect
 const words = [
     "CozyBrew",
     "Warm, Cozy, Sustainable",
@@ -84,7 +85,7 @@ if (textElement) {
     typeWriter();
 }
 
-
+//const producten
 const producten = [
     //koffie
     {
@@ -268,6 +269,7 @@ const producten = [
     }
 ]
 
+// Functie om productkaart te maken
 function maakProductKaart(product) {
     const kaart = document.createElement("article");
     kaart.className = "kaart";
@@ -331,3 +333,41 @@ if (accessibilityKnop) {
 function toggleAccessibility() {
     document.documentElement.classList.toggle('accessibility');
 }
+
+
+// Openingsuren functie
+const uur = new Date().getHours();
+const dagNaam = new Date().toLocaleDateString('nl-NL', { weekday: 'long' });
+const datum = new Date().toLocaleDateString('nl-NL');
+const dagNummer = new Date().getDate();
+const maandNummer = new Date().getMonth() + 1; //Maanden tellen vanaf 0, dus +1
+
+console.log("Het is vandaag " + dagNaam + " (" + datum + ").");
+
+let openGesloten;
+if (dagNummer === 1 && maandNummer === 1) {
+  openGesloten = "Gesloten";
+} else if (dagNummer === 25 && maandNummer === 12) {
+  openGesloten = "Gesloten";
+} else if (dagNummer === 26 && maandNummer === 12) {
+  openGesloten = "Gesloten";
+} else if (dagNaam === "maandag") {
+  openGesloten = "Open van 12:00 tot 18:00.";
+} else if (dagNaam === "dinsdag") {
+  openGesloten = "Open van 12:00 tot 18:00.";
+} else if (dagNaam === "woensdag") {
+  openGesloten = "Open van 12:00 tot 18:00.";
+} else if (dagNaam === "donderdag") {
+  openGesloten = "Open van 12:00 tot 21:00.";
+} else if (dagNaam === "vrijdag") {
+  openGesloten = "Open van 12:00 tot 18:00.";
+} else if (dagNaam === "zaterdag") {
+  openGesloten = "Open van 09:00 tot 16:00.";
+} else if (dagNaam === "zondag") {
+  openGesloten = "Open van 10:00 tot 16:00.";
+} else {
+  openGesloten = "Er is iets misgegaan bij het berekenen van de dag.";
+}
+console.log(openGesloten);
+document.getElementById("openGesloten").innerHTML = openGesloten;
+
