@@ -308,6 +308,67 @@ if (productenOverzicht) {
     });
 }
 
+
+
+// Menu-kaarten opbouwen met fetch()
+const menuOverzicht = document.querySelector('#menu');
+const statusLine = document.querySelector('#statusLine');
+
+if (menuOverzicht) {
+    async function createMenu() {
+        statusLine.textContent = 'Aan het laden...';
+        try {
+            const response = await fetch('https://api.sampleapis.com/coffee/hot');
+            if (!response.ok) {
+                throw new Error(`Nah this ain't right bro: ${response.status}.`);
+            }
+
+            const totalMenu = await response.json();
+            const menu = totalMenu.slice(0, 18);
+
+            if (menu.length == 0) {
+                statusLine.textContent = `Er zijn ${menu.length} items gevonden.`;
+            } else {
+                menu.forEach(appendMenuItems);
+                statusLine.textContent = `Er zijn ${menu.length} items geladen.`;
+            }
+
+        } catch (error) {
+            statusLine.textContent = 'Menu kon niet worden geladen, probeer het later opnieuw.';
+        }
+    }
+
+    function appendMenuItems(item) {
+        menuOverzicht.appendChild(buildItems(item));
+    }
+
+    function buildItems(item) {
+        const itemBox = document.createElement('article');
+        itemBox.classList.add('kaart');
+
+        const image = document.createElement('img');
+        image.src = item.image;
+        image.alt = `Foto van ${item.title}`;
+
+        const title = document.createElement('h2');
+        title.textContent = item.title;
+
+        const ingredients = document.createElement('p');
+        const ingredientList = item.ingredients.join(', ');
+        ingredients.textContent = ingredientList;
+
+        itemBox.appendChild(image);
+        itemBox.appendChild(title);
+        itemBox.appendChild(ingredients);
+
+        return itemBox;
+
+    }
+
+    createMenu();
+
+}
+
 // Darkmode functie
 
 const darkKnop = document.getElementById("dark-knop");

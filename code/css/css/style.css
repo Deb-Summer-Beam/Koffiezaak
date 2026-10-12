@@ -221,6 +221,27 @@ main {
   transition: background-color 0.2s ease;
 }
 
+
+/* Menu */
+#menu .kaart p {
+  padding: 10px;
+}
+
+#menu .kaart h2 {
+  margin: 5px;
+  text-decoration: underline;
+}
+
+#statusLine {
+  margin: 25px;
+}
+
+#menu .kaart img {
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+
 /*darkmode */
 
 body.donker {
