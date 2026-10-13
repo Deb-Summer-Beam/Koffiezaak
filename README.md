@@ -168,3 +168,10 @@ Dit project is ontwikkeld als onderdeel van een webdevelopment-project.
 📄 Licentie
 
 Dit project is bedoeld voor educatieve doeleinden.
+
+### Activiteitendiagram – Bestelling toevoegen
+
+Dit diagram toont de invoercontrole, prijsberekening
+en het toevoegen van producten aan het winkelmandje.
+
+![Activiteitendiagram bestelling](../uml/activiteit_bestelling.png)
