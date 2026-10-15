@@ -1,0 +1,22 @@
+[
+    {"title": "Nacht in de stad", "Zaal": 1, "Plaatsen": 24},
+    {"title": "Reis naar Mars", "Zaal": 2, "Plaatsen": 0},
+    {"title": "Avontuur in de jungle", "Zaal": 3, "Plaatsen": 15}
+]
+
+
+
+
+
+const url = "https://jsonplaceholder.typicode.com/posts" + "/posts/2";
+
+const titel = document.querySelector("#title");
+const tekst = document.querySelector("#zaal");
+async function toonBericht() {  
+  const Zoeken = await fetch(url);
+  const ontvangen = await Zoeken.json();
+
+  titel.textContent = ontvangen.title;
+  tekst.textContent = ontvangen.zaal;
+}
+toonBericht();
