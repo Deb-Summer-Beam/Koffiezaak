@@ -154,3 +154,57 @@ function controleerAantal() {
 if (aantalInvoer && berekenPrijsKnop && prijsMelding) {
   berekenPrijsKnop.addEventListener("click", controleerAantal);
 }
+
+
+// Pagina5.html - Stap 1: selecteer de lege container en bewaar het element.
+const kaartLijst = document.getElementById("kaart-lijst");
+
+// Stap 2: een array met drie objecten met dezelfde propertynamen.
+const onderdelen = [
+  {
+    titel: "Espresso",
+    beschrijving: "Een kleine, krachtige koffie met een volle smaak.",
+    extra: "Prijs: € 2,50"
+  },
+  {
+    titel: "Cappuccino",
+    beschrijving: "Espresso met warme melk en een zachte laag melkschuim.",
+    extra: "Prijs: € 3,50"
+  },
+  {
+    titel: "Latte macchiato",
+    beschrijving: "Warme melk met espresso en een luchtige laag melkschuim.",
+    extra: "Prijs: € 3,75"
+  }
+];
+
+// Stap 3: ontvang één object en geef een compleet article terug.
+function maakKaart(onderdeel) {
+  const kaart = document.createElement("article");
+  kaart.classList.add("product-kaart");
+
+  const kop = document.createElement("h2");
+  kop.textContent = onderdeel.titel;
+
+  const beschrijving = document.createElement("p");
+  beschrijving.textContent = onderdeel.beschrijving;
+
+  const extra = document.createElement("p");
+  extra.classList.add("product-extra");
+  extra.textContent = onderdeel.extra;
+
+  kaart.appendChild(kop);
+  kaart.appendChild(beschrijving);
+  kaart.appendChild(extra);
+
+  return kaart;
+}
+
+// Stap 4: bouw voor ieder object een kaart en voeg die aan de container toe.
+// De controle voorkomt fouten op pagina's zonder kaart-lijst.
+if (kaartLijst) {
+  onderdelen.forEach(function (onderdeel) {
+    const kaart = maakKaart(onderdeel);
+    kaartLijst.appendChild(kaart);
+  });
+}

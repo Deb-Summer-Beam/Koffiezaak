@@ -199,8 +199,33 @@ h2.accent {
   margin: 0 auto;
 }
 
+/* Productkaarten voor Pagina5.html. */
+.product-lijst {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.product-kaart {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #e4d5c5;
+  background-color: #ffffff;
+}
+
+.product-extra {
+  color: #6f4e37;
+  font-weight: bold;
+}
+
 /* Op kleine schermen komen de inhoudsblokken onder elkaar. */
 @media (max-width: 700px) {
+  .product-lijst {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
   .oefeningen {
     grid-template-columns: 1fr;
     gap: 16px;
