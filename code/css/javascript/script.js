@@ -85,189 +85,15 @@ if (textElement) {
     typeWriter();
 }
 
-//const producten
-const producten = [
-    //koffie
-    {
-        naam: "espresso",
-        categorie: "Koffie",
-        afbeelding: "espresso.png",
-        omschrijving: "Krachtige, geconcentreerde koffie met een rijke smaak en een romige crema.",
-        prijs: 2.50
-    },
-    {
-        naam: "cappuccino",
-        categorie: "Koffie",
-        afbeelding: "cappuccino.png",
-        omschrijving: "Zachte, romige koffie met een lichte schuimlaag en een rijke smaak.",
-        prijs: 3.00
-    },
-    {
-        naam: "Latte macchiato",
-        categorie: "Koffie",
-        afbeelding: "latte-macchiato.png",
-        omschrijving: "Koffie met romige melk en een lichte schuimlaag.",
-        prijs: 3.50
-    },
-    {
-        naam: "Flat white",
-        categorie: "Koffie",
-        afbeelding: "flat-white.png",
-        omschrijving: "Zachte koffie met een lichte schuimlaag en een rijke smaak.",
-        prijs: 3.50
-    },
-    {
-        naam: "Havermelk Latte",
-        categorie: "Koffie",
-        afbeelding: "havermelk-latte.png",
-        omschrijving: "Koffie met romige havermelk en een lichte schuimlaag.",
-        prijs: 3.50
-    },
-    //Thee
-    {
-        naam: "Groene thee",
-        categorie: "Thee",
-        afbeelding: "groene-thee.png",
-        omschrijving: "Frisse, lichtgeurige thee met een frisse smaak.",
-        prijs: 2.00
-    },
-    {
-        naam: "Earl Grey",
-        categorie: "Thee",
-        afbeelding: "earl-grey.png",
-        omschrijving: "Classieke, aromatische thee met een frisse smaak.",
-        prijs: 2.00
-    },
-    {
-        naam: "Verse muntthee",
-        categorie: "Thee",
-        afbeelding: "verse-muntthee.png",
-        omschrijving: "Frisse, aromatische thee met een verse muntgeur.",
-        prijs: 2.00
-    },
-    {
-        naam: "Rooibos Vanille",
-        categorie: "Thee",
-        afbeelding: "rooibos-vanille.png",
-        omschrijving: "Natuurlijke, zoete thee met een rijke smaak.",
-        prijs: 2.00
-    },
-    {
-        naam: "Chai Latte",
-        categorie: "Thee",
-        afbeelding: "chai-latte.png",
-        omschrijving: "Aromatische thee met een rijke smaak.",
-        prijs: 2.00
-    },
-    //Dranken
-    {
-        naam: "Verse Jus d'Orange",
-        categorie: "Dranken",
-        afbeelding: "verse-jus-d-orange.png",
-        omschrijving: "Frisse, natuurlijke jus met een frisse smaak.",
-        prijs: 3.00
-    },
-    {
-        naam: "Cola",
-        categorie: "Dranken",
-        afbeelding: "cola.png",
-        omschrijving: "Frisse, koolzuurhoudende drank met een frisse smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Spa Rood",
-        categorie: "Dranken",
-        afbeelding: "spa-rood.png",
-        omschrijving: "Drank met een frisse smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Ice Tea",
-        categorie: "Dranken",
-        afbeelding: "ice-tea.png",
-        omschrijving: "Frisse, koolzuurhoudende drank met een frisse smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Appelsap",
-        categorie: "Dranken",
-        afbeelding: "appelsap.png",
-        omschrijving: "Zoete, fruitige appelsap, ook favoriet bij kinderen.",
-        prijs: 2.50
-    },
-    //Gebak
-    {
-        naam: "Appeltaart",
-        categorie: "Gebak",
-        afbeelding: "appeltaart.png",
-        omschrijving: "Krokante, zoete taart met verse appels.",
-        prijs: 2.50
-    },
-    {
-        naam: "Brownie",
-        categorie: "Gebak",
-        afbeelding: "brownie.png",
-        omschrijving: "Krokante, chocolade-geurige taart met een rijke smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Cheesecake",
-        categorie: "Gebak",
-        afbeelding: "cheesecake.png",
-        omschrijving: "Rijke, roomkaas-geurige taart met een frisse smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Croissant",
-        categorie: "Gebak",
-        afbeelding: "croissant.png",
-        omschrijving: "Krokante, boterige taart met een frisse smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Veganistische Cookie",
-        categorie: "Gebak",
-        afbeelding: "veganistische-cookie.png",
-        omschrijving: "Krokante, plantaardige cookie met een frisse smaak.",
-        prijs: 2.50
-    },
-    // Andere dranken
-    {
-        naam: "Warme chocolademelk",
-        categorie: "Andere dranken",
-        afbeelding: "warme-chocolademelk.png",
-        omschrijving: "Warme, chocolade-geurige melk met een rijke smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Smoothie Aardbei-banaan",
-        categorie: "Andere dranken",
-        afbeelding: "smoothie-aardbei-banaan.png",
-        omschrijving: "Frisse, natuurlijke smoothie met een frisse smaak.",
-        prijs: 3.00
-    },
-    {
-        naam: "Milkshake Vanille",
-        categorie: "Andere dranken",
-        afbeelding: "milkshake-vanille.png",
-        omschrijving: "Rijke, vanille-geurige shake met een frisse smaak.",
-        prijs: 3.00
-    },
-    {
-        naam: "Golden Latte",
-        categorie: "Andere dranken",
-        afbeelding: "golden-latte.png",
-        omschrijving: "Warme kurkumamelk met kaneel, gember en een snufje peper.",
-        prijs: 3.50
-    },
-    {
-        naam: "Matcha Latte",
-        categorie: "Andere dranken",
-        afbeelding: "matcha-latte.png",
-        omschrijving: "Rijke, groene thee-geurige latte met een frisse smaak.",
-        prijs: 3.50
+async function laadProducten() {
+
+    const response = await fetch("menu.json");
+    if (!response.ok) {
+        throw new Error(`Request mislukt: ${response.status}`);
+
     }
-]
+    return await response.json();
+}
 
 // Functie om productkaart te maken
 function maakProductKaart(product) {
@@ -304,10 +130,32 @@ function maakProductKaart(product) {
 
 const productenOverzicht = document.querySelector(".productenoverzicht");
 
+const menuStatus = document.querySelector("#menuStatus");
+
+async function toonMenu() {
+    menuStatus.textContent = "Menu laden...";
+    try {
+        const producten = await laadProducten();
+        if (producten.length === 0) {
+            menuStatus.textContent = "Er zijn geen producten beschikbaar.";
+            return;
+        }
+
+        producten.forEach(function (product) {
+            productenOverzicht.appendChild(maakProductKaart(product));
+        });
+        menuStatus.textContent = producten.length + " producten geladen";
+    } catch (fout) {
+        menuStatus.textContent = "Het menu kon niet worden geladen. Probeer het later opnieuw.";
+        console.error(fout);
+    }
+
+
+
+}
+
 if (productenOverzicht) {
-    producten.forEach(function (product) {
-        productenOverzicht.appendChild(maakProductKaart(product));
-    });
+    toonMenu();
 }
 
 // Darkmode functie

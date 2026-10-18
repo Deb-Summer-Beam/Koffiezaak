@@ -1,0 +1,240 @@
+[
+  {
+    "naam": "Espresso",
+    "categorie": "Koffie",
+    "afbeelding": "espresso.png",
+    "omschrijving": "Krachtige, geconcentreerde koffie met een rijke smaak en een romige crema.",
+    "prijs": 2.50
+  },
+  {
+    "naam": "Cappuccino",
+    "categorie": "Koffie",
+    "afbeelding": "cappuccino.png",
+    "omschrijving": "Zachte, romige koffie met een lichte schuimlaag en een rijke smaak.",
+    "prijs": 3.50
+  },
+  {
+    "naam": "Latte macchiato",
+    "categorie": "Koffie",
+    "afbeelding": "latte-macchiato.png",
+    "omschrijving": "Koffie met romige melk en een lichte schuimlaag.",
+    "prijs": 3.75
+  },
+  {
+    "naam": "Flat white",
+    "categorie": "Koffie",
+    "afbeelding": "flat-white.png",
+    "omschrijving": "Zachte koffie met een lichte schuimlaag en een rijke smaak.",
+    "prijs": 3.75
+  },
+  {
+    "naam": "Havermelk Latte",
+    "categorie": "Koffie",
+    "afbeelding": "havermelk-latte.png",
+    "omschrijving": "Koffie met romige havermelk en een lichte schuimlaag.",
+    "prijs": 3.50
+  },
+  {
+    "naam": "Americano",
+    "categorie": "Koffie",
+    "afbeelding": "americano.png",
+    "omschrijving": "Espresso aangevuld met heet water, voor een milde maar volle koffiesmaak.",
+    "prijs": 3.00
+  },
+  {
+    "naam": "IJskoffie",
+    "categorie": "Koffie",
+    "afbeelding": "ijskoffie.png",
+    "omschrijving": "Koude koffie met melk en ijsblokjes, heerlijk verfrissend op warme dagen.",
+    "prijs": 3.75
+  },
+  {
+    "naam": "Groene thee",
+    "categorie": "Thee",
+    "afbeelding": "groene-thee.png",
+    "omschrijving": "Frisse, lichtgeurige thee met een frisse smaak.",
+    "prijs": 3.00
+  },
+  {
+    "naam": "Earl Grey",
+    "categorie": "Thee",
+    "afbeelding": "earl-grey.png",
+    "omschrijving": "Classieke, aromatische thee met een frisse smaak.",
+    "prijs": 2.00
+  },
+  {
+    "naam": "Verse muntthee",
+    "categorie": "Thee",
+    "afbeelding": "verse-muntthee.png",
+    "omschrijving": "Frisse, aromatische thee met een verse muntgeur.",
+    "prijs": 3.50
+  },
+  {
+    "naam": "Rooibos Vanille",
+    "categorie": "Thee",
+    "afbeelding": "rooibos-vanille.png",
+    "omschrijving": "Natuurlijke, zoete thee met een rijke smaak.",
+    "prijs": 2.00
+  },
+  {
+    "naam": "Zwarte thee",
+    "categorie": "Thee",
+    "afbeelding": "zwarte-thee.png",
+    "omschrijving": "Klassieke zwarte thee met een krachtige, licht moutige smaak.",
+    "prijs": 2.50
+  },
+  {
+    "naam": "Kamillethee",
+    "categorie": "Thee",
+    "afbeelding": "kamillethee.png",
+    "omschrijving": "Zachte kruidenthee van kamillebloemen, rustgevend en zonder cafeïne.",
+    "prijs": 3.50
+  },
+  {
+    "naam": "Vruchtenthee",
+    "categorie": "Thee",
+    "afbeelding": "vruchtenthee.png",
+    "omschrijving": "Fruitige thee met bessen en hibiscus, licht zoet en zonder cafeïne.",
+    "prijs": 3.75
+  },
+  {
+    "naam": "Chai Latte",
+    "categorie": "Thee",
+    "afbeelding": "chai-latte.png",
+    "omschrijving": "Aromatische thee met een rijke smaak.",
+    "prijs": 3.75
+  },
+  {
+    "naam": "Verse Jus d'Orange",
+    "categorie": "Dranken",
+    "afbeelding": "verse-jus-d-orange.png",
+    "omschrijving": "Frisse, natuurlijke jus met een frisse smaak.",
+    "prijs": 3.00
+  },
+  {
+    "naam": "Cola",
+    "categorie": "Dranken",
+    "afbeelding": "cola.png",
+    "omschrijving": "Frisse, koolzuurhoudende drank met een frisse smaak.",
+    "prijs": 2.50
+  },
+  {
+    "naam": "Spa Rood",
+    "categorie": "Dranken",
+    "afbeelding": "spa-rood.png",
+    "omschrijving": "Drank met een frisse smaak.",
+    "prijs": 2.50
+  },
+  {
+    "naam": "Ice Tea",
+    "categorie": "Dranken",
+    "afbeelding": "ice-tea.png",
+    "omschrijving": "Frisse, koolzuurhoudende drank met een frisse smaak.",
+    "prijs": 2.50
+  },
+  {
+    "naam": "Appelsap",
+    "categorie": "Dranken",
+    "afbeelding": "appelsap.png",
+    "omschrijving": "Zoete, fruitige appelsap, ook favoriet bij kinderen.",
+    "prijs": 2.50
+  },
+  {
+    "naam": "Appeltaart",
+    "categorie": "Gebak",
+    "afbeelding": "appeltaart.png",
+    "omschrijving": "Krokante, zoete taart met verse appels.",
+    "prijs": 4.00
+  },
+  {
+    "naam": "Brownie",
+    "categorie": "Gebak",
+    "afbeelding": "brownie.png",
+    "omschrijving": "Krokante, chocolade-geurige taart met een rijke smaak.",
+    "prijs": 2.50
+  },
+  {
+    "naam": "Chocoladetaart",
+    "categorie": "Gebak",
+    "afbeelding": "chocoladetaart.png",
+    "omschrijving": "Smeuïge chocoladetaart met een glanzende laag pure chocolade-ganache.",
+    "prijs": 5.00
+  },
+  {
+    "naam": "Muffin / cupcake",
+    "categorie": "Gebak",
+    "afbeelding": "muffin-cupcake.png",
+    "omschrijving": "Luchtige muffin of cupcake met een romige topping, elke dag vers gebakken.",
+    "prijs": 4.00
+  },
+  {
+    "naam": "Koekjes",
+    "categorie": "Gebak",
+    "afbeelding": "koekjes.png",
+    "omschrijving": "Een mix van roomboterkoekjes en chocolate-chip koekjes, lekker bij je koffie.",
+    "prijs": 3.00
+  },
+  {
+    "naam": "Kleine gebakjes",
+    "categorie": "Gebak",
+    "afbeelding": "kleine-gebakjes.png",
+    "omschrijving": "Wisselend assortiment kleine gebakjes, zoals een mini-tompoes en een éclair.",
+    "prijs": 3.75
+  },
+  {
+    "naam": "Cheesecake",
+    "categorie": "Gebak",
+    "afbeelding": "cheesecake.png",
+    "omschrijving": "Rijke, roomkaas-geurige taart met een frisse smaak.",
+    "prijs": 5.00
+  },
+  {
+    "naam": "Croissant",
+    "categorie": "Gebak",
+    "afbeelding": "croissant.png",
+    "omschrijving": "Krokante, boterige taart met een frisse smaak.",
+    "prijs": 2.75
+  },
+  {
+    "naam": "Veganistische Cookie",
+    "categorie": "Gebak",
+    "afbeelding": "veganistische-cookie.png",
+    "omschrijving": "Krokante, plantaardige cookie met een frisse smaak.",
+    "prijs": 2.50
+  },
+  {
+    "naam": "Warme chocolademelk",
+    "categorie": "Andere dranken",
+    "afbeelding": "warme-chocolademelk.png",
+    "omschrijving": "Warme, chocolade-geurige melk met een rijke smaak.",
+    "prijs": 2.50
+  },
+  {
+    "naam": "Smoothie Aardbei-banaan",
+    "categorie": "Andere dranken",
+    "afbeelding": "smoothie-aardbei-banaan.png",
+    "omschrijving": "Frisse, natuurlijke smoothie met een frisse smaak.",
+    "prijs": 3.00
+  },
+  {
+    "naam": "Milkshake Vanille",
+    "categorie": "Andere dranken",
+    "afbeelding": "milkshake-vanille.png",
+    "omschrijving": "Rijke, vanille-geurige shake met een frisse smaak.",
+    "prijs": 3.00
+  },
+  {
+    "naam": "Golden Latte",
+    "categorie": "Andere dranken",
+    "afbeelding": "golden-latte.png",
+    "omschrijving": "Warme kurkumamelk met kaneel, gember en een snufje peper.",
+    "prijs": 3.50
+  },
+  {
+    "naam": "Matcha Latte",
+    "categorie": "Andere dranken",
+    "afbeelding": "matcha-latte.png",
+    "omschrijving": "Rijke, groene thee-geurige latte met een frisse smaak.",
+    "prijs": 3.50
+  }
+]
