@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: #cfc9c2;
+    background-color: #b5a091;
 }
 
 main {
@@ -144,5 +144,47 @@ header nav {
 .menukaart .menu-item p {
     margin: 6px 0 0;
     font-size: 14px;
+    line-height: 1.5;
+}
+
+
+
+
+
+.welkom {
+    position: relative;
+    min-height: 80vh;
+    display: grid;
+    place-items: center;
+    background-color: #000;
+    color: white;
+    overflow: hidden;
+}
+
+.welkom img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    opacity: 0.65;
+}
+
+.welkom-tekst {
+    position: relative;
+    padding: 32px;
+    font-family: Arial, sans-serif;
+}
+
+.welkom h1 {
+    margin: 0 0 16px;
+    font-size: clamp(48px, 8vw, 120px);
+    line-height: 1;
+}
+
+.welkom p {
+    margin: 0;
+    font-size: 20px;
     line-height: 1.5;
 }
