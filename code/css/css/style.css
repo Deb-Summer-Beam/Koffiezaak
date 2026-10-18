@@ -269,6 +269,17 @@ body.donker .dark-knop {
   border: 1px solid #C9A681;
 }
 
+/* Accessibility */
+html.accessibility {
+ font-size: 1.4rem;
+ letter-spacing: 0.12em;
+ word-spacing: 0.16em;
+}
+
+html.accessibility body {
+  line-height: 1.8;
+}
+
 
 
 /* Tablet landscape / kleine laptop */
