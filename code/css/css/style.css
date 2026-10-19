@@ -402,3 +402,286 @@ html.accessibility body {
     padding: 12px;
   }
 }
+
+ /* Bestelformulier (bestelling.html) */
+
+.bestellingTitel {
+  margin: 0 auto 30px;
+  padding: 0 20px;
+}
+
+#bestelFormulier {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 45px 50px;
+  box-sizing: border-box;
+  background-color: #dcc3a5;
+  border: 2px solid #b9804f;
+  border-radius: 19px;
+  box-shadow: 0 4px 6px rgba(75, 41, 21, 0.18);
+}
+
+/* Sierrand met sterren */
+.sterren {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #b9804f;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sterren.boven,
+.sterren.onder {
+  left: 25px;
+  right: 25px;
+  height: 18px;
+  letter-spacing: 8px;
+}
+
+.sterren.boven {
+  top: 8px;
+}
+
+.sterren.onder {
+  bottom: 8px;
+}
+
+.sterren.links,
+.sterren.rechts {
+  top: 30px;
+  bottom: 30px;
+  width: 15px;
+  writing-mode: vertical-rl;
+  letter-spacing: 10px;
+}
+
+.sterren.links {
+  left: 10px;
+}
+
+.sterren.rechts {
+  right: 10px;
+}
+
+#bestelFormulier h3 {
+  margin: 30px 0 15px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+#bestelFormulier h3:first-of-type {
+  margin-top: 0;
+}
+
+.klantgegevens {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 20px;
+}
+
+.productRij {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+#bestelFormulier label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+#bestelFormulier input,
+#bestelFormulier select {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #4B2915;
+  background-color: #FFF8EE;
+  border: 1px solid #60391F;
+  border-radius: 10px;
+}
+
+#bestelFormulier input:focus-visible,
+#bestelFormulier select:focus-visible,
+#bestelFormulier button:focus-visible {
+  outline: 3px solid #b9804f;
+  outline-offset: 2px;
+}
+
+/* Knoppen */
+#bestelFormulier button {
+  min-height: 44px;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #EAD8BE;
+  background-color: #4B2915;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#bestelFormulier button:hover {
+  background-color: #6B3D20;
+}
+
+.actieRij {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0;
+}
+
+.bestelActies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+/* "Controleer bestelling" is een tweede keuze, dus lichter */
+#bestelFormulier #controleerBtn {
+  color: #4B2915;
+  background-color: #EAD8BE;
+  border: 1px solid #60391F;
+}
+
+#bestelFormulier #controleerBtn:hover {
+  background-color: #c9a681;
+}
+
+/* Winkelmandje */
+#winkelmandje {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#winkelmandje li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  background-color: #FFF8EE;
+  border-radius: 10px;
+}
+
+#bestelFormulier .verwijderBtn {
+  min-height: 0;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  color: #4B2915;
+  background-color: transparent;
+  border: 1px solid #60391F;
+}
+
+#bestelFormulier .verwijderBtn:hover {
+  background-color: #c9a681;
+}
+
+#totaalBestelling {
+  margin: 15px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Controleoverzicht */
+#controleOverzicht:not(:empty) {
+  margin-top: 25px;
+  padding: 20px 25px;
+  background-color: #FFF8EE;
+  border: 2px dashed #b9804f;
+  border-radius: 10px;
+}
+
+#controleOverzicht p {
+  margin: 4px 0;
+}
+
+/* Bestelformulier darkmode */
+body.donker #bestelFormulier {
+  background-color: #3A271E;
+  border-color: #C9A681;
+}
+
+body.donker .sterren {
+  color: #D9A06B;
+}
+
+body.donker #bestelFormulier input,
+body.donker #bestelFormulier select,
+body.donker #winkelmandje li,
+body.donker #controleOverzicht:not(:empty) {
+  color: #F0E1CC;
+  background-color: #2E1F17;
+  border-color: #C9A681;
+}
+
+body.donker #bestelFormulier button {
+  color: #1E1410;
+  background-color: #D9A06B;
+}
+
+body.donker #bestelFormulier button:hover {
+  background-color: #C9A681;
+}
+
+body.donker #bestelFormulier #controleerBtn,
+body.donker #bestelFormulier .verwijderBtn {
+  color: #F0E1CC;
+  background-color: transparent;
+  border: 1px solid #C9A681;
+}
+
+body.donker #bestelFormulier #controleerBtn:hover,
+body.donker #bestelFormulier .verwijderBtn:hover {
+  background-color: #4A3326;
+}
+
+/* Bestelformulier tablet */
+@media (max-width: 768px) {
+  #bestelFormulier {
+    padding: 40px 35px;
+  }
+
+  .klantgegevens {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Bestelformulier mobiel */
+@media (max-width: 480px) {
+  #bestelFormulier {
+    padding: 35px 25px;
+  }
+
+  .klantgegevens,
+  .bestelActies {
+    grid-template-columns: 1fr;
+  }
+
+  .productRij {
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+  }
+
+  #winkelmandje li {
+    flex-wrap: wrap;
+  }
+
+  #totaalBestelling {
+    text-align: center;
+  }
+}
