@@ -117,7 +117,7 @@ function maakProductKaart(product) {
 
     const prijs = document.createElement("p");
     prijs.className = "prijs";
-    prijs.textContent = "€ " + product.prijs.toLocaleString("nl-NL") + ",-";
+    prijs.textContent = product.prijs.toLocaleString("nl-NL", { style: "currency", currency: "EUR" });
     kaart.appendChild(prijs);
 
     const knop = document.createElement("button");
@@ -177,8 +177,6 @@ function toggleDarkmode() {
 }
 function localStorageCheckDarkmode() {
     if (localStorage.getItem("darkmodeValue") == "on") {
-
-
         document.body.classList.add("donker");
     }
 }

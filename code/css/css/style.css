@@ -196,15 +196,32 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.kaart .prijs {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+
 .kaart:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 22px rgba(75, 41, 21, 0.28);
 }
 
 .product-foto {
+  display: block;
   width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.kaart h2 {
+  font-size: 1.2rem;
+  margin: 15px 0 8px;
+  padding: 0 14px;
+}
+
+.kaart p {
   line-height: 1.4;
-  text-align: center;
   padding: 0 14px;
   margin: 0 0 12px;
 }
@@ -219,6 +236,11 @@ main {
   padding: 12px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  margin-top: auto;
+}
+
+.winkelwagen-knop:hover {
+  background-color: #6B3D20;
 }
 
 /*darkmode */
@@ -269,11 +291,25 @@ body.donker .dark-knop {
   border: 1px solid #C9A681;
 }
 
+body.donker .kaart {
+  background-color: #3A271E;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+body.donker .winkelwagen-knop {
+  color: #1E1410;
+  background-color: #D9A06B;
+}
+
+body.donker .winkelwagen-knop:hover {
+  background-color: #C9A681;
+}
+
 /* Accessibility */
 html.accessibility {
- font-size: 1.4rem;
- letter-spacing: 0.12em;
- word-spacing: 0.16em;
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  word-spacing: 0.16em;
 }
 
 html.accessibility body {
@@ -368,14 +404,6 @@ html.accessibility body {
     padding: 14px 14px 40px;
   }
 
-  .kaart h2 {
-    font-size: 1.05rem;
-  }
-
-  .kaart p {
-    font-size: 0.9rem;
-  }
-
 
   h1 {
     font-size: 1.6rem;
@@ -401,9 +429,17 @@ html.accessibility body {
   .uitgelicht {
     padding: 12px;
   }
+
+  .kaart h2 {
+    font-size: 1.05rem;
+  }
+
+  .kaart p {
+    font-size: 0.9rem;
+  }
 }
 
- /* Bestelformulier (bestelling.html) */
+/* Bestelformulier (bestelling.html) */
 
 .bestellingTitel {
   margin: 0 auto 30px;
