@@ -64,7 +64,7 @@
 
         <div class="veld">
         <label for="telefoon">Telefoonnummer:</label>
-        <input type="tel" id="telefoon" name="telefoon" required>
+        <input type="tel" id="telefoon" name="telefoon" name="telefoon"pattern="06[0-9]{8}"title="Gebruik een mobiel nummer van 10 cijfers, beginnend met 06"required>
         </div>
 
         <div class="veld">
@@ -74,7 +74,7 @@
 
         <div class="veld">
         <label for="postcode">Postcode:</label>
-        <input type="text" id="postcode" name="postcode" required>
+        <input type="text" id="postcode" name="postcode" pattern="[1-9][0-9]{3}\s?[A-Za-z]{2}"title="Gebruik een postcode zoals 5611 AB"required>
         </div>
 
         <div class="veld">

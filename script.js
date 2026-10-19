@@ -70,9 +70,10 @@ toevoegenBtn.addEventListener("click", () => {
 
     regel.remove();
     winkelmandTotaal = winkelmandTotaal - totaal;
+    totaalBestelling.textContent ="Totaal bestelling: €" + winkelmandTotaal.toFixed(2);
 
-        totaalBestelling.textContent =
-            "Totaal bestelling: €" + winkelmandTotaal.toFixed(2);
+    bestellingGecontroleerd = false;//de besteling is veranderd en moet opnieuw gecontroleerd worden
+    controleOverzicht.replaceChildren();//verdwijnt het oude controleoverzicht automatisch
 
 });
     regel.appendChild(verwijderBtn);
@@ -83,11 +84,39 @@ toevoegenBtn.addEventListener("click", () => {
 
     totaalBestelling.textContent =
         "Totaal bestelling: €" + winkelmandTotaal.toFixed(2);
+
+    bestellingGecontroleerd = false;//nadat al gecontroleerd is de klant voegt opnieuw een product, dan wordt de eerdere controle ongeldig
+    controleOverzicht.replaceChildren();//verwijdert de inhoud van het oude controleoverzicht, dus de controle moet opnieuw uitgevoerd worden
+
+
 });
 const controleerBtn = document.getElementById("controleerBtn");
 const controleOverzicht = document.getElementById("controleOverzicht");
 
+let bestellingGecontroleerd = false;//nee niet gecontroleerd
+
+const klantVelden = document.querySelectorAll(
+    "#naam, #email, #telefoon, #adres, #postcode, #plaats"
+);
+
+klantVelden.forEach((veld) => {
+    veld.addEventListener("input", () => {//wanneer klant typt of iets verandert
+        bestellingGecontroleerd = false; //maak eerdere controle ongeldig
+        controleOverzicht.replaceChildren(); //verwijdert het oude overzicht
+    });
+});
+
+function voegTekstToe(element, tekst) {
+    const paragraaf = document.createElement(element);
+    paragraaf.textContent = tekst;
+    controleOverzicht.appendChild(paragraaf);
+}
+
 controleerBtn.addEventListener("click", () => {
+
+    if (!bestelFormulier.reportValidity()) {//controleert validatie regels o.a.required en pattern 
+        return;
+    }
 
     if (winkelmandTotaal === 0) {
     alert("Voeg eerst een product toe aan je bestelling.");
@@ -103,12 +132,12 @@ controleerBtn.addEventListener("click", () => {
     const plaats = document.getElementById("plaats").value;
 
     if (
-    naam === "" ||
-    email === "" ||
-    telefoon === "" ||
-    adres === "" ||
-    postcode === "" ||
-    plaats === ""
+    naam.trim() === "" ||
+    email.trim() === "" ||
+    telefoon.trim() === "" ||
+    adres.trim() === "" ||
+    postcode.trim() === "" ||
+    plaats.trim() === ""
 ) {
     alert("Vul eerst alle klantgegevens in.");
     return;//alert geven als een van de gegevens ontbreekt
@@ -116,31 +145,36 @@ controleerBtn.addEventListener("click", () => {
 
     const producten = winkelmandje.querySelectorAll("li");//alle <li>'s  uit winkelmaandje verzameld
 
-    let productenTekst = "";//lege text waarin straks de bestelling wordt verzameld
 
-    producten.forEach((product) => {//voor ieder product gevonden voer de code uit
-        const kopie = product.cloneNode(true);//kopie van het origineel in winkelmaandje
-                                            //true omdat pakt al de nodes, false zou allen de <li>'s pakken
+controleOverzicht.replaceChildren();//maak eerst oude controleoverzicht leeg
+
+voegTekstToe("h3", "👤 Controleer je gegevens");
+
+voegTekstToe("p", "Naam: " + naam);//maak veilige HTML-element aan
+voegTekstToe("p", "E-mail: " + email);
+voegTekstToe("p", "Telefoon: " + telefoon);
+voegTekstToe("p", "Adres: " + adres);
+voegTekstToe("p", "Postcode: " + postcode);
+voegTekstToe("p", "Plaats: " + plaats);
+
+voegTekstToe("h3", "🛒 Jouw bestelling");
+
+producten.forEach((product) => {
+    const kopie = product.cloneNode(true);
     kopie.querySelector(".verwijderBtn").remove();
-    productenTekst = productenTekst + "<p>" + kopie.textContent + "</p>";//<p> zorgt dat iedere bestelde product netjes op een eigen regel komt
 
-}); 
-
-
-    controleOverzicht.innerHTML =
-        "<h3>👤 Controleer je gegevens</h3>" +
-        "<p>Naam: " + naam + "</p>" +
-        "<p>E-mail: " + email + "</p>" +
-        "<p>Telefoon: " + telefoon + "</p>" +
-        "<p>Adres: " + adres + "</p>" +
-        "<p>Postcode: " + postcode + "</p>" +
-        "<p>Plaats: " + plaats + "</p>" +
-
-         "<h3>🛒 Jouw bestelling</h3>" +
-        productenTekst +
-
-        "<p>Totaal bestelling: €" + winkelmandTotaal.toFixed(2) + "</p>";
+    voegTekstToe("p", kopie.textContent);
 });
+
+voegTekstToe(
+    "p",
+    "Totaal bestelling: €" + winkelmandTotaal.toFixed(2)
+);
+
+bestellingGecontroleerd = true;
+
+});
+
 //hier voorkomen we dat bj het submitten de pagina opnieuw laadt
 const bestelFormulier = document.getElementById("bestelFormulier");
 
@@ -154,7 +188,12 @@ bestelFormulier.addEventListener("submit", (event) => {
         return;//als de winkelwagen nog 0 is,de functie stopt hier
     }
 
-    const naam = document.getElementById("naam").value;
+    if (bestellingGecontroleerd === false) {
+    alert("Controleer eerst je bestelling voordat je bestelt.");
+    return;
+}
+
+const naam = document.getElementById("naam").value;
 const email = document.getElementById("email").value;
 const telefoon = document.getElementById("telefoon").value;
 const adres = document.getElementById("adres").value;
@@ -162,12 +201,12 @@ const postcode = document.getElementById("postcode").value;
 const plaats = document.getElementById("plaats").value;
 
 if (
-    naam === "" ||
-    email === "" ||
-    telefoon === "" ||
-    adres === "" ||
-    postcode === "" ||
-    plaats === ""
+    naam.trim() === "" ||
+    email.trim() === "" ||
+    telefoon.trim() === "" ||
+    adres.trim() === "" ||
+    postcode.trim() === "" ||
+    plaats.trim() === ""
 ) {
     alert("Vul eerst alle klantgegevens in.");
     return;
@@ -183,7 +222,7 @@ if (
     totaalBestelling.textContent = "Totaal bestelling: €0.00";//leegt totaal bestellingen
     controleOverzicht.innerHTML = "";//controleoverzicht leegmaken
     
-
+    bestellingGecontroleerd = false;
 
 
 });
