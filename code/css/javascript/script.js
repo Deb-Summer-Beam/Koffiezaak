@@ -158,17 +158,32 @@ if (productenOverzicht) {
     toonMenu();
 }
 
-// Darkmode functie
+// darkmode 
 
-const darkKnop = document.getElementById("dark-knop");
+const darkKnop = document.querySelector("#dark-knop");
 
 if (darkKnop) {
-    darkKnop.addEventListener("click", function () {
-        document.body.classList.toggle("donker");
-
-    });
+    darkKnop.addEventListener("click", toggleDarkmode);
 }
 
+function toggleDarkmode() {
+    document.body.classList.toggle("donker");
+
+    if (document.body.classList.contains("donker")) {
+        localStorage.setItem("darkmodeValue", "on");
+    } else {
+        localStorage.setItem("darkmodeValue", "off");
+    }
+}
+function localStorageCheckDarkmode() {
+    if (localStorage.getItem("darkmodeValue") == "on") {
+
+
+        document.body.classList.add("donker");
+    }
+}
+
+localStorageCheckDarkmode();
 
 // Accessibility functionaliteit
 
@@ -204,7 +219,11 @@ const datum = new Date().toLocaleDateString('nl-NL');
 const dagNummer = new Date().getDate();
 const maandNummer = new Date().getMonth() + 1; //Maanden tellen vanaf 0, dus +1
 
+
+// Open of gesloten melding met openingstijden. 
+
 console.log("Het is vandaag " + dagNaam + " (" + datum + ").");
+
 
 let openGesloten;
 if (dagNummer === 1 && maandNummer === 1) {
