@@ -41,41 +41,86 @@ toevoegenBtn.addEventListener("click", () => {
     const gekozenAantal = Number(aantal.value);
 
     if (gekozenProduct === "") {
-    alert("Kies eerst een product.");
-    return;
+        alert("Kies eerst een product.");
+        return;
     }
     if (!Number.isInteger(gekozenAantal) || gekozenAantal < 1) {
-    alert("Kies een geldig heel aantal vanaf 1.");
-    return;
+        alert("Kies een geldig heel aantal vanaf 1.");
+        return;
     }
 
     const prijs = prijzen[gekozenProduct];
     const totaal = berekenTotaal(prijs, gekozenAantal);
-    
+
+    let huidigAantal = gekozenAantal;
+
     const regel = document.createElement("li");
 
-    regel.textContent =
+    const aantalInput = document.createElement("input");
+    aantalInput.type = "number";
+    aantalInput.min = "1";
+    aantalInput.step = "1";//stelt stappen van 1 in
+    aantalInput.value = gekozenAantal;
+
+    aantalInput.addEventListener("change", () => { //reageert wanneer de kkant het aantal wijzigt en bevestigt
+        const nieuwAantal = Number(aantalInput.value);
+
+        if (!Number.isInteger(nieuwAantal) || nieuwAantal < 1) {
+            alert("Kies een geldig heel aantal vanaf 1.");
+            aantalInput.value = huidigAantal; //herstelt het vorige geldige aantal
+            return; //stopt de ongeldige invoer 
+        }
+
+        console.log("Oud aantal:", huidigAantal);
+        console.log("Nieuw aantal:", nieuwAantal);
+
+        const oudTotaal = berekenTotaal(prijs, huidigAantal);
+        const nieuwTotaal = berekenTotaal(prijs, nieuwAantal);
+
+        winkelmandTotaal = winkelmandTotaal - oudTotaal + nieuwTotaal;
+
+        totaalBestelling.textContent =
+            "Totaal bestelling: €" + winkelmandTotaal.toFixed(2);
+
+        huidigAantal = nieuwAantal;
+
+        regel.firstChild.textContent =
+            nieuwAantal + " x " +
+            gekozenProduct +
+            " - €" +
+            nieuwTotaal.toFixed(2);
+
+        bestellingGecontroleerd = false;
+        controleOverzicht.replaceChildren();
+    });
+    const productTekst = document.createElement("span");
+
+    productTekst.textContent =
         gekozenAantal + " x " +
         gekozenProduct +
         " - €" +
         totaal.toFixed(2);
 
+    regel.appendChild(productTekst);    
+
     const verwijderBtn = document.createElement("button");
     verwijderBtn.type = "button";
-    
+
     verwijderBtn.textContent = "❌ Verwijderen";
     verwijderBtn.classList.add("verwijderBtn");
 
     verwijderBtn.addEventListener("click", () => {
 
-    regel.remove();
-    winkelmandTotaal = winkelmandTotaal - totaal;
-    totaalBestelling.textContent ="Totaal bestelling: €" + winkelmandTotaal.toFixed(2);
+        regel.remove();
+        winkelmandTotaal = winkelmandTotaal - berekenTotaal(prijs, huidigAantal);
+        totaalBestelling.textContent = "Totaal bestelling: €" + winkelmandTotaal.toFixed(2);
 
-    bestellingGecontroleerd = false;//de besteling is veranderd en moet opnieuw gecontroleerd worden
-    controleOverzicht.replaceChildren();//verdwijnt het oude controleoverzicht automatisch
+        bestellingGecontroleerd = false;//de besteling is veranderd en moet opnieuw gecontroleerd worden
+        controleOverzicht.replaceChildren();//verdwijnt het oude controleoverzicht automatisch
 
-});
+    });
+
+    regel.appendChild(aantalInput);
     regel.appendChild(verwijderBtn);
 
     winkelmandje.appendChild(regel);//voeg nieuwe regel-node toe als kind van de winkelmandje-node
@@ -119,10 +164,10 @@ controleerBtn.addEventListener("click", () => {
     }
 
     if (winkelmandTotaal === 0) {
-    alert("Voeg eerst een product toe aan je bestelling.");
-    return;//test eerst als het een lege winkelwagen is
-    }    
-   
+        alert("Voeg eerst een product toe aan je bestelling.");
+        return;//test eerst als het een lege winkelwagen is
+    }
+
 
     const naam = document.getElementById("naam").value;
     const email = document.getElementById("email").value;
@@ -132,46 +177,46 @@ controleerBtn.addEventListener("click", () => {
     const plaats = document.getElementById("plaats").value;
 
     if (
-    naam.trim() === "" ||
-    email.trim() === "" ||
-    telefoon.trim() === "" ||
-    adres.trim() === "" ||
-    postcode.trim() === "" ||
-    plaats.trim() === ""
-) {
-    alert("Vul eerst alle klantgegevens in.");
-    return;//alert geven als een van de gegevens ontbreekt
-}
+        naam.trim() === "" ||
+        email.trim() === "" ||
+        telefoon.trim() === "" ||
+        adres.trim() === "" ||
+        postcode.trim() === "" ||
+        plaats.trim() === ""
+    ) {
+        alert("Vul eerst alle klantgegevens in.");
+        return;//alert geven als een van de gegevens ontbreekt
+    }
 
     const producten = winkelmandje.querySelectorAll("li");//alle <li>'s  uit winkelmaandje verzameld
 
 
-controleOverzicht.replaceChildren();//maak eerst oude controleoverzicht leeg
+    controleOverzicht.replaceChildren();//maak eerst oude controleoverzicht leeg
 
-voegTekstToe("h3", "👤 Controleer je gegevens");
+    voegTekstToe("h3", "👤 Controleer je gegevens");
 
-voegTekstToe("p", "Naam: " + naam);//maak veilige HTML-element aan
-voegTekstToe("p", "E-mail: " + email);
-voegTekstToe("p", "Telefoon: " + telefoon);
-voegTekstToe("p", "Adres: " + adres);
-voegTekstToe("p", "Postcode: " + postcode);
-voegTekstToe("p", "Plaats: " + plaats);
+    voegTekstToe("p", "Naam: " + naam);//maak veilige HTML-element aan
+    voegTekstToe("p", "E-mail: " + email);
+    voegTekstToe("p", "Telefoon: " + telefoon);
+    voegTekstToe("p", "Adres: " + adres);
+    voegTekstToe("p", "Postcode: " + postcode);
+    voegTekstToe("p", "Plaats: " + plaats);
 
-voegTekstToe("h3", "🛒 Jouw bestelling");
+    voegTekstToe("h3", "🛒 Jouw bestelling");
 
-producten.forEach((product) => {
-    const kopie = product.cloneNode(true);
-    kopie.querySelector(".verwijderBtn").remove();
+    producten.forEach((product) => {
+        const kopie = product.cloneNode(true);
+        kopie.querySelector(".verwijderBtn").remove();
 
-    voegTekstToe("p", kopie.textContent);
-});
+        voegTekstToe("p", kopie.textContent);
+    });
 
-voegTekstToe(
-    "p",
-    "Totaal bestelling: €" + winkelmandTotaal.toFixed(2)
-);
+    voegTekstToe(
+        "p",
+        "Totaal bestelling: €" + winkelmandTotaal.toFixed(2)
+    );
 
-bestellingGecontroleerd = true;
+    bestellingGecontroleerd = true;
 
 });
 
@@ -181,7 +226,7 @@ const bestelFormulier = document.getElementById("bestelFormulier");
 bestelFormulier.addEventListener("submit", (event) => {
 
     event.preventDefault();//deze voorkomt dat de pagina opnieuw verzend of herlaadt
-                            // hier neemt javascript over 
+    // hier neemt javascript over 
 
     if (winkelmandTotaal === 0) {
         alert("Voeg eerst een product toe aan je bestelling.");
@@ -189,39 +234,39 @@ bestelFormulier.addEventListener("submit", (event) => {
     }
 
     if (bestellingGecontroleerd === false) {
-    alert("Controleer eerst je bestelling voordat je bestelt.");
-    return;
-}
+        alert("Controleer eerst je bestelling voordat je bestelt.");
+        return;
+    }
 
-const naam = document.getElementById("naam").value;
-const email = document.getElementById("email").value;
-const telefoon = document.getElementById("telefoon").value;
-const adres = document.getElementById("adres").value;
-const postcode = document.getElementById("postcode").value;
-const plaats = document.getElementById("plaats").value;
+    const naam = document.getElementById("naam").value;
+    const email = document.getElementById("email").value;
+    const telefoon = document.getElementById("telefoon").value;
+    const adres = document.getElementById("adres").value;
+    const postcode = document.getElementById("postcode").value;
+    const plaats = document.getElementById("plaats").value;
 
-if (
-    naam.trim() === "" ||
-    email.trim() === "" ||
-    telefoon.trim() === "" ||
-    adres.trim() === "" ||
-    postcode.trim() === "" ||
-    plaats.trim() === ""
-) {
-    alert("Vul eerst alle klantgegevens in.");
-    return;
-}
+    if (
+        naam.trim() === "" ||
+        email.trim() === "" ||
+        telefoon.trim() === "" ||
+        adres.trim() === "" ||
+        postcode.trim() === "" ||
+        plaats.trim() === ""
+    ) {
+        alert("Vul eerst alle klantgegevens in.");
+        return;
+    }
 
     alert("☕ Bedankt voor je bestelling!");//anders krijgt dit
 
-    
+
     bestelFormulier.reset();// verwijder de klantgegevens voor de volgende klant
 
     winkelmandje.innerHTML = "";//leegt winkelwagen
     winkelmandTotaal = 0;
     totaalBestelling.textContent = "Totaal bestelling: €0.00";//leegt totaal bestellingen
     controleOverzicht.innerHTML = "";//controleoverzicht leegmaken
-    
+
     bestellingGecontroleerd = false;
 
 

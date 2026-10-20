@@ -298,7 +298,7 @@ footer p {
     width: 100%;
 }
 .verwijderBtn {
-    margin-left: 25px !important;
+    margin-left: 0 !important;
 }
 @media (max-width: 768px) {
 
@@ -411,4 +411,41 @@ p {
     text-shadow:
       1px 1px 1px #fffaf0,
         -1px -1px 1px #fffaf0;
+}
+#winkelmandje input[type="number"] {
+    width: 90px;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 0;
+}
+#winkelmandje li {
+    display: grid;
+    grid-template-columns: 250px 110px 180px;
+    align-items: center;
+    column-gap: 15px;
+    margin-bottom: 12px;
+}
+#winkelmandje .verwijderBtn {
+    width: 180px;
+    max-width: 100%;
+    margin: 0 !important;
+}
+
+@media (max-width: 768px) {
+    #winkelmandje li {
+        grid-template-columns: minmax(0, 1fr) 70px;
+        gap: 8px;
+        margin-bottom: 15px;
+    }
+
+    #winkelmandje li .verwijderBtn {
+        grid-column: 1 / -1;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #winkelmandje input[type="number"] {
+        width: 70px;
+        margin: 0;
+    }
 }
