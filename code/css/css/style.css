@@ -721,3 +721,177 @@ body.donker #bestelFormulier .verwijderBtn:hover {
     text-align: center;
   }
 }
+
+/* Reserveringsformulier (resevering.html) */
+
+.reserveerIntro {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+#reserveerFormulier {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 45px 50px;
+  box-sizing: border-box;
+  background-color: #dcc3a5;
+  border: 2px solid #b9804f;
+  border-radius: 19px;
+  box-shadow: 0 4px 6px rgba(75, 41, 21, 0.18);
+}
+
+#reserveerFormulier h2 {
+  margin: 30px 0 15px;
+  padding: 0;
+  font-size: 1.4rem;
+}
+
+#reserveerFormulier h2:first-of-type {
+  margin-top: 0;
+}
+
+.reserveerRij {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 20px;
+}
+
+#reserveerFormulier label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+#reserveerFormulier input,
+#reserveerFormulier select,
+#reserveerFormulier textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #4B2915;
+  background-color: #FFF8EE;
+  border: 1px solid #60391F;
+  border-radius: 10px;
+}
+
+#reserveerFormulier textarea {
+  resize: vertical;
+}
+
+#reserveerFormulier select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#reserveerFormulier input:focus-visible,
+#reserveerFormulier select:focus-visible,
+#reserveerFormulier textarea:focus-visible,
+#reserveerFormulier button:focus-visible {
+  outline: 3px solid #b9804f;
+  outline-offset: 2px;
+}
+
+.opmerkingVeld {
+  margin-top: 16px;
+}
+
+#datumMelding {
+  min-height: 1.6em;
+  margin: 10px 0 0;
+  font-weight: 700;
+}
+
+.reserveerActies {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+#reserveerFormulier button {
+  min-height: 44px;
+  padding: 10px 30px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #EAD8BE;
+  background-color: #4B2915;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#reserveerFormulier button:hover {
+  background-color: #6B3D20;
+}
+
+#reserveerBevestiging:not(:empty) {
+  margin-top: 25px;
+  padding: 20px 25px;
+  background-color: #FFF8EE;
+  border: 2px dashed #b9804f;
+  border-radius: 10px;
+}
+
+#reserveerBevestiging p {
+  margin: 4px 0;
+}
+
+/* Reserveringsformulier darkmode */
+body.donker #reserveerFormulier {
+  background-color: #3A271E;
+  border-color: #C9A681;
+}
+
+body.donker #reserveerFormulier input,
+body.donker #reserveerFormulier select,
+body.donker #reserveerFormulier textarea,
+body.donker #reserveerBevestiging:not(:empty) {
+  color: #F0E1CC;
+  background-color: #2E1F17;
+  border-color: #C9A681;
+}
+
+body.donker #reserveerFormulier input[type="date"] {
+  color-scheme: dark;
+}
+
+body.donker #reserveerFormulier button {
+  color: #1E1410;
+  background-color: #D9A06B;
+}
+
+body.donker #reserveerFormulier button:hover {
+  background-color: #C9A681;
+}
+
+/* Reserveringsformulier tablet */
+@media (max-width: 768px) {
+  #reserveerFormulier {
+    padding: 40px 35px;
+  }
+
+  .reserveerRij {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Reserveringsformulier mobiel */
+@media (max-width: 480px) {
+  #reserveerFormulier {
+    padding: 35px 25px;
+  }
+
+  .reserveerRij {
+    grid-template-columns: 1fr;
+  }
+
+  #reserveerFormulier button {
+    width: 100%;
+  }
+}

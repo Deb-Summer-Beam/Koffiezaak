@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>CozyBrew - Reservering</title>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="javascript/script.js" defer></script>
+    <script src="javascript/reserveren.js" defer></script>
 </head>
 
 <body>
@@ -26,16 +27,92 @@
         <button id="dark-knop" class="dark-knop">Dark-Mode</button>
         <button id="accessibility-knop" class="dark-knop">Makkelijker lezen</button>
     </header>
-    <h1>
 
-    </h1>
+    <main>
+        <h1>Reserveer een tafel</h1>
+        <p class="reserveerIntro">
+            Kies een datum en tijd en vul je gegevens in. Je ziet alleen de tijden waarop CozyBrew open is.
+        </p>
 
+        <form id="reserveerFormulier">
+            <div class="sterren boven">
+                ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦
+            </div>
+            <div class="sterren onder">
+                ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦
+            </div>
+            <div class="sterren links">
+                ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦
+            </div>
+            <div class="sterren rechts">
+                ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦
+            </div>
 
-    <h2>
-        Werken bij CozyBrew
-    </h2>
+            <h2>📅 Wanneer kom je?</h2>
+            <div class="reserveerRij">
+                <div class="veld">
+                    <label for="datum">Datum:</label>
+                    <input type="date" id="datum" name="datum" required>
+                </div>
 
+                <div class="veld">
+                    <label for="tijd">Tijd:</label>
+                    <select id="tijd" name="tijd" required disabled>
+                        <option value="">-- Kies eerst een datum --</option>
+                    </select>
+                </div>
 
+                <div class="veld">
+                    <label for="personen">Aantal personen:</label>
+                    <select id="personen" name="personen" required>
+                        <option value="">-- Kies --</option>
+                        <option value="1">1 persoon</option>
+                        <option value="2">2 personen</option>
+                        <option value="3">3 personen</option>
+                        <option value="4">4 personen</option>
+                        <option value="5">5 personen</option>
+                        <option value="6">6 personen</option>
+                        <option value="7">7 personen</option>
+                        <option value="8">8 personen</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Hier zet JavaScript een melding, bijvoorbeeld als CozyBrew die dag gesloten is -->
+            <p id="datumMelding" aria-live="polite"></p>
+
+            <h2>👤 Jouw gegevens</h2>
+            <div class="klantgegevens">
+                <div class="veld">
+                    <label for="naam">Naam:</label>
+                    <input type="text" id="naam" name="naam" autocomplete="name" required>
+                </div>
+
+                <div class="veld">
+                    <label for="email">E-mailadres:</label>
+                    <input type="email" id="email" name="email" autocomplete="email" required>
+                </div>
+
+                <div class="veld">
+                    <label for="telefoon">Telefoonnummer:</label>
+                    <input type="tel" id="telefoon" name="telefoon" autocomplete="tel" required>
+                </div>
+            </div>
+
+            <div class="veld opmerkingVeld">
+                <label for="opmerking">Opmerking (niet verplicht):</label>
+                <textarea id="opmerking" name="opmerking" rows="3"
+                    placeholder="Bijvoorbeeld: kinderstoel nodig, of we vieren een verjaardag"></textarea>
+            </div>
+
+            <div class="reserveerActies">
+                <button type="submit" id="reserveerBtn">📅 Reservering plaatsen</button>
+            </div>
+
+            <!-- Hier zet JavaScript de bevestiging na het versturen -->
+            <div id="reserveerBevestiging" aria-live="polite"></div>
+        </form>
+    </main>
 
     <footer>
         <div id="openGesloten"></div>
