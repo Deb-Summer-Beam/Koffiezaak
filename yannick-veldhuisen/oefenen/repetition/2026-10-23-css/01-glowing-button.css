@@ -1,0 +1,13 @@
+/* 01 · Fill the ⬜ so this rule only applies while the mouse is on the button. */
+
+.glow {
+  background-color: steelblue;
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+}
+
+/* why: a colon starts a state (a pseudo-class); a dot here would look for a class named "hover" */
+.glow/* ⬜ */ {
+  background-color: orange;
+}

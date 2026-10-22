@@ -1,0 +1,8 @@
+/* 02 · Done when: a link turns dark red and loses its underline while you hover it. */
+
+nav a {
+  color: black;
+  margin-right: 1rem;
+}
+
+/* ⬜ 2–3 lines: the hover rule for the links */
