@@ -20,7 +20,7 @@
         <nav>
             <a href="menu.html">Menu</a>
             <a href="contact.html">Contact us</a>
-            <a href="resevering.html">Reservering</a>
+            <a href="reservering.html">Reservering</a>
             <a href="werkenbij.html">Werken bij</a>
             <a href="bestelling.html">Bestelling plaatsen</a>
         </nav>
@@ -95,7 +95,8 @@
 
                 <div class="veld">
                     <label for="telefoon">Telefoonnummer:</label>
-                    <input type="tel" id="telefoon" name="telefoon" autocomplete="tel" required>
+                    <input type="tel" id="telefoon" name="telefoon" autocomplete="tel" pattern="06[0-9]{8}"
+                        title="Gebruik een mobiel nummer van 10 cijfers, beginnend met 06" required>
                 </div>
             </div>
 
