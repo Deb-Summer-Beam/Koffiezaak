@@ -402,3 +402,61 @@ html.accessibility body {
     padding: 12px;
   }
 }
+
+/* Contact opmaak */
+.contact-card {
+  text-align: left;
+  flex: 1 1 300px;
+  border-radius: 10px;
+  border: 2px solid #b9804f;
+  padding: 20px;
+}
+
+.contact-card h2 {
+  text-align: left;
+  padding: 0px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#contact-page {
+  display: flex;
+  gap: 20px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.veld input, .veld textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  background-color: inherit;
+  color: inherit;
+  border-radius: 10px;
+}
+
+.veld textarea {
+  min-height: 90px;
+  resize: vertical;
+  border-radius: 10px;
+}
+
+.knop {
+  font: inherit;
+  background-color: inherit;
+  color: inherit;
+  font-weight: 700;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 10px;
+}
+
+.knop:hover {
+  background-color: #dab486;
+}
+
+.veld {
+  margin-bottom: 5px;
+}

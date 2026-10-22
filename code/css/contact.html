@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Contact</title>
     <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="javascript/script.js" defer> </script>
@@ -18,7 +18,7 @@
         </a>
         <nav>
             <a href="menu.html">Menu</a>
-            <a href="contact.html">Contact us</a>
+            <a href="contact.html">Contact</a>
             <a href="resevering.html">Reservering</a>
             <a href="werkenbij.html">Werken bij</a>
         </nav>
@@ -26,16 +26,33 @@
         <button id="accessibility-knop" class="dark-knop">Makkelijker lezen</button>
     </header>
     <h1>
-
+        Contact
     </h1>
+    <main id="contact-page">
+        <section class="contact-card">
+            <h2>Contactgegevens</h2>
+            <address>
+                CozyBrew <br />
+                Laageinde 82 <br />
+                4191NT, Geldermalsen <br />
+                <a href="mailto:info@cozybrew.nl">info@cozybrew.nl</a>
+            </address>
+        </section>
+        <section class="contact-card">
+            <h2>Neem contact op</h2>
+            <form id="contact-form">
+                <div class="veld"><label for="naam-input">Naam:</label>
+                <input type="text" name="naam" required id="naam-input"></div>
+                <div class="veld"><label for="email-input">Email:</label>
+                <input type="email" name="email" required id="email-input"></div>
+                <div class="veld"><label for="bericht-input">Bericht:</label>
+                <textarea name="bericht" required id="bericht-input"></textarea></div>
+                <button class="knop" type="submit">Verstuur</button>
+                <p id="contact-form-status"></p>
+            </form>
+        </section>
 
-
-    <h2>
-        Werken bij CozyBrew
-    </h2>
-
-
-
+    </main>
     <footer>
         <div id="openGesloten"></div>
         &copy;CozyBrew
