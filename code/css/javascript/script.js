@@ -85,16 +85,6 @@ if (textElement) {
     typeWriter();
 }
 
-async function laadProducten() {
-
-    const response = await fetch("menu.json");
-    if (!response.ok) {
-        throw new Error(`Request mislukt: ${response.status}`);
-
-    }
-    return await response.json();
-}
-
 // Functie om productkaart te maken
 function maakProductKaart(product) {
     const kaart = document.createElement("article");
@@ -128,35 +118,37 @@ function maakProductKaart(product) {
     return kaart;
 }
 
-const productenOverzicht = document.querySelector(".productenoverzicht");
+async function laadProducten() {
+    const productenOverzicht = document.querySelector(".productenoverzicht");
+    const menuStatus = document.querySelector("#menuStatus");
 
-const menuStatus = document.querySelector("#menuStatus");
+    if (!productenOverzicht || !menuStatus) {
+        return;
+    }
 
-async function toonMenu() {
     menuStatus.textContent = "Menu laden...";
+
     try {
-        const producten = await laadProducten();
-        if (producten.length === 0) {
-            menuStatus.textContent = "Er zijn geen producten beschikbaar.";
-            return;
+        const response = await fetch("json/menu-groep.json");
+
+        if (!response.ok) {
+            throw new Error("Menu laden mislukt: " + response.status);
         }
+
+        const producten = await response.json();
 
         producten.forEach(function (product) {
             productenOverzicht.appendChild(maakProductKaart(product));
         });
+
         menuStatus.textContent = producten.length + " producten geladen";
-    } catch (fout) {
-        menuStatus.textContent = "Het menu kon niet worden geladen. Probeer het later opnieuw.";
-        console.error(fout);
+    } catch (error) {
+        console.error(error);
+        menuStatus.textContent = "Het menu kon niet worden geladen.";
     }
-
-
-
 }
 
-if (productenOverzicht) {
-    toonMenu();
-}
+laadProducten();
 
 // darkmode 
 
@@ -231,22 +223,34 @@ if (dagNummer === 1 && maandNummer === 1) {
 } else if (dagNummer === 26 && maandNummer === 12) {
     openGesloten = "Gesloten";
 } else if (dagNaam === "maandag") {
-    openGesloten = "Open van 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
 } else if (dagNaam === "dinsdag") {
-    openGesloten = "Open van 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
 } else if (dagNaam === "woensdag") {
-    openGesloten = "Open van 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
 } else if (dagNaam === "donderdag") {
-    openGesloten = "Open van 12:00 tot 21:00.";
+    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 21:00.";
 } else if (dagNaam === "vrijdag") {
-    openGesloten = "Open van 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
 } else if (dagNaam === "zaterdag") {
-    openGesloten = "Open van 09:00 tot 16:00.";
+    openGesloten = "Vandaag zijn we open van <br> 09:00 tot 16:00.";
 } else if (dagNaam === "zondag") {
-    openGesloten = "Open van 10:00 tot 16:00.";
+    openGesloten = "Vandaag zijn we open van <br> 10:00 tot 16:00.";
 } else {
     openGesloten = "Er is iets misgegaan bij het berekenen van de dag.";
 }
 console.log(openGesloten);
 document.getElementById("openGesloten").innerHTML = openGesloten;
 
+const contactSubmitForm = document.querySelector('#contact-form');
+
+if (contactSubmitForm) {
+    contactSubmitForm.addEventListener('submit', submitButton);
+}
+
+
+function submitButton(event) {
+    event.preventDefault();
+    contactSubmitForm.reset();
+    document.querySelector('#contact-form-status').textContent = "Bericht is succesvol verzonden";
+}
