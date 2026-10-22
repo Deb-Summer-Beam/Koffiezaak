@@ -385,3 +385,15 @@ if (dagNummer === 1 && maandNummer === 1) {
 console.log(openGesloten);
 document.getElementById("openGesloten").innerHTML = openGesloten;
 
+const contactSubmitForm = document.querySelector('#contact-form');
+
+if (contactSubmitForm) {
+    contactSubmitForm.addEventListener('submit', submitButton);
+}
+
+
+function submitButton(event) {
+    event.preventDefault();
+    contactSubmitForm.reset();
+    document.querySelector('#contact-form-status').textContent = "Bericht is succesvol verzonden";
+}

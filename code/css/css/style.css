@@ -257,7 +257,7 @@ body.donker .werkfoto {
   font-family: inherit;
   font-size: 1rem;
   color: #4B2915;
-  background-color: #DCC3A5;
+  background-color: #d8aa71;
   border: 1px solid #60371F;
   border-radius: 10px;
   padding: 10px 20px;
@@ -407,7 +407,7 @@ html.accessibility body {
 .contact-card {
   text-align: left;
   flex: 1 1 300px;
-  border-radius: 20px;
+  border-radius: 10px;
   border: 2px solid #b9804f;
   padding: 20px;
 }
@@ -433,17 +433,28 @@ html.accessibility body {
   font: inherit;
   background-color: inherit;
   color: inherit;
+  border-radius: 10px;
 }
 
 .veld textarea {
   min-height: 90px;
   resize: vertical;
+  border-radius: 10px;
 }
 
 .knop {
   font: inherit;
   background-color: inherit;
   color: inherit;
+  font-weight: 700;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 10px;
+}
+
+.knop:hover {
+  background-color: #dab486;
 }
 
 .veld {
