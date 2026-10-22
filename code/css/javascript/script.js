@@ -85,190 +85,6 @@ if (textElement) {
     typeWriter();
 }
 
-//const producten
-const producten = [
-    //koffie
-    {
-        naam: "espresso",
-        categorie: "Koffie",
-        afbeelding: "espresso.png",
-        omschrijving: "Krachtige, geconcentreerde koffie met een rijke smaak en een romige crema.",
-        prijs: 2.50
-    },
-    {
-        naam: "cappuccino",
-        categorie: "Koffie",
-        afbeelding: "cappuccino.png",
-        omschrijving: "Zachte, romige koffie met een lichte schuimlaag en een rijke smaak.",
-        prijs: 3.00
-    },
-    {
-        naam: "Latte macchiato",
-        categorie: "Koffie",
-        afbeelding: "latte-macchiato.png",
-        omschrijving: "Koffie met romige melk en een lichte schuimlaag.",
-        prijs: 3.50
-    },
-    {
-        naam: "Flat white",
-        categorie: "Koffie",
-        afbeelding: "flat-white.png",
-        omschrijving: "Zachte koffie met een lichte schuimlaag en een rijke smaak.",
-        prijs: 3.50
-    },
-    {
-        naam: "Havermelk Latte",
-        categorie: "Koffie",
-        afbeelding: "havermelk-latte.png",
-        omschrijving: "Koffie met romige havermelk en een lichte schuimlaag.",
-        prijs: 3.50
-    },
-    //Thee
-    {
-        naam: "Groene thee",
-        categorie: "Thee",
-        afbeelding: "groene-thee.png",
-        omschrijving: "Frisse, lichtgeurige thee met een frisse smaak.",
-        prijs: 2.00
-    },
-    {
-        naam: "Earl Grey",
-        categorie: "Thee",
-        afbeelding: "earl-grey.png",
-        omschrijving: "Classieke, aromatische thee met een frisse smaak.",
-        prijs: 2.00
-    },
-    {
-        naam: "Verse muntthee",
-        categorie: "Thee",
-        afbeelding: "verse-muntthee.png",
-        omschrijving: "Frisse, aromatische thee met een verse muntgeur.",
-        prijs: 2.00
-    },
-    {
-        naam: "Rooibos Vanille",
-        categorie: "Thee",
-        afbeelding: "rooibos-vanille.png",
-        omschrijving: "Natuurlijke, zoete thee met een rijke smaak.",
-        prijs: 2.00
-    },
-    {
-        naam: "Chai Latte",
-        categorie: "Thee",
-        afbeelding: "chai-latte.png",
-        omschrijving: "Aromatische thee met een rijke smaak.",
-        prijs: 2.00
-    },
-    //Dranken
-    {
-        naam: "Verse Jus d'Orange",
-        categorie: "Dranken",
-        afbeelding: "verse-jus-d-orange.png",
-        omschrijving: "Frisse, natuurlijke jus met een frisse smaak.",
-        prijs: 3.00
-    },
-    {
-        naam: "Cola",
-        categorie: "Dranken",
-        afbeelding: "cola.png",
-        omschrijving: "Frisse, koolzuurhoudende drank met een frisse smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Spa Rood",
-        categorie: "Dranken",
-        afbeelding: "spa-rood.png",
-        omschrijving: "Drank met een frisse smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Ice Tea",
-        categorie: "Dranken",
-        afbeelding: "ice-tea.png",
-        omschrijving: "Frisse, koolzuurhoudende drank met een frisse smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Appelsap",
-        categorie: "Dranken",
-        afbeelding: "appelsap.png",
-        omschrijving: "Zoete, fruitige appelsap, ook favoriet bij kinderen.",
-        prijs: 2.50
-    },
-    //Gebak
-    {
-        naam: "Appeltaart",
-        categorie: "Gebak",
-        afbeelding: "appeltaart.png",
-        omschrijving: "Krokante, zoete taart met verse appels.",
-        prijs: 2.50
-    },
-    {
-        naam: "Brownie",
-        categorie: "Gebak",
-        afbeelding: "brownie.png",
-        omschrijving: "Krokante, chocolade-geurige taart met een rijke smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Cheesecake",
-        categorie: "Gebak",
-        afbeelding: "cheesecake.png",
-        omschrijving: "Rijke, roomkaas-geurige taart met een frisse smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Croissant",
-        categorie: "Gebak",
-        afbeelding: "croissant.png",
-        omschrijving: "Krokante, boterige taart met een frisse smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Veganistische Cookie",
-        categorie: "Gebak",
-        afbeelding: "veganistische-cookie.png",
-        omschrijving: "Krokante, plantaardige cookie met een frisse smaak.",
-        prijs: 2.50
-    },
-    // Andere dranken
-    {
-        naam: "Warme chocolademelk",
-        categorie: "Andere dranken",
-        afbeelding: "warme-chocolademelk.png",
-        omschrijving: "Warme, chocolade-geurige melk met een rijke smaak.",
-        prijs: 2.50
-    },
-    {
-        naam: "Smoothie Aardbei-banaan",
-        categorie: "Andere dranken",
-        afbeelding: "smoothie-aardbei-banaan.png",
-        omschrijving: "Frisse, natuurlijke smoothie met een frisse smaak.",
-        prijs: 3.00
-    },
-    {
-        naam: "Milkshake Vanille",
-        categorie: "Andere dranken",
-        afbeelding: "milkshake-vanille.png",
-        omschrijving: "Rijke, vanille-geurige shake met een frisse smaak.",
-        prijs: 3.00
-    },
-    {
-        naam: "Golden Latte",
-        categorie: "Andere dranken",
-        afbeelding: "golden-latte.png",
-        omschrijving: "Warme kurkumamelk met kaneel, gember en een snufje peper.",
-        prijs: 3.50
-    },
-    {
-        naam: "Matcha Latte",
-        categorie: "Andere dranken",
-        afbeelding: "matcha-latte.png",
-        omschrijving: "Rijke, groene thee-geurige latte met een frisse smaak.",
-        prijs: 3.50
-    }
-]
-
 // Functie om productkaart te maken
 function maakProductKaart(product) {
     const kaart = document.createElement("article");
@@ -291,7 +107,7 @@ function maakProductKaart(product) {
 
     const prijs = document.createElement("p");
     prijs.className = "prijs";
-    prijs.textContent = "€ " + product.prijs.toLocaleString("nl-NL") + ",-";
+    prijs.textContent = product.prijs.toLocaleString("nl-NL", { style: "currency", currency: "EUR" });
     kaart.appendChild(prijs);
 
     const knop = document.createElement("button");
@@ -302,25 +118,62 @@ function maakProductKaart(product) {
     return kaart;
 }
 
-const productenOverzicht = document.querySelector(".productenoverzicht");
+async function laadProducten() {
+    const productenOverzicht = document.querySelector(".productenoverzicht");
+    const menuStatus = document.querySelector("#menuStatus");
 
-if (productenOverzicht) {
-    producten.forEach(function (product) {
-        productenOverzicht.appendChild(maakProductKaart(product));
-    });
+    if (!productenOverzicht || !menuStatus) {
+        return;
+    }
+
+    menuStatus.textContent = "Menu laden...";
+
+    try {
+        const response = await fetch("json/menu-groep.json");
+
+        if (!response.ok) {
+            throw new Error("Menu laden mislukt: " + response.status);
+        }
+
+        const producten = await response.json();
+
+        producten.forEach(function (product) {
+            productenOverzicht.appendChild(maakProductKaart(product));
+        });
+
+        menuStatus.textContent = producten.length + " producten geladen";
+    } catch (error) {
+        console.error(error);
+        menuStatus.textContent = "Het menu kon niet worden geladen.";
+    }
 }
 
-// Darkmode functie
+laadProducten();
 
-const darkKnop = document.getElementById("dark-knop");
+// darkmode 
+
+const darkKnop = document.querySelector("#dark-knop");
 
 if (darkKnop) {
-    darkKnop.addEventListener("click", function () {
-        document.body.classList.toggle("donker");
-
-    });
+    darkKnop.addEventListener("click", toggleDarkmode);
 }
 
+function toggleDarkmode() {
+    document.body.classList.toggle("donker");
+
+    if (document.body.classList.contains("donker")) {
+        localStorage.setItem("darkmodeValue", "on");
+    } else {
+        localStorage.setItem("darkmodeValue", "off");
+    }
+}
+function localStorageCheckDarkmode() {
+    if (localStorage.getItem("darkmodeValue") == "on") {
+        document.body.classList.add("donker");
+    }
+}
+
+localStorageCheckDarkmode();
 
 // Accessibility functionaliteit
 
@@ -356,7 +209,11 @@ const datum = new Date().toLocaleDateString('nl-NL');
 const dagNummer = new Date().getDate();
 const maandNummer = new Date().getMonth() + 1; //Maanden tellen vanaf 0, dus +1
 
+
+// Open of gesloten melding met openingstijden. 
+
 console.log("Het is vandaag " + dagNaam + " (" + datum + ").");
+
 
 let openGesloten;
 if (dagNummer === 1 && maandNummer === 1) {
@@ -366,22 +223,34 @@ if (dagNummer === 1 && maandNummer === 1) {
 } else if (dagNummer === 26 && maandNummer === 12) {
     openGesloten = "Gesloten";
 } else if (dagNaam === "maandag") {
-    openGesloten = "Open van 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
 } else if (dagNaam === "dinsdag") {
-    openGesloten = "Open van 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
 } else if (dagNaam === "woensdag") {
-    openGesloten = "Open van 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
 } else if (dagNaam === "donderdag") {
-    openGesloten = "Open van 12:00 tot 21:00.";
+    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 21:00.";
 } else if (dagNaam === "vrijdag") {
-    openGesloten = "Open van 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
 } else if (dagNaam === "zaterdag") {
-    openGesloten = "Open van 09:00 tot 16:00.";
+    openGesloten = "Vandaag zijn we open van <br> 09:00 tot 16:00.";
 } else if (dagNaam === "zondag") {
-    openGesloten = "Open van 10:00 tot 16:00.";
+    openGesloten = "Vandaag zijn we open van <br> 10:00 tot 16:00.";
 } else {
     openGesloten = "Er is iets misgegaan bij het berekenen van de dag.";
 }
 console.log(openGesloten);
 document.getElementById("openGesloten").innerHTML = openGesloten;
 
+const contactSubmitForm = document.querySelector('#contact-form');
+
+if (contactSubmitForm) {
+    contactSubmitForm.addEventListener('submit', submitButton);
+}
+
+
+function submitButton(event) {
+    event.preventDefault();
+    contactSubmitForm.reset();
+    document.querySelector('#contact-form-status').textContent = "Bericht is succesvol verzonden";
+}

@@ -196,15 +196,32 @@ main {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.kaart .prijs {
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+
 .kaart:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 22px rgba(75, 41, 21, 0.28);
 }
 
 .product-foto {
+  display: block;
   width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.kaart h2 {
+  font-size: 1.2rem;
+  margin: 15px 0 8px;
+  padding: 0 14px;
+}
+
+.kaart p {
   line-height: 1.4;
-  text-align: center;
   padding: 0 14px;
   margin: 0 0 12px;
 }
@@ -219,6 +236,30 @@ main {
   padding: 12px;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  margin-top: auto;
+}
+
+.winkelwagen-knop:hover {
+  background-color: #6B3D20;
+}
+
+.werkenBij {
+  text-align: center;
+}
+
+#openGesloten {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #4B2915;
+  text-decoration: none;
+  background-color: #dcc3a5;
+  margin: 15px;
+  padding: 25px 25px;
+  border: 1px solid #60391F;
+  border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  display: inline-block;
 }
 
 /*darkmode */
@@ -269,11 +310,25 @@ body.donker .dark-knop {
   border: 1px solid #C9A681;
 }
 
+body.donker .kaart {
+  background-color: #3A271E;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+body.donker .winkelwagen-knop {
+  color: #1E1410;
+  background-color: #D9A06B;
+}
+
+body.donker .winkelwagen-knop:hover {
+  background-color: #C9A681;
+}
+
 /* Accessibility */
 html.accessibility {
- font-size: 1.4rem;
- letter-spacing: 0.12em;
- word-spacing: 0.16em;
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  word-spacing: 0.16em;
 }
 
 html.accessibility body {
@@ -368,14 +423,6 @@ html.accessibility body {
     padding: 14px 14px 40px;
   }
 
-  .kaart h2 {
-    font-size: 1.05rem;
-  }
-
-  .kaart p {
-    font-size: 0.9rem;
-  }
-
 
   h1 {
     font-size: 1.6rem;
@@ -401,4 +448,527 @@ html.accessibility body {
   .uitgelicht {
     padding: 12px;
   }
+
+  .kaart h2 {
+    font-size: 1.05rem;
+  }
+
+  .kaart p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Bestelformulier (bestelling.html) */
+
+.bestellingTitel {
+  margin: 0 auto 30px;
+  padding: 0 20px;
+}
+
+#bestelFormulier {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 45px 50px;
+  box-sizing: border-box;
+  background-color: #dcc3a5;
+  border: 2px solid #b9804f;
+  border-radius: 19px;
+  box-shadow: 0 4px 6px rgba(75, 41, 21, 0.18);
+}
+
+/* Sierrand met sterren */
+.sterren {
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #b9804f;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  pointer-events: none;
+  user-select: none;
+}
+
+.sterren.boven,
+.sterren.onder {
+  left: 25px;
+  right: 25px;
+  height: 18px;
+  letter-spacing: 8px;
+}
+
+.sterren.boven {
+  top: 8px;
+}
+
+.sterren.onder {
+  bottom: 8px;
+}
+
+.sterren.links,
+.sterren.rechts {
+  top: 30px;
+  bottom: 30px;
+  width: 15px;
+  writing-mode: vertical-rl;
+  letter-spacing: 10px;
+}
+
+.sterren.links {
+  left: 10px;
+}
+
+.sterren.rechts {
+  right: 10px;
+}
+
+#bestelFormulier h3 {
+  margin: 30px 0 15px;
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+#bestelFormulier h3:first-of-type {
+  margin-top: 0;
+}
+
+.klantgegevens {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 20px;
+}
+
+.productRij {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+#bestelFormulier label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+#bestelFormulier input,
+#bestelFormulier select {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #4B2915;
+  background-color: #FFF8EE;
+  border: 1px solid #60391F;
+  border-radius: 10px;
+}
+
+#bestelFormulier input:focus-visible,
+#bestelFormulier select:focus-visible,
+#bestelFormulier button:focus-visible {
+  outline: 3px solid #b9804f;
+  outline-offset: 2px;
+}
+
+/* Knoppen */
+#bestelFormulier button {
+  min-height: 44px;
+  padding: 10px 20px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #EAD8BE;
+  background-color: #4B2915;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#bestelFormulier button:hover {
+  background-color: #6B3D20;
+}
+
+.actieRij {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 0;
+}
+
+.bestelActies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+/* "Controleer bestelling" is een tweede keuze, dus lichter */
+#bestelFormulier #controleerBtn {
+  color: #4B2915;
+  background-color: #EAD8BE;
+  border: 1px solid #60391F;
+}
+
+#bestelFormulier #controleerBtn:hover {
+  background-color: #c9a681;
+}
+
+/* Winkelmandje */
+#winkelmandje {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#winkelmandje li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  background-color: #FFF8EE;
+  border-radius: 10px;
+}
+
+#bestelFormulier .verwijderBtn {
+  min-height: 0;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  color: #4B2915;
+  background-color: transparent;
+  border: 1px solid #60391F;
+}
+
+#bestelFormulier .verwijderBtn:hover {
+  background-color: #c9a681;
+}
+
+#totaalBestelling {
+  margin: 15px 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+/* Controleoverzicht */
+#controleOverzicht:not(:empty) {
+  margin-top: 25px;
+  padding: 20px 25px;
+  background-color: #FFF8EE;
+  border: 2px dashed #b9804f;
+  border-radius: 10px;
+}
+
+#controleOverzicht p {
+  margin: 4px 0;
+}
+
+/* Bestelformulier darkmode */
+body.donker #bestelFormulier {
+  background-color: #3A271E;
+  border-color: #C9A681;
+}
+
+body.donker .sterren {
+  color: #D9A06B;
+}
+
+body.donker #bestelFormulier input,
+body.donker #bestelFormulier select,
+body.donker #winkelmandje li,
+body.donker #controleOverzicht:not(:empty) {
+  color: #F0E1CC;
+  background-color: #2E1F17;
+  border-color: #C9A681;
+}
+
+body.donker #bestelFormulier button {
+  color: #1E1410;
+  background-color: #D9A06B;
+}
+
+body.donker #bestelFormulier button:hover {
+  background-color: #C9A681;
+}
+
+body.donker #bestelFormulier #controleerBtn,
+body.donker #bestelFormulier .verwijderBtn {
+  color: #F0E1CC;
+  background-color: transparent;
+  border: 1px solid #C9A681;
+}
+
+body.donker #bestelFormulier #controleerBtn:hover,
+body.donker #bestelFormulier .verwijderBtn:hover {
+  background-color: #4A3326;
+}
+
+/* Bestelformulier tablet */
+@media (max-width: 768px) {
+  #bestelFormulier {
+    padding: 40px 35px;
+  }
+
+  .klantgegevens {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Bestelformulier mobiel */
+@media (max-width: 480px) {
+  #bestelFormulier {
+    padding: 35px 25px;
+  }
+
+  .klantgegevens,
+  .bestelActies {
+    grid-template-columns: 1fr;
+  }
+
+  .productRij {
+    grid-template-columns: 2fr 1fr;
+    gap: 10px;
+  }
+
+  #winkelmandje li {
+    flex-wrap: wrap;
+  }
+
+  #totaalBestelling {
+    text-align: center;
+  }
+}
+
+/* Reserveringsformulier (resevering.html) */
+
+.reserveerIntro {
+  max-width: 700px;
+  margin: 0 auto 30px;
+  text-align: center;
+}
+
+#reserveerFormulier {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto 40px;
+  padding: 45px 50px;
+  box-sizing: border-box;
+  background-color: #dcc3a5;
+  border: 2px solid #b9804f;
+  border-radius: 19px;
+  box-shadow: 0 4px 6px rgba(75, 41, 21, 0.18);
+}
+
+#reserveerFormulier h2 {
+  margin: 30px 0 15px;
+  padding: 0;
+  font-size: 1.4rem;
+}
+
+#reserveerFormulier h2:first-of-type {
+  margin-top: 0;
+}
+
+.reserveerRij {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px 20px;
+}
+
+#reserveerFormulier label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+
+#reserveerFormulier input,
+#reserveerFormulier select,
+#reserveerFormulier textarea {
+  width: 100%;
+  min-height: 44px;
+  padding: 8px 12px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #4B2915;
+  background-color: #FFF8EE;
+  border: 1px solid #60391F;
+  border-radius: 10px;
+}
+
+#reserveerFormulier textarea {
+  resize: vertical;
+}
+
+#reserveerFormulier select:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#reserveerFormulier input:focus-visible,
+#reserveerFormulier select:focus-visible,
+#reserveerFormulier textarea:focus-visible,
+#reserveerFormulier button:focus-visible {
+  outline: 3px solid #b9804f;
+  outline-offset: 2px;
+}
+
+.opmerkingVeld {
+  margin-top: 16px;
+}
+
+#datumMelding {
+  min-height: 1.6em;
+  margin: 10px 0 0;
+  font-weight: 700;
+}
+
+.reserveerActies {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+#reserveerFormulier button {
+  min-height: 44px;
+  padding: 10px 30px;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #EAD8BE;
+  background-color: #4B2915;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+#reserveerFormulier button:hover {
+  background-color: #6B3D20;
+}
+
+#reserveerBevestiging:not(:empty) {
+  margin-top: 25px;
+  padding: 20px 25px;
+  background-color: #FFF8EE;
+  border: 2px dashed #b9804f;
+  border-radius: 10px;
+}
+
+#reserveerBevestiging p {
+  margin: 4px 0;
+}
+
+/* Reserveringsformulier darkmode */
+body.donker #reserveerFormulier {
+  background-color: #3A271E;
+  border-color: #C9A681;
+}
+
+body.donker #reserveerFormulier input,
+body.donker #reserveerFormulier select,
+body.donker #reserveerFormulier textarea,
+body.donker #reserveerBevestiging:not(:empty) {
+  color: #F0E1CC;
+  background-color: #2E1F17;
+  border-color: #C9A681;
+}
+
+body.donker #reserveerFormulier input[type="date"] {
+  color-scheme: dark;
+}
+
+body.donker #reserveerFormulier button {
+  color: #1E1410;
+  background-color: #D9A06B;
+}
+
+body.donker #reserveerFormulier button:hover {
+  background-color: #C9A681;
+}
+
+/* Reserveringsformulier tablet */
+@media (max-width: 768px) {
+  #reserveerFormulier {
+    padding: 40px 35px;
+  }
+
+  .reserveerRij {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Reserveringsformulier mobiel */
+@media (max-width: 480px) {
+  #reserveerFormulier {
+    padding: 35px 25px;
+  }
+
+  .reserveerRij {
+    grid-template-columns: 1fr;
+  }
+
+  #reserveerFormulier button {
+    width: 100%;
+  }
+}
+
+/* Contact opmaak */
+.contact-card {
+  text-align: left;
+  flex: 1 1 300px;
+  border-radius: 10px;
+  border: 2px solid #b9804f;
+  padding: 20px;
+}
+
+.contact-card h2 {
+  text-align: left;
+  padding: 0px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#contact-page {
+  display: flex;
+  gap: 20px;
+  padding-top: 10px;
+  padding-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.veld input, .veld textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font: inherit;
+  background-color: inherit;
+  color: inherit;
+  border-radius: 10px;
+}
+
+.veld textarea {
+  min-height: 90px;
+  resize: vertical;
+  border-radius: 10px;
+}
+
+.knop {
+  font: inherit;
+  background-color: inherit;
+  color: inherit;
+  font-weight: 700;
+  padding: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-radius: 10px;
+}
+
+.knop:hover {
+  background-color: #dab486;
+}
+
+.veld {
+  margin-bottom: 5px;
 }
