@@ -1,0 +1,28 @@
+.card {
+    padding: 10px;
+    margin: 5px;
+    background-color: grey;
+}
+
+.card:hover {
+    background-color: darkblue;
+}
+
+.link {
+    color: white;
+}
+
+.link:hover {
+    color: yellow;
+    text-decoration: red wavy underline;
+}
+
+#knoppie:focus,
+#input:focus {
+    background-color: yellow;
+    display: flex;
+}
+
+.list .item:nth-child(2n+3) {
+    color: purple;
+}
