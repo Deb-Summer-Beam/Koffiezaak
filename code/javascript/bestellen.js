@@ -53,12 +53,16 @@ toevoegenBtn.addEventListener("click", () => {
     const totaal = berekenTotaal(prijs, gekozenAantal);
     
     const regel = document.createElement("li");
+    const regelSpan = document.createElement('span');
+    regel.appendChild(regelSpan);
 
-    regel.textContent =
+    regelSpan.textContent =
         gekozenAantal + " x " +
         gekozenProduct +
         " - €" +
         totaal.toFixed(2);
+    
+    regelSpan.classList.add('regelSpan');
 
     const verwijderBtn = document.createElement("button");
     verwijderBtn.type = "button";
@@ -116,30 +120,58 @@ controleerBtn.addEventListener("click", () => {
 
     const producten = winkelmandje.querySelectorAll("li");//alle <li>'s  uit winkelmaandje verzameld
 
-    let productenTekst = "";//lege text waarin straks de bestelling wordt verzameld
+    controleOverzicht.textContent = "";
 
-    producten.forEach((product) => {//voor ieder product gevonden voer de code uit
-        const kopie = product.cloneNode(true);//kopie van het origineel in winkelmaandje
-                                            //true omdat pakt al de nodes, false zou allen de <li>'s pakken
-    kopie.querySelector(".verwijderBtn").remove();
-    productenTekst = productenTekst + "<p>" + kopie.textContent + "</p>";//<p> zorgt dat iedere bestelde product netjes op een eigen regel komt
+    function productRegels(product) {
+        const productRegel = document.createElement('p');
+        productRegel.textContent = product.querySelector('.regelSpan').textContent;
+        controleOverzicht.appendChild(productRegel);
+    }
 
-}); 
+    // Creëer alle elementen en geef ze met textContent text
+    function appendControleOverzicht() {
+        const titel = document.createElement('h3');
+        titel.textContent = '👤 Controleer je gegevens';
 
+        const naamE = document.createElement('p');
+        naamE.textContent = `Naam: ${naam} `;
 
-    controleOverzicht.innerHTML =
-        "<h3>👤 Controleer je gegevens</h3>" +
-        "<p>Naam: " + naam + "</p>" +
-        "<p>E-mail: " + email + "</p>" +
-        "<p>Telefoon: " + telefoon + "</p>" +
-        "<p>Adres: " + adres + "</p>" +
-        "<p>Postcode: " + postcode + "</p>" +
-        "<p>Plaats: " + plaats + "</p>" +
+        const emailE = document.createElement('p');
+        emailE.textContent = `E-mail: ${email} `;
 
-         "<h3>🛒 Jouw bestelling</h3>" +
-        productenTekst +
+        const telefoonE = document.createElement('p');
+        telefoonE.textContent = `Telefoon: ${telefoon} `;
 
-        "<p>Totaal bestelling: €" + winkelmandTotaal.toFixed(2) + "</p>";
+        const adresE = document.createElement('p');
+        adresE.textContent = `Adres: ${adres} `;
+
+        const postcodeE = document.createElement('p');
+        postcodeE.textContent = `Postcode: ${postcode} `;
+
+        const plaatsE = document.createElement('p');
+        plaatsE.textContent = `Plaats: ${plaats} `;
+
+        const bestellingE = document.createElement('h3');
+        bestellingE.textContent = '🛒 Jouw bestelling';
+
+        const totaalE = document.createElement('p');
+        totaalE.textContent = `Totaal bestelling: €${winkelmandTotaal.toFixed(2)}`;
+
+        // Voeg alle gecreëerde elementen toe aan #controleOverzicht
+        controleOverzicht.appendChild(titel);
+        controleOverzicht.appendChild(naamE);
+        controleOverzicht.appendChild(emailE);
+        controleOverzicht.appendChild(telefoonE);
+        controleOverzicht.appendChild(adresE);
+        controleOverzicht.appendChild(postcodeE);
+        controleOverzicht.appendChild(plaatsE);
+        controleOverzicht.appendChild(bestellingE);
+        producten.forEach(productRegels);
+        controleOverzicht.appendChild(totaalE);
+    }
+
+    appendControleOverzicht();
+
 });
 //hier voorkomen we dat bj het submitten de pagina opnieuw laadt
 const bestelFormulier = document.getElementById("bestelFormulier");
@@ -178,10 +210,10 @@ if (
     
     bestelFormulier.reset();// verwijder de klantgegevens voor de volgende klant
 
-    winkelmandje.innerHTML = "";//leegt winkelwagen
+    winkelmandje.textContent = "";//leegt winkelwagen
     winkelmandTotaal = 0;
     totaalBestelling.textContent = "Totaal bestelling: €0.00";//leegt totaal bestellingen
-    controleOverzicht.innerHTML = "";//controleoverzicht leegmaken
+    controleOverzicht.textContent = "";//controleoverzicht leegmaken
     
 
 
