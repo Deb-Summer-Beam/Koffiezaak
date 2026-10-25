@@ -1,2 +1,13 @@
 /* 03 · From blank. Done when: every card has a grey background and some padding,
    and the card under the mouse turns dark blue with white text. */
+
+.card {
+    padding: 10px;
+    margin: 5px;
+    background-color: grey;
+}
+
+.card:hover {
+    background-color: darkblue;
+    color: white;
+}

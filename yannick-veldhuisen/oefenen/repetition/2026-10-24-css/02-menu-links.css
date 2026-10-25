@@ -6,3 +6,7 @@ nav a {
 }
 
 /* ⬜ 2–3 lines: the hover rule for the links */
+nav a:hover {
+  color: darkred;
+  text-decoration: none;
+}

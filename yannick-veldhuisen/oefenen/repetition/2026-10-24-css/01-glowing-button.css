@@ -8,6 +8,6 @@
 }
 
 /* why: a colon starts a state (a pseudo-class); a dot here would look for a class named "hover" */
-.glow/* ⬜ */ {
+.glow:hover {
   background-color: orange;
 }
