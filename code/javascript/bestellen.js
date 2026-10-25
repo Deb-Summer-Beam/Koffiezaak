@@ -120,8 +120,6 @@ controleerBtn.addEventListener("click", () => {
 
     const producten = winkelmandje.querySelectorAll("li");//alle <li>'s  uit winkelmaandje verzameld
 
-    controleOverzicht.textContent = "";
-
     function productRegels(product) {
         const productRegel = document.createElement('p');
         productRegel.textContent = product.querySelector('.regelSpan').textContent;
@@ -130,6 +128,8 @@ controleerBtn.addEventListener("click", () => {
 
     // Creëer alle elementen en geef ze met textContent text
     function appendControleOverzicht() {
+        controleOverzicht.textContent = "";
+
         const titel = document.createElement('h3');
         titel.textContent = '👤 Controleer je gegevens';
 
