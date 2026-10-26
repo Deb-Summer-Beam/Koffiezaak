@@ -1,0 +1,13 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+li.done {
+    text-decoration: underline;
+    color: green;
+}
+
+li.doneButDifferent {
+    color: red;
+}
