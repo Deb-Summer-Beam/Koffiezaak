@@ -1,0 +1,8 @@
+#card {
+  border: 1px solid gray;
+  padding: 1rem;
+}
+
+#card.picked {
+  border: 4px solid green;
+}
