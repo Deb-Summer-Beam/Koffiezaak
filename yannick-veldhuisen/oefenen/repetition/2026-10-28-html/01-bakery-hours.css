@@ -1,0 +1,5 @@
+/* why: a visible colour proves the <link> in the HTML works */
+body {
+  background-color: #fdf3e1;
+  font-family: sans-serif;
+}
