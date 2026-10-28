@@ -91,6 +91,7 @@ Voor het prioriteren van de requirements van Cozy Brew wordt de MoSCoW-methode g
 | FR-05 | De bezoeker kan de reserveringspagina openen en de beschikbare reserveringsmogelijkheden bekijken                                                                                                                                                                                                                 | Should Have | De reserveringspagina is bereikbaar en toont de beschikbare informatie of invoervelden voor een reservering                                                                                                                                                                                    |
 | FR-06 | De bezoeker kan informatie over Cozy Brew en de koffiezaak bekijken                                                                                                                                                                                                                                               | Should Have | De informatiepagina is bereikbaar via de website en toont een beschrijving van Cozy Brew                                                                                                                                                                                                       |
 | FR-07 | De bezoeker kan de pagina “Werken bij Cozy Brew” openen en informatie over werken bij de koffiezaak bekijken                                                                                                                                                                                                      | Could Have  | De pagina is bereikbaar via de website en toont de beschikbare informatie over werken bij Cozy Brew                                                                                                                                                                                            |
+| FR-08 | De bezoeker kan via de pagina "Contact" een contactbericht sturen naar Cozy Brew. | Should Have | De bezoeker krijgt, na het volledig invullen van het formulier, de bevestiging 'Bericht is succesvol verzonden'. De bezoeker krijgt bij het leeg laten van een veld de melding dat het veld ingevuld moet worden. De bezoeker krijgt bij met missen van een '@'in het veld 'Email' een melding om een '@' toe te voegen |
 
 ## 2.2 Niet-functionele requirements
 
@@ -239,6 +240,19 @@ Verwacht resultaat: De bezoeker kan meerdere producten aan het winkelmandje toev
 | Hoofdscenario        | 1\. De bezoeker selecteert producten en aantallen. 2-De bezoeker voegt producten toe aan het winkelmandje. 3. De website berekent het totaalbedrag. 4. De bezoeker kan aantallen wijzingen of producten verwijderen. 5. De website herberekent het totaalbedrag. 6. De bezoeker vult de persoonsgegevens in. 7. De website toont een overzicht van de bestelling en persoonsgegevens. 8. De bezoeker controleert en corrigeert eventuele fouten. 9. De bezoeker bevestigt de bestelling |
 | Alternatief scenario | Als verplichte gegevens ontbreken, aantallen ongeldig zijn of het winkelmandje leeg is, kan de bezoeker de bestelling niet bevestigen en krijgt deze een duidelijke melding                                                                                                                                                                                                                                                                                                             |
 | Resultaat            | De bezoeker kan een bestelling samenstellen, aanpassen, controleren en bevestigen                                                                                                                                                                                                                                                                                                                                                                                                       |
+
+### UC-05: Contactbericht versturen
+
+| Onderdeel | Beschrijving |
+|---|---|
+| Usecase-ID | UC-05 |
+| Naam | Contactbericht versturen | 
+| Actor | Bezoeker van de website |
+| Doel | Een contactbericht versturen met bezoekersgegevens en bericht. |
+| Voorwaarde | De bezoeker heeft de contactpagina van Cozy Brew geopend |
+| Hoofdscenario | 1. De bezoeker vult gegevens (naam, email, bericht) in. 2. De bezoeker klikt op 'Verstuur' 3. De website bevestigt dat het bericht succesvol is verzonden. |
+| Alternatief scenario | Als de bezoeker een veld leeg laat, krijgt de bezoeker een melding om het veld in te vullen. Als de bezoeker geen '@' in het emailveld invult, krijgt de bezoeker een melding om een '@' toe te voegen. |
+| Resultaat | De bezoeker heeft succesvol een bericht kunnen sturen naar Cozy Brew |
 
 # 4. Sitemap en navigatiestructuur
 
