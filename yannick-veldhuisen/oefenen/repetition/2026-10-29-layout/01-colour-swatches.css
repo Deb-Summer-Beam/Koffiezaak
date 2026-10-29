@@ -1,0 +1,16 @@
+/* 01 · Fill the ⬜ with the property that sets how many columns the grid has and how wide they are. */
+
+/* why: the grid goes on the PARENT; the children (.swatch) are placed by it automatically */
+.palette {
+  display: grid;
+  /* why: repeat(3, 1fr) = three columns, each one equal share (fr = fraction) of the free width */
+  grid-template-columns: repeat(3, 1fr);
+  /* why: gap only adds space BETWEEN items, never around the outside edge like margin would */
+  gap: 1rem;
+}
+
+.swatch {
+  padding: 2rem;
+  background-color: lightgray;
+  text-align: center;
+}

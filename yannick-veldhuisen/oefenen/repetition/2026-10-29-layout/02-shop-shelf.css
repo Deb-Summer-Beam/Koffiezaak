@@ -1,0 +1,14 @@
+/* 02 · Make the shelf a grid. */
+
+.shelf {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  /* ⬜ three lines here: turn on grid, 4 equal columns, 12px between the products */
+}
+
+.product {
+  margin: 0;
+  padding: 1rem;
+  border: 2px solid sienna;
+}

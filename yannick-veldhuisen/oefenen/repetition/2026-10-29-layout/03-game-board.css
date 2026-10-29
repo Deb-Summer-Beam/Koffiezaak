@@ -1,0 +1,13 @@
+/* 03 · From blank, below this comment.
+   The board shows the six tiles in 3 rows of 2 equally wide columns, with 2rem of space between the tiles.
+   Give each tile a visible background colour so you can see the columns.
+   Done when: 3 rows of 2 tiles, same width, space only between them. */
+.board {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   gap: 2rem;
+}
+
+.tile {
+   background-color: purple;
+}
