@@ -9,6 +9,65 @@ Het document is bedoeld voor ontwikkelaars die aan de website verder werken of h
 
 ## 2. Technieken en bestandsstructuur
 ### 2.1 Gebruikte technieken
+De website is gebouwd met HTML, CSS en JavaScript. Hieronder staat per techniek waarvoor wij hem gebruiken. 
+
+#### HTML5
+De structuur van elke pagina is opgebouwd met semantische HTML-elementen, zoals `<header>`, `<nav>`, `<main>`, `<section>`, `<form>` en `<footer>`. Deze elementen geven aan wat een onderdeel is, niet alleen hoe het eruitziet. Dat maakt de code leesbaarder voor developers en schermlezers om de opbouw van de pagina te begrijpen. De productkaarten op het menu zijn `<article>`-elementen deze staan niet in de HTML, maar worden door JavaScript aangemaakt (zie 4.2) 
+
+#### Formuliervalidatie
+De formulieren voor bestellen, reseveren en contact controleren de invoer op twee niveaus.
+
+In de HTML hebben de verplichte velden het attribuut `required`, zodat het formulier niet verstuurd kan worden zoland een veld leeg is. Daarnaast heeft elk veld het juiste type:
+- `type="email"` controleert of er een geldig e-mailadres is ingevuld;
+- `type="tel"` toont op een telefoon een cijfertoetsenbord;
+- `type="date"` laat de bezoeker een datum kiezen uit een kalender;
+- `type="number"` met `min="1"` voorkomt dat er een aantal lager dan 1 wordt ingevuld.
+
+De browser voert deze controles zelf uit en toont een melding bij het veld dat niet klopt. 
+
+In JavaScript controleren we regels die HTML niet kan controleren. In `bestellen.js` wordt gecontroleerd of er een product gekozen is en of het aantal een heel getal van minimaal 1 is. In `reserveren.js` wordt bij het keizen van een datum gekeken of Cozy Brew die dag open is. Op 1 januari en op 25 en 26 december verschijnt de melding "Helaas zijn we gesloten op deze dag." en wordt het tijdveld uitgeschakeld. Op andere dagen worden allen de tijden getoond die binnen de openingstijden vallen van die dag. 
+
+#### Toegankelijkheid: aria-live
+Sommige meldingen veranderen terwijl we de bezoeker op de pagina is, zoals "Menu laden..." of een foutmelding. Deze meldingen staan in een element met 'aria-live'. Een schermlezer leest de nieuwe tekst dan automatisch voor zodra die verandert. Bij `#menuStatus` gebruiken we `aria-live="polite"`: de schermlezer wacht tot hij klaar is met voorlezen en onderbreekt de bezoeker dus niet. Zonder itattribuut zou een blinde of slechtziende bezoeker de melding missen. 
+
+#### CSS: Flexbox en Grid
+Alle opmaak staat in één bestand: `style.css`. Voor de layout gebruiken we twee technieken.
+
+**Flexbox** zet elementen in één richting naast of onder elkaar. Dit gebruiken we voor onderdelen die uit één rij of kolom bestaan, zoals de `header`, de navigatie, een productkaart (`.kaart`) en de regels in het winkelmandje.
+
+**Grid** verdeelt de ruimte in rijen én kolommen tegelijk. Dit gebruiken we waar meerdere onderdelen netjes uitgelijnd in een raster moeten staan, zoals het productenoverzicht op het menu (`.productenoverzicht`) en de velden van het bestel- en reserveerformulier (`.klantgegevens`, `.productRij`, `.reserveerRij`)
+
+#### CSS: responsive met media queries
+De opmaak is eerst gemaakt voor een groot scherm. Met media queries (`max-width`) passen we de layout aan voor kleinere schermen, op drie pbreakpoints: 
+- 1024px: kleine laptops en tablets in liggende stand;
+- 768px: tablets;
+- 480px: telefoons.
+
+Onze doelgroep bezoekt de website vooral op een telefoon. Daarom geven we het breakpoint van 480px extra aandacht. Op dat formaat:
+- is de header niet meer sticky, zodat hij tijdens het scrollen geen schermruimte inneemt;
+- staan de producten in twee kolommen;
+- worden het logo en de koppen kleiner;
+- hebben de navigatielinks genoeg ruimte (padding) om ze goed met een vinger aan te tikken.
+
+#### JavaScript
+JavaScript zorgt voor het gedrag van de website. We gebruiken drie bestanden `script.js` staan op alle pagina's allen op `bestellingen.html` en `reserveren.js` alleen op `reservering.html`. Met `querySelector` zoeken we elementen op, met `addEventListener` reageren we op klikken en het verzenden van formulieren, en met `createElement` en `textContent` passen we de pagina aan.
+
+**defer.** De scripts staan in de `<head>` met het attribuut `defer`. Zonder `defer` stopt de browser met het inlezen van de HTML zodra hij het script tegenkomt, en voert hij de JavaScript direct uit. De elementen die verderop in de pagina staan, bestaan op dat moment nog niet. `querySelector` vindt ze dan niet en het script geeft fouten in de console. Met `defer` downloadt de browser het script alvast op de achtergrond, maar voert hij het pas uit nadat de hele HTML is ingelezen. Zo bestaan alle elementen al wanneer de JavaScript start.
+
+**fetch en JSON.** Het menu wordt met `fetch()` en `async`/`await` opgehaald uit het lokale bestand `menu-groep.json`. Daardoor staan de producten los van de code: een nieuw product toevoegen of een prijs aanpassen kan in de JSON, zonder de JavaScript te veranderen. Hoofdstuk 4 beschrijft hoe dit werkt.
+
+#### Hulpmiddelen
+- **Git en GitHub.** Iedereen werkt op een eigen branch, zodat we tegelijk aan verschillende onderdelen kunnen werken zonder elkaars werk te overschrijven. Werk komt via een pull request in de gezamenlijke branch, nadat een groepsgenoot het heeft gereviewd. Hebben twee mensen dezelfde regel aangepast, dan laat Git een mergeconflict zien en kiezen we samen welke versie blijft. De geschiedenis laat zien wie wat wanneer heeft veranderd, en met issues verdelen we de taken.
+- **Lucidchart.** Hiermee maken we de UML-diagrammen (use-case, activiteiten en sequence). Een diagram laat in één overzicht zien hoe een proces of functie verloopt, wat in de code zelf lastiger te zien is. De bronbestanden staan als `.vsdx` in `docs/uml/`.
+- **VS Code.** De editor waarin we de code schrijven. Hij heeft ingebouwde Git-ondersteuning en is uit te breiden met extensies die het programmeren makkelijker maken.
+- **AI-tools (Claude Code, ChatGPT en GitHub Copilot).** Binnen de groep hebben we AI op vier manieren gebruikt:
+  - Afbeeldingen: de afbeeldingen op `index.html` en `menu.html` zijn gegenereerd met ChatGPT, waarbij ons eigen logo in de afbeeldingen is verwerkt.
+  - Advies en uitleg: uitleg over hoe een stuk code werkt, of waarom het niet werkt.
+  - Codereview: een algemene controle van vooral de JavaScript. De W3C-validator controleert alleen HTML en CSS, dus voor JavaScript gebruikten we AI om fouten op te sporen.
+  - Documentatie: hulp bij het formuleren van teksten in de documenten en bij het opsporen van spelfouten.
+
+  AI is voor ons een hulpmiddel en geen vervanging van ons eigen werk. Alle code en tekst die met hulp van AI tot stand is gekomen, hebben we zelf gecontroleerd, getest en begrepen voordat het in het project kwam. Aanpassingen in de code hebben we zelf doorgevoerd.
+
 ### 2.2 Bestandsstructuur
 ```
 Koffiezaak/
