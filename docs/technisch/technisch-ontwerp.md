@@ -109,7 +109,19 @@ Afbeeldingen en code houden we ook gescheiden. Foto’s zijn statische bestanden
 
 ## 3. Functies, gegevens en herbruikbare onderdelen
 ### 3.1 Gegevens (datamodel)
+In `localStorage` gebruiken we de key `accessibilityValue` met de mogelijkheden "on"/"off". `localStorage` kan enkel waarden opslaan van het type 'string'. Omdat alternatieven zoals "true"/"false" hierdoor later mogelijk voor verwarring kunnen zorgen met waarden van het type 'boolean', hebben we gekozen om gebruik te maken van "on"/"off". We gebruiken `localStorage` als bron om te bepalen op welke manier de website zichtbaar moet zijn met betrekking tot de Accessibility functie. 
+
+In `localStorage` gebruiken we de key `darkmodeValue` met de mogelijkheden "on"/"off". `localStorage` kan enkel waarden opslaan van het type 'string'. Omdat alternatieven zoals "true"/"false" hierdoor later mogelijk voor verwarring kunnen zorgen met waarden van het type 'boolean', hebben we gekozen om gebruik te maken van "on"/"off". We gebruiken `localStorage` als bron om te bepalen op welke manier de website zichtbaar moet zijn met betrekking tot de Darkmode functie. 
+
 ### 3.2 Belangrijkste functies
+**toggleAccessibility-functie:** `toggleAccessibility()` wordt uitgevoerd na een klik op de knop met ID `#accessibility-knop` en wijst door middel van `.toggle` de class `accessibility` toe wanneer deze nog niet is toegevoegd aan `<html>` (geselecteerd met 'document.documentElement'). Wanneer deze class al is toegevoegd zal hij deze er juist afhalen. Daarna checkt deze functie of de class is toegewezen of juist niet. Wanneer `<html>` de class toegewezen heeft, zal de `localStorage` worden aangesproken en zal de key `accessibilityValue` de waarde "on" krijgen. Wanneer `<html>` de class niet heeft toegewezen, zal de key `accessibilityValue` de waarde "off" krijgen. 
+
+**localStorageCheckAccessibility-functie**: `localStorageCheckAccessibility()` wordt uitgevoerd wanneer de pagina laadt en checkt of de waarde van de key `accessibilityValue` in `localStorage` gelijk is aan "on". Wanneer dit zo is, zal de class 'accessibility' worden toegewezen aan `<html>`. Wanneer de keywaarde niet gelijk is aan "on", zal er niks gebeuren.  
+
+**toggleDarkmode-functie**: `toggleDarkmode()` wordt uitgevoerd na een klik op de knop met ID `#dark-knop` en wijst door middel van `.toggle` de class `donker` toe wanneer deze nog niet is toegevoegd aan `<body>` (geselecteerd met 'document.body'). Wanneer deze class al is toegevoegd zal hij deze er juist afhalen. Daarna checkt deze functie of de class is toegewezen of juist niet. Wanneer `<body>` de class toegewezen heeft, zal de `localStorage` worden aangesproken en zal de key `darkmodeValue` de waarde "on" krijgen. Wanneer `<body>` de class niet heeft toegewezen, zal de key `darkmodeValue` de waarde "off" krijgen. 
+
+**localStorageCheckDarkmode-functie**: `localStorageCheckDarkmode()` wordt uitgevoerd wanneer de pagina laadt en checkt of de waarde van de key `darkmodeValue` in `localStorage` gelijk is aan "on". Wanneer dit zo is, zal de class 'donker' worden toegewezen aan `<body>`. Wanneer de keywaarde niet gelijk is aan "on", zal er niks gebeuren.
+
 ### 3.3 Herbruikbare onderdelen
 
 ## 4. API-verwerking
