@@ -5,6 +5,9 @@ from pathlib import Path
 
 md_pad = Path(sys.argv[1]).resolve()
 
+script_map = Path(__file__).resolve().parent
+html_pad = (script_map / "test.html").resolve()
+
 with open(md_pad, encoding="utf-8", mode='r') as file:
     content = file.read()
 
@@ -35,13 +38,12 @@ pagina = f"""<!DOCTYPE html>
 </html>
 """
 
-with open("test.html", encoding="utf-8", mode='w') as file:
+with open(html_pad, encoding="utf-8", mode='w') as file:
     file.write(pagina)
 
 print("Markdown file converted to HTML successfully.")
 
 edge = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
-html_pad = Path("test.html").resolve()
 pdf_pad = md_pad.with_suffix(".pdf")
 
 subprocess.run([edge, "--headless", "--no-pdf-header-footer", f"--print-to-pdf={pdf_pad}", html_pad])
