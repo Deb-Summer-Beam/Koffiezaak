@@ -1,0 +1,12 @@
+/* 02: light yellow on a phone, light blue from 700px wide.
+   Done when: see 02-day-colour.html. */
+
+body {
+  background-color: lightyellow;
+}
+
+@media (min-width: 700px) {
+  body {
+    background-color: lightblue;
+  }
+}

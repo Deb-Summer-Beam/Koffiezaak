@@ -1,0 +1,14 @@
+/* 01: normal text on a phone, twice as big from 600px wide.
+   Done when: see 01-big-note.html. */
+
+/* why: a rule outside any media query is the phone version (mobile first) */
+.note {
+  font-size: 1rem;
+}
+
+/* why: this query only switches on at 600px and wider, so phones keep the rule above */
+@media (min-width: 600px) {
+  .note {
+    font-size: 2rem;
+  }
+}

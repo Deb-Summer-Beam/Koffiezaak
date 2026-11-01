@@ -1,0 +1,14 @@
+/* 03: Spec: on a phone the h1 is centred; from 800px wide it is left-aligned.
+   Mobile first: the phone rule first, then the media query.
+   Done when: see 03-title-side.html. */
+
+
+h1 {
+   text-align: center;
+}
+
+@media (min-width: 800px) {
+   h1 {
+      text-align: left;
+   }
+}
