@@ -151,6 +151,8 @@ Het diagram toont het verzoek van `script.js` aan de webserver, het antwoord, en
 ## 5. Technische keuzes
 ### 5.1 Responsiviteit
 ### 5.2 Toegankelijkheid
+Om de website toegankelijk te maken voor mensen met een visuele beperking, hebben we ervoor gekozen om een 'Makkelijker lezen' knop toe te voegen. Zonder deze functie sluiten we een groep mensen uit die anders de website niet zouden kunnen gebruiken. De knop vergroot de tekst, letter- en woordafstand en regelhoogte op de gehele website. Door gebruik te maken van `localStorage`, onthoudt de browser of de leesmodus aan of uit staat. Hierdoor zal de opmaak van tekst en regelruimte ook zichtbaar blijven bij het veranderen of herladen van de pagina. Iemand die deze opmaak nodig heeft zou zonder `localStorage` op elke pagina de knop weer moeten zoeken en aanklikken (zie 3.1 en 3.2).
+
 ### 5.3 Veilig omgaan met gegevens
 
 ## 6. Testaanpak en bekende beperkingen
