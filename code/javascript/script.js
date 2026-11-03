@@ -93,7 +93,7 @@ function maakProductKaart(product) {
 
     const foto = document.createElement("img");
     foto.className = "product-foto";
-    foto.src = "../../images/Producten/" + product.afbeelding;
+    foto.src = "../images/Producten/" + product.afbeelding;
     foto.alt = "Foto van " + product.naam;
     kaart.appendChild(foto);
 
