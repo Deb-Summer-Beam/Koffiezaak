@@ -972,3 +972,330 @@ body.donker #reserveerFormulier button:hover {
 .veld {
   margin-bottom: 5px;
 }
+/* 
+   COZY BREW - NIEUWE HOMEPAGE HEADER
+   Issue #55 */
+
+.header-home {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 30px;
+    min-height: 110px;
+    box-sizing: border-box;
+}
+
+.header-home .header-openingstijden {
+    justify-self: start;
+    text-align: left;
+}
+
+.header-home .header-logo {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+}
+
+.header-home .logo {
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+}
+
+.header-home .header-knoppen {
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.header-home .header-knoppen button {
+    width: auto;
+    min-height: 48px;
+    padding: 10px 16px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Kleinere schermen */
+@media (max-width: 900px) {
+    .header-home {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 15px;
+    }
+
+    .header-home .header-openingstijden,
+    .header-home .header-logo,
+    .header-home .header-knoppen {
+        justify-self: center;
+        text-align: center;
+    }
+
+    .header-home .header-knoppen {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+/* 
+   COZY BREW - KOFFIE BANNER
+   Issue #55 */
+
+.koffie-banner {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.koffie-afbeelding {
+    width: 100%;
+    height: 100%;
+}
+
+.koffie-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out;
+}
+
+.koffie-foto.vervagen {
+    opacity: 0;
+}
+
+.koffie-welkomsttekst {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 85%;
+    max-width: 750px;
+    padding: 30px;
+
+    text-align: center;
+    color: white;
+    background-color: rgba(45, 28, 20, 0.65);
+    border-radius: 20px;
+}
+
+.koffie-welkomsttekst h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.koffie-welkomsttekst p {
+    font-size: 22px;
+    line-height: 1.6;
+    color: white;
+}
+
+/* Mobiele schermen */
+@media (max-width: 768px) {
+    .koffie-banner {
+        height: 350px;
+    }
+
+    .koffie-welkomsttekst {
+        padding: 20px;
+    }
+
+    .koffie-welkomsttekst h2 {
+        font-size: 28px;
+    }
+
+    .koffie-welkomsttekst p {
+        font-size: 16px;
+    }
+}
+/*
+   COZY BREW - NAVIGATIE HOMEPAGE
+   Issue #55 */
+
+.koffie-navigatie {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 15px;
+    padding: 25px 30px;
+    background-color: #f5e9dc;
+}
+
+.koffie-navigatie a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+    padding: 18px 10px;
+    min-width: 0;
+
+    background-color: #7b4f3f;
+    color: white;
+    border-radius: 12px;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
+}
+
+.koffie-navigatie a:hover {
+    background-color: #a67358;
+    transform: translateY(-4px);
+}
+
+.koffie-navigatie a:focus-visible {
+    outline: 3px solid #c58b51;
+    outline-offset: 3px;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+    .koffie-navigatie {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Mobiel */
+@media (max-width: 480px) {
+    .koffie-navigatie {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+}
+/* =========================================
+   COZY BREW - INFORMATIETEKSTEN HOMEPAGE
+   Issue #55
+========================================= */
+
+.koffie-informatie {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 40px 50px;
+
+    background-color: #f5e9dc;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(60, 35, 25, 0.12);
+}
+
+.koffie-informatie h2 {
+    color: #7b4f3f;
+    font-size: 28px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.koffie-informatie p {
+    color: #4a3328;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.koffie-informatie p:last-child {
+    margin-bottom: 0;
+}
+
+/* Mobiele schermen */
+@media (max-width: 768px) {
+    .koffie-informatie {
+        margin: 25px 15px;
+        padding: 25px 20px;
+    }
+
+    .koffie-informatie h2 {
+        font-size: 22px;
+    }
+
+    .koffie-informatie p {
+        font-size: 16px;
+    }
+}
+
+/*
+   COZY BREW - FOTOCARROUSEL
+   Issue #55 */
+
+.koffie-slideshow {
+    width: 100%;
+    padding: 40px 0;
+    overflow: hidden;
+}
+
+.koffie-carrousel {
+    --ruimte: 16px;
+    --foto-breedte: calc((100vw - 3 * var(--ruimte)) / 4);
+
+    width: 100%;
+    overflow: hidden;
+}
+
+.koffie-carrousel-baan {
+    display: flex;
+    width: max-content;
+    gap: var(--ruimte);
+    animation: koffieSchuiven 54s linear infinite;
+}
+
+.carrousel-groep {
+    display: flex;
+    gap: var(--ruimte);
+    flex-shrink: 0;
+    width: max-content;
+}
+
+.carrousel-foto {
+    flex: 0 0 var(--foto-breedte);
+    width: var(--foto-breedte);
+    height: 220px;
+    min-width: 0;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+@keyframes koffieSchuiven {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(calc(-50% - 8px));
+    }
+}
+
+/* Pauzeren wanneer de muis over de foto's staat */
+.koffie-carrousel:hover .koffie-carrousel-baan,
+.koffie-carrousel:focus-within .koffie-carrousel-baan {
+    animation-play-state: paused;
+}
+
+/* Minder beweging voor bezoekers die dit instellen */
+@media (prefers-reduced-motion: reduce) {
+    .koffie-carrousel-baan {
+        animation: none;
+    }
+}
+
+/* Tablet: twee foto's naast elkaar */
+@media (max-width: 900px) {
+    .koffie-carrousel {
+        --foto-breedte: calc((100vw - var(--ruimte)) / 2);
+    }
+}
+
+/* Mobiel: één foto */
+@media (max-width: 480px) {
+    .koffie-carrousel {
+        --foto-breedte: 100vw;
+    }
+}

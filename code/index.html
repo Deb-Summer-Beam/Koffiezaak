@@ -13,52 +13,157 @@
 
 <body>
 
-    <header>
-        <a href="index.html" alt="terug naar homepage">
+    <header class="header-home">
+
+        <div class="header-openingstijden">
+            <div id="openGesloten"></div>
+        </div>
+
+        <a href="index.html" class="header-logo" aria-label="Terug naar homepage">
             <img src="../images/cozybrew_logo.png" alt="Logo van CozyBrew" class="logo">
         </a>
-        <div id="openGesloten"></div>
-        <nav>
-            <a href="menu.html">Menu</a>
-            <a href="contact.html">Contact us</a>
-            <a href="reservering.html">Reservering</a>
-            <a href="werkenbij.html">Werken bij</a>
-            <a href="bestelling.html">Bestelling plaatsen</a>
-        </nav>
-        <button id="dark-knop" class="dark-knop">Dark-Mode</button>
-        <button id="accessibility-knop" class="dark-knop">Makkelijker lezen</button>
+
+        <div class="header-knoppen">
+            <button id="dark-knop" class="dark-knop">
+                Dark-Mode
+            </button>
+
+            <button id="accessibility-knop" class="dark-knop">
+                Makkelijker lezen
+            </button>
+        </div>
+
     </header>
+    </header>
+
+    <!-- Homepage banner - Issue #55 -->
+    <section class="koffie-banner" aria-label="Welkom bij CozyBrew">
+
+        <div class="koffie-afbeelding">
+            <img src="../images/cozybrew-coffeetruck.png" alt="De CozyBrew koffiekar" class="koffie-foto">
+        </div>
+
+        <div class="koffie-welkomstekst">
+            <h2>Welkom bij CozyBrew</h2>
+            <p>Geniet van heerlijke koffie, verse gebakjes
+                en gezellige momenten.</p>
+        </div>
+
+    </section>
+
+    </section>
+
+    <!-- Navigatie onder de koffie-banner -->
+    <nav class="koffie-navigatie" aria-label="Hoofdnavigatie">
+
+        <a href="menu.html">☕ Menu</a>
+
+        <a href="contact.html">✉️ Contact us</a>
+
+        <a href="reservering.html">📅 Reservering</a>
+
+        <a href="werkenbij.html">👥 Werken bij</a>
+
+        <a href="bestelling.html">🛒 Bestelling plaatsen</a>
+
+    </nav>
+
     <div class="achtergrond">
+
         <main>
+
             <h1 class="typewriter">
                 <span id="text"></span>
                 <span class="cursor" aria-hidden="true"></span>
             </h1>
 
-            <div class="fotos">
-                <img src="../images/cozybrew-coffeetruck.png" alt="CozyBrew Coffee Truck" class="opmaak">
-                <img src="../images/cozybrewcoffeebag.png" alt="CozyBrew Coffee Bag " class="opmaak">
-                <img src="../images/cozycupcakes.png" alt="CozyBrew Cupcakes" class="opmaak">
-                <!-- fotos 3 langs elkaar onder h1 -->
-            </div>
-            <h2>
-                Bij CozyBrew streven we ernaar om de perfecte koffie-ervaring te bieden. Onze barista's bereiden met
-                zorg en
-                passie elke kop koffie, zodat u kunt genieten van de rijke aroma's en smaken. Kom langs en ervaar de
-                warmte
-                en
-                gastvrijheid van onze gezellige koffiebar.
-            </h2>
-            <p> Bij CozyBrew hebben wij een ruim assortiment aan koffie en thee. Van klassieke espresso's tot unieke
-                melanges,
-                wij hebben voor ieder wat wils. Onze barista's staan klaar om u te adviseren en uw perfecte kop koffie
-                te
-                bereiden. </p>
-            <p> Naast onze heerlijke dranken bieden wij ook een selectie van verse gebakjes en snacks. Geniet van een
-                zoete
-                traktatie bij uw koffie of neem een hartige snack mee voor onderweg. </p>
-            <p> Kom langs bij CozyBrew en ervaar de gezellige sfeer, de heerlijke geuren van versgemalen koffie en de
-                vriendelijke service. <br>Wij kijken ernaar uit u te verwelkomen! </p>
+
+            <!-- Informatieteksten Cozy Brew -->
+            <section class="koffie-informatie">
+                <h2>
+                    Bij CozyBrew streven we ernaar om de perfecte koffie-ervaring te bieden. Onze barista's bereiden met
+                    zorg en
+                    passie elke kop koffie, zodat u kunt genieten van de rijke aroma's en smaken. Kom langs en ervaar de
+                    warmte
+                    en
+                    gastvrijheid van onze gezellige koffiebar.
+                </h2>
+                <p> Bij CozyBrew hebben wij een ruim assortiment aan koffie en thee. Van klassieke espresso's tot unieke
+                    melanges,
+                    wij hebben voor ieder wat wils. Onze barista's staan klaar om u te adviseren en uw perfecte kop
+                    koffie
+                    te
+                    bereiden. </p>
+                <p> Naast onze heerlijke dranken bieden wij ook een selectie van verse gebakjes en snacks. Geniet van
+                    een
+                    zoete
+                    traktatie bij uw koffie of neem een hartige snack mee voor onderweg. </p>
+                <p> Kom langs bij CozyBrew en ervaar de gezellige sfeer, de heerlijke geuren van versgemalen koffie en
+                    de
+                    vriendelijke service. <br>Wij kijken ernaar uit u te verwelkomen! </p>
+            </section>
+
+            <!-- Slideshow Cozy Brew - Issue #55 -->
+            <section class="koffie-carrousel" aria-label="Foto's van Cozy Brew">
+
+                <div class="koffie-carrousel-baan">
+
+                    <!-- Eerste groep: 9 verschillende foto's -->
+                    <div class="carrousel-groep">
+
+                        <img src="../images/cozybrew-coffeetruck.png" alt="CozyBrew Coffee Truck"
+                            class="carrousel-foto">
+
+                        <img src="../images/cozybrewcoffeebag.png" alt="CozyBrew Coffee Bag" class="carrousel-foto">
+
+                        <img src="../images/cozycupcakes.png" alt="CozyBrew Cupcakes" class="carrousel-foto">
+
+                        <img src="../images/cozybrew-latte-art.png" alt="Cappuccino met latte art"
+                            class="carrousel-foto">
+
+                        <img src="../images/cozybrew-croissants.png" alt="Verse croissants" class="carrousel-foto">
+
+                        <img src="../images/cozybrew-cheesecake.png" alt="Cheesecake met rood fruit"
+                            class="carrousel-foto">
+
+                        <img src="../images/cozybrew-ijskoffie.png" alt="Verfrissende ijskoffie" class="carrousel-foto">
+
+                        <img src="../images/cozybrew-gebaksvitrine.png" alt="Vitrine met vers gebak"
+                            class="carrousel-foto">
+
+                        <img src="../images/cozybrew-interieur.png" alt="Gezellig interieur van Cozy Brew"
+                            class="carrousel-foto">
+
+                    </div>
+
+                    <!-- Tweede groep: identieke foto's voor naadloze herhaling -->
+                    <div class="carrousel-groep" aria-hidden="true">
+
+                        <img src="../images/cozybrew-coffeetruck.png" alt="" class="carrousel-foto">
+
+                        <img src="../images/cozybrewcoffeebag.png" alt="" class="carrousel-foto">
+
+                        <img src="../images/cozycupcakes.png" alt="" class="carrousel-foto">
+
+                        <img src="../images/cozybrew-latte-art.png" alt="" class="carrousel-foto">
+
+                        <img src="../images/cozybrew-croissants.png" alt="" class="carrousel-foto">
+
+                        <img src="../images/cozybrew-cheesecake.png" alt="" class="carrousel-foto">
+
+                        <img src="../images/cozybrew-ijskoffie.png" alt="" class="carrousel-foto">
+
+                        <img src="../images/cozybrew-gebaksvitrine.png" alt="" class="carrousel-foto">
+
+                        <img src="../images/cozybrew-interieur.png" alt="" class="carrousel-foto">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
         </main>
     </div>
 
