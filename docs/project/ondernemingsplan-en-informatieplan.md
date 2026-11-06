@@ -125,21 +125,26 @@ Het testoverzicht staat in docs/testing/deel1-testoverzicht.md.
 
 ## 9. Eerste use-case-overzicht
 
-Rol: Bezoeker
+**Rol:** Bezoeker
 
-Doelen:
+**Doelen:**
 
--Informatie zoeken
+- UC-01 Menu bekijken
+- UC-02 Contactinformatie vinden
+- UC-03 Een tafel reserveren
+- UC-04 Producten bestellen
+  - `<<include>>` Bestelling controleren
+- UC-05 Contactbericht versturen
 
--Contact opnemen
+In week 3 bevatte dit overzicht drie algemene doelen. Na de feedback in week 9 is het diagram opnieuw getekend voor Cozy Brew en uitgebreid naar vijf use-cases, zodat het aansluit op de use-cases in het functioneel ontwerp [(#16)](https://github.com/Deb-Summer-Beam/Koffiezaak/issues/16).
 
--Diensten bekijken
+**Diagram opgeslagen als:**
 
-Diagram opgeslagen als:
+- ![Use-case diagram (.png)](../uml/week03-usecase-start.png)
+- [Bewerkbaar bestand (.vsdx)](../uml/week03-usecase-start.vsdx)
 
-docs/uml/Home-koffie.svg
+Volgens de les mag elke tool gebruikt worden. Daarom is `.vsdx` gebruikt in plaats van `.drawio`.
 
-docs/uml/Specialiteiten-koffie.svg
 
 ## 10. Controle en vastleggen
 
