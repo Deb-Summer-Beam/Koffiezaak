@@ -1,12 +1,12 @@
- Ondernemingsplan en Informatieplan
+# Ondernemingsplan en Informatieplan
 
-1. Probleem en projectdoel
+## 1. Probleem en projectdoel
 
 Het project richt zich op het verbeteren van de vindbaarheid en duidelijkheid van informatie voor bezoekers. De website wordt gemaakt voor een bezoeker die snel en overzichtelijk informatie wil vinden. De website moet zorgen voor een heldere navigatie, duidelijke structuur en snelle toegang tot belangrijke informatie. Binnen het project vallen ontwerp, navigatie, contentstructuur en basisfunctionaliteit. Buiten het project vallen complexe back-end systemen, koppelingen met externe databases en login-functionaliteit.
 
-2. Doelgroep en persona
+## 2. Doelgroep en persona
 
-Persona 1
+### 2.1 Persona 1
 
 Naam: Erik Pieterson 
 Rol: Bezoeker 
@@ -19,7 +19,7 @@ Belangrijkste behoefte: Overzicht, duidelijke navigatie, geen overbodige tekst.
 Mogelijke belemmering: Raakt snel het overzicht kwijt bij drukke pagina’s. 
 Wat moet de website duidelijk maken: Waar informatie staat, hoe contact opgenomen kan worden en wat de belangrijkste onderdelen zijn (gemak).
 
-Persona 2
+### 2.2 Persona 2
 
 Naam: Sophie van Dijk.
 Rol: Bezoeker 
@@ -33,7 +33,7 @@ Mogelijke belemmering: Raakt snel het overzicht kwijt bij drukke pagina’s.
 Wat moet de website duidelijk maken: Waar informatie staat, hoe contact opgenomen kan worden en wat de belangrijkste onderdelen zijn (gemak).
 
 
-3. Productidentiteit en moodboard
+## 3. Productidentiteit en moodboard
 
 Drie woorden: Rustig, Betrouwbaar, Modern
 
@@ -47,7 +47,7 @@ Modern: Ronde vormen, subtiele schaduwen en een frisse accentkleur.
 
 Het moodboard staat in: docs/ontwerp/week03-moodboard.png.
 
-4. Informatieplan
+## 4. Informatieplan
 
 Informatie 1: Dienstenoverzicht	
 Voor wie: Bezoeker
@@ -72,58 +72,58 @@ Wie houdt dit bij?: Team
 			
 				
 				
-5. Huidige en gewenste werkwijze
+## 5. Huidige en gewenste werkwijze
 
-5.1 Huidige werkwijze (contact opnemen)
+### 5.1 Huidige werkwijze (contact opnemen)
 
 -Bezoeker zoekt contactgegevens op verschillende pagina’s.
 -Contactgegevens staan soms in een document.
 -Bezoeker moet scrollen om het juiste onderdeel te vinden.
 -Bezoeker belt of mailt, maar mist soms belangrijke informatie.
 
-5.2 Gewenste werkwijze via de website
+### 5.2 Gewenste werkwijze via de website
 
 -Contactgegevens staan altijd zichtbaar in de footer en de contact paginas.
 -De contactpaginas tonen telefoonnummer, e-mail en openingstijden in een aparte blad.
 -De website verwerkt geen gegevens, maar toont alle benodigde informatie duidelijk.
 -De bezoeker hoeft niet te zoeken: alles staat op één plek.
 
-6. Eerste eisen en acceptatiecriteria
+## 6. Eerste eisen en acceptatiecriteria
 
-6.1- Eis : De bezoeker kan vanaf iedere pagina naar de homepagina
+### 6.1 Eis: De bezoeker kan vanaf iedere pagina naar de homepagina
 - Waarom nodig?: Om eenvoudig terug te keren.
 - Acceptatiecriterium: Iedere pagina bevat een werkende link naar index.html.
 
-6.2 -Eis: De navigatie is op desktop en mobiel duidelijk zichtbaar.
+### 6.2 Eis: De navigatie is op desktop en mobiel duidelijk zichtbaar.
 -Waarom nodig: Toegankelijkheid.
 -Acceptatiecriterium: Menu werkt op 320px t/m 1920px schermbreedte.
 
-6.3 - Eis: Contactgegevens zijn altijd vindbaar.
+### 6.3 Eis: Contactgegevens zijn altijd vindbaar.
 -Waarom nodig: Minder zoekwerk.
 -Acceptatiecriteria: Minder zoekwerk.	Footer bevat telefoonnummer en e-mail op alle pagina’s.
 
-6.4- Eis: De website laadt binnen 2 seconden.
+### 6.4 Eis: De website laadt binnen 2 seconden.
 -Waarom nodig: Gebruiksvriendelijkheid.
 -Acceptatiecriteria: Lighthouse-test toont laadtijd ≤ 2s.
 
 
-7. Start testoverzicht
+## 7. Start testoverzicht
 
 Het testoverzicht staat in docs/testing/deel1-testoverzicht.md.
 
-8. Globale planning
+## 8. Globale planning
 
-8.1 - Week 3–4	Basisstructuur website + moodboard, wireframes, ondernemingsplan
+### 8.1 - Week 3–4 Basisstructuur website + moodboard, wireframes, ondernemingsplan
 - Verdeling: Team.
 -Controle: Review door projectleider en commit.
-8.2- Week 5–7	Pagina’s vullen, responsive menu's, JS, navigatie afronden.
+### 8.2 - Week 5–7 Pagina’s vullen, responsive menu's, JS, navigatie afronden.
 -verdeling: Team.
--Controle: Testoverzicht bijwerken.
-8.3- Week 8–10	Verbeteringen, responsive design, eerste use-cases.
+-Controle: Test-overzicht bijwerken.
+### 8.3 - Week 8-10	Verbeteringen, responsive design, eerste use-cases.
 - Verdeling: Team.
 -Controle: Eindcontrole + commit.
 
-9. Eerste use-case-overzicht
+## 9. Eerste use-case-overzicht
 
 Rol: Bezoeker
 
@@ -141,7 +141,7 @@ docs/uml/Home-koffie.svg
 
 docs/uml/Specialiteiten-koffie.svg
 
-10. Controle en vastleggen
+## 10. Controle en vastleggen
 
 Plan sluit aan op projectbeschrijving en wireframes.
 
