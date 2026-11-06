@@ -3,10 +3,13 @@
 ## 1. Probleem en projectdoel
 
 
-Bij veel koffiezaken kom je binnen en sta je vervolgens lang in de rij, voor een zitplek of voor je koffie, thee of iets anders uit het assortiment. Ook als je een vraag hebt over een product of iets anders, sta je lang in de rij of wacht je dagen op een digitaal antwoord. Daarnaast komt het online menu vaak niet overeen met de werkelijkheid. Omdat het menu regelmatig verandert, loopt de website achter en staan er producten op die in de winkel niet meer verkrijgbaar zijn.
+Klanten die bij Cozy Brew langskomen, weten vooraf niet of er een plek vrij is en staan bij drukte lang in de rij om te kunnen bestellen. Wie een vraag heeft over een product, moet die in de zaak stellen of wacht lang op een antwoord per e-mail. Daarnaast kan het menu regelmatig veranderen. Daardoor raakt de informatie online snel verouderd en staan er soms producten op d ewebsite die in de zaak niet meer verkrijgbaar zijn. 
 
-Met onze website willen we de klant de mogelijkheid geven om een zitplek te reserveren, zodat de klant zeker weet dat er plaats is. Ook kan de klant vooraf een product bestellen en direct zien wanneer de bestelling klaarstaat, zonder onverwacht in een lange rij te staan. Voor vragen over producten of andere zaken bieden we twee manieren om snel antwoord te krijgen: een contactformulier en een AI-chatbot die direct antwoord geeft op vragen, bijvoorbeeld over allergieën. Het menu is eenvoudig aan te passen via een JSON-bestand. Daarin kan de beheerder snel nieuwe producten toevoegen en oude producten verwijderen, zonder dat daar programmeerervaring voor nodig is. Zo blijft het menu altijd actueel.
+De website is bedoeld voor mensen met een druk leven, zoals (deeltijd)studenten en werkenden. In hoofdstuk 2 is deze doelgroep uitgewerkt in de persona's Erik en Sophie.
 
+Via de website kan de klant vooraf het actuele menu met prijzen bekijken, een tafel reserwveren en een bestelling samenstellen en controleren. Vragen kan de klant stellen via een contactformulier. Daarnaast komt er een AI-chatbot die vragen direct kan beantwoorden, bijvoorbeeld over allergieen. De chatbot haalt zijn informatie uit hetzelfde menubestand, zodat de antwoorden altijd aansluiten op het actuele menu. Het menu wordt geladen uit een JSON-bestand(`code/json/menu-groep.json`). Zo kan de beheerder producten en prijzen aanpassen zonder de HTML-pagina's te wijzigen, en blijft het menu actueel. 
+
+Binnen het project vallen het ontwerp, de navigatie en de pagina's van de website, met de functies uit het use-case-overzicht in hoofstuk 9: Menu bekijken, contactinformatie vinden, een tafel reserveren, producten bestellen en een contactbericht versturen. De formulieren controleren de invoer en tonen een bevestiging. Buiten het project valt de back-end: bestellingen, reserveringen en contactberichten worden nog niet opgeslagen of verstuurd, omdat dit pas later in het jaar aan bod komt.
 
 ## 2. Doelgroep en persona
 
