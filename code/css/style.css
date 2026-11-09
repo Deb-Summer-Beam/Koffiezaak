@@ -248,18 +248,18 @@ main {
 }
 
 #openGesloten {
-  font-size: 1.25rem;
-  font-weight: bold;
-  color: #4B2915;
-  text-decoration: none;
-  background-color: #dcc3a5;
-  margin: 15px;
-  padding: 25px 25px;
-  border: 1px solid #60391F;
-  border-radius: 10px;
-  text-align: center;
-  vertical-align: middle;
-  display: inline-block;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    background-color: #7b4f3f;
+    margin: 15px;
+    padding: 25px 25px;
+    border: 1px solid #7b4f3f;
+    border-radius: 12px;
+    text-align: center;
+    vertical-align: middle;
+    display: inline-block;
 }
 
 /*darkmode */
@@ -293,16 +293,26 @@ body.donker .werkfoto {
   border: 2px solid #D9A06B;
 }
 
+
 .dark-knop {
-  cursor: pointer;
-  font-family: inherit;
-  font-size: 1rem;
-  color: #4B2915;
-  background-color: #DCC3A5;
-  border: 1px solid #60371F;
-  border-radius: 10px;
-  padding: 10px 20px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #7b4f3f;
+    border: 1px solid #7b4f3f;
+    border-radius: 12px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease,
+                transform 0.3s ease;
 }
+
+.dark-knop:hover {
+    background-color: #a67358;
+    transform: translateY(-4px);
+}
+
 
 body.donker .dark-knop {
   color: #F0E1CC;
@@ -972,8 +982,7 @@ body.donker #reserveerFormulier button:hover {
 .veld {
   margin-bottom: 5px;
 }
-/* 
-   COZY BREW - NIEUWE HOMEPAGE HEADER
+/* COZY BREW - NIEUWE HOMEPAGE HEADER
    Issue #55 */
 
 .header-home {
@@ -1038,8 +1047,7 @@ body.donker #reserveerFormulier button:hover {
         justify-content: center;
     }
 }
-/* 
-   COZY BREW - KOFFIE BANNER
+/* COZY BREW - KOFFIE BANNER
    Issue #55 */
 
 .koffie-banner {
@@ -1113,13 +1121,12 @@ body.donker #reserveerFormulier button:hover {
         font-size: 16px;
     }
 }
-/*
-   COZY BREW - NAVIGATIE HOMEPAGE
+/*COZY BREW - NAVIGATIE HOMEPAGE
    Issue #55 */
 
 .koffie-navigatie {
     display: grid;
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 15px;
     padding: 25px 30px;
     background-color: #f5e9dc;
@@ -1171,10 +1178,8 @@ body.donker #reserveerFormulier button:hover {
         padding: 20px;
     }
 }
-/* =========================================
-   COZY BREW - INFORMATIETEKSTEN HOMEPAGE
-   Issue #55
-========================================= */
+/*COZY BREW - INFORMATIETEKSTEN HOMEPAGE
+   Issue #55 */
 
 .koffie-informatie {
     max-width: 1000px;
@@ -1222,8 +1227,7 @@ body.donker #reserveerFormulier button:hover {
     }
 }
 
-/*
-   COZY BREW - FOTOCARROUSEL
+/*COZY BREW - FOTOCARROUSEL
    Issue #55 */
 
 .koffie-slideshow {
