@@ -3,13 +3,13 @@
 ## 1. Probleem en projectdoel
 
 
-Klanten die bij Cozy Brew langskomen, weten vooraf niet of er een plek vrij is en staan bij drukte lang in de rij om te kunnen bestellen. Wie een vraag heeft over een product, moet die in de zaak stellen of wacht lang op een antwoord per e-mail. Daarnaast kan het menu regelmatig veranderen. Daardoor raakt de informatie online snel verouderd en staan er soms producten op d ewebsite die in de zaak niet meer verkrijgbaar zijn. 
+Klanten die bij Cozy Brew langskomen, weten vooraf niet of er een plek vrij is en staan bij drukte lang in de rij om te kunnen bestellen. Wie een vraag heeft over een product, moet die in de zaak stellen of wacht lang op een antwoord per e-mail. Daarnaast kan het menu regelmatig veranderen. Daardoor raakt de informatie online snel verouderd en staan er soms producten op de website die in de zaak niet meer verkrijgbaar zijn. 
 
 De website is bedoeld voor mensen met een druk leven, zoals (deeltijd)studenten en werkenden. In hoofdstuk 2 is deze doelgroep uitgewerkt in de persona's Erik en Sophie.
 
-Via de website kan de klant vooraf het actuele menu met prijzen bekijken, een tafel reserwveren en een bestelling samenstellen en controleren. Vragen kan de klant stellen via een contactformulier. Daarnaast komt er een AI-chatbot die vragen direct kan beantwoorden, bijvoorbeeld over allergieen. De chatbot haalt zijn informatie uit hetzelfde menubestand, zodat de antwoorden altijd aansluiten op het actuele menu. Het menu wordt geladen uit een JSON-bestand(`code/json/menu-groep.json`). Zo kan de beheerder producten en prijzen aanpassen zonder de HTML-pagina's te wijzigen, en blijft het menu actueel. 
+Via de website kan de klant vooraf het actuele menu met prijzen bekijken, een tafel reserveren en een bestelling samenstellen en controleren. Vragen kan de klant stellen via een contactformulier. Daarnaast komt er een AI-chatbot die vragen direct kan beantwoorden, bijvoorbeeld over allergieen. De chatbot haalt zijn informatie uit hetzelfde menubestand, zodat de antwoorden altijd aansluiten op het actuele menu. Het menu wordt geladen uit een JSON-bestand(`code/json/menu-groep.json`). Zo kan de beheerder producten en prijzen aanpassen zonder de HTML-pagina's te wijzigen, en blijft het menu actueel. 
 
-Binnen het project vallen het ontwerp, de navigatie en de pagina's van de website, met de functies uit het use-case-overzicht in hoofstuk 9: Menu bekijken, contactinformatie vinden, een tafel reserveren, producten bestellen en een contactbericht versturen. De formulieren controleren de invoer en tonen een bevestiging. Buiten het project valt de back-end: bestellingen, reserveringen en contactberichten worden nog niet opgeslagen of verstuurd, omdat dit pas later in het jaar aan bod komt.
+Binnen het project vallen het ontwerp, de navigatie en de pagina's van de website, met de functies uit het use-case-overzicht in hoofdstuk 9: Menu bekijken, contactinformatie vinden, een tafel reserveren, producten bestellen en een contactbericht versturen. De formulieren controleren de invoer en tonen een bevestiging. Buiten het project valt de back-end: bestellingen, reserveringen en contactberichten worden nog niet opgeslagen of verstuurd, omdat dit pas later in het jaar aan bod komt.
 
 ## 2. Doelgroep en persona
 
@@ -105,9 +105,9 @@ Wie houdt dit bij?: Team
 -Waarom nodig: Minder zoekwerk.
 -Acceptatiecriteria: Minder zoekwerk.	Footer bevat telefoonnummer en e-mail op alle pagina’s.
 
-### 6.4 Eis: De website laadt binnen 2 seconden.
+### 6.4 Eis: De website laadt binnen 3 seconden.
 -Waarom nodig: Gebruiksvriendelijkheid.
--Acceptatiecriteria: Lighthouse-test toont laadtijd ≤ 2s.
+-Acceptatiecriteria: Lighthouse-test toont laadtijd ≤ 3s.
 
 
 ## 7. Start testoverzicht
@@ -116,15 +116,37 @@ Het testoverzicht staat in docs/testing/deel1-testoverzicht.md.
 
 ## 8. Globale planning
 
-### 8.1 Week 3–4 Basisstructuur website + moodboard, wireframes, ondernemingsplan
-- Verdeling: Team.
--Controle: Review door projectleider en commit.
+**Rolverdeling:**
+  - Matthieu, Teamleider / coordinator
+  - Mitchell, GitHub-beheerder
+  - Debora, Ontwerper / UX-coordinator
+  - Yannick, Developer / technische lead
+  - Koen, Developer / technische lead
+  - Cheyenne, Reflectie- en documentatiebeheer 
+
+### 8.1 Week 3–4: Basisstructuur website, moodboard, wireframes, ondernemingsplan
+
+| Onderdeel | Wie | Wat |
+|---|---|---|
+| Projectstructuur | Yannick | Mappenstructuur volgens de projecteisen opgezet (`docs/ontwerp`, `docs/project`, `docs/testing`, `docs/uml`) |
+| Basisstructuur website | Debora | Pagina's contact, openingstijden en bestellingen gemaakt, inclusief bestelformulier met JavaScript; kleuren en lettertype vastgelegd |
+| Basisstructuur website | Koen | Pagina "Werken bij" gemaakt, navigatie opgemaakt en logo gekoppeld aan de homepagina |
+| Basisstructuur website | Matthieu | Menukaart en contactpagina uitgewerkt; rekentool in JavaScript gebouwd |
+| Basisstructuur website | Cheyenne | Eigen opzet van de site gemaakt met menu-, drinks-, food-, bestel- en over-ons-pagina |
+| Interactie (JavaScript) | Mitchel | Dropdown en tekst tonen/verbergen gebouwd |
+| Moodboard | Koen | Gemaakt; geüpload door Yannick |
+| Wireframes | Debora | Wireframes voor de homepagina en de menupagina gemaakt; geüpload door Yannick |
+| Ondernemingsplan en informatieplan | Hele team | Samen opgesteld in les 3; uitgewerkt en geüpload door Yannick |
+| GitHub-beheer | Mitchel | Pull request #1 (branch Koen) gemerged naar main; oude persona-bestanden opgeruimd |
+
+- Controle: review door Matthieu en commit.
+
 ### 8.2 - Week 5–7 Pagina’s vullen, responsive menu's, JS, navigatie afronden.
--verdeling: Team.
--Controle: Test-overzicht bijwerken.
+- verdeling: Team.
+- Controle: Test-overzicht bijwerken.
 ### 8.3 - Week 8-10	Verbeteringen, responsive design, eerste use-cases.
 - Verdeling: Team.
--Controle: Eindcontrole + commit.
+- Controle: Eindcontrole + commit.
 
 ## 9. Eerste use-case-overzicht
 
