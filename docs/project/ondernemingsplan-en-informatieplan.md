@@ -133,19 +133,56 @@ Het testoverzicht staat in docs/testing/deel1-testoverzicht.md.
 | Basisstructuur website | Koen | Pagina "Werken bij" gemaakt, navigatie opgemaakt en logo gekoppeld aan de homepagina |
 | Basisstructuur website | Matthieu | Menukaart en contactpagina uitgewerkt; rekentool in JavaScript gebouwd |
 | Basisstructuur website | Cheyenne | Eigen opzet van de site gemaakt met menu-, drinks-, food-, bestel- en over-ons-pagina |
-| Interactie (JavaScript) | Mitchel | Dropdown en tekst tonen/verbergen gebouwd |
+| Interactie (JavaScript) | Mitchell | Dropdown en tekst tonen/verbergen gebouwd |
 | Moodboard | Koen | Gemaakt; geüpload door Yannick |
 | Wireframes | Debora | Wireframes voor de homepagina en de menupagina gemaakt; geüpload door Yannick |
 | Ondernemingsplan en informatieplan | Hele team | Samen opgesteld in les 3; uitgewerkt en geüpload door Yannick |
-| GitHub-beheer | Mitchel | Pull request #1 (branch Koen) gemerged naar main; oude persona-bestanden opgeruimd |
+| GitHub-beheer | Mitchell | Pull request #1 (branch Koen) gemerged naar main; oude persona-bestanden opgeruimd |
 
 - Controle: review door Matthieu en commit.
 
-### 8.2 - Week 5–7 Pagina’s vullen, responsive menu's, JS, navigatie afronden.
-- verdeling: Team.
+### 8.2 Week 5–7: Pagina's vullen, responsive menu's, JS, navigatie afronden
+
+| Onderdeel | Wie | Wat |
+|---|---|---|
+| Bestelformulier | Debora | Winkelwagen met verwijderen en totaalberekening, validatie, controleoverzicht en resetfunctie gebouwd (branch `debora/next-gen`) |
+| Responsive design | Debora | Layout verbeterd voor mobiel (footer en bestelformulier), CSS opgeschoond; responsive layouts getest en vastgelegd in `docs/testing` |
+| Menu (JavaScript) | Debora | Dynamische koffielijst op de menupagina met JavaScript |
+| UML | Debora | Activiteitendiagram van de bestelvalidatie en sequentiediagram van de Fetch API gemaakt |
+| Menu en producten | Koen | Productkaarten met mediaquery, 9 productfoto's toegevoegd; menu opgehaald uit `menu.json` met fetch, inclusief laad-, lege en foutstatus |
+| Interactie (JavaScript) | Koen | Darkmode-knop met eventlistener en responsive openingstijden-checker gebouwd |
+| Bestelformulier | Koen | Bestelformulier van Debora overgezet naar de gezamenlijke site en opgenomen in de navigatie |
+| Toegankelijkheid | Yannick | Accessibility-knop op alle pagina's, keuze onthouden met localStorage |
+| Menu (JavaScript) | Yannick | Menu ophalen met `fetch()`, met foutafhandeling via `console.error` |
+| Persona's | Mitchell | Persona 1 en 2 toegevoegd |
+| Menu-data | Cheyenne | `menu-groep.json` aangemaakt en eigen opzet van de site bijgewerkt (branch `cheyenne`) |
+| GitHub-beheer | Mitchell, Koen | Pull requests #2 en #4 (Mitchell) en #3 (Koen) gemerged naar main |
+
 - Controle: Test-overzicht bijwerken.
-### 8.3 - Week 8-10	Verbeteringen, responsive design, eerste use-cases.
-- Verdeling: Team.
+
+### 8.3 Week 8–10: Verbeteringen, responsive design, eerste use-cases
+
+| Onderdeel | Wie | Wat |
+|---|---|---|
+| Bestelformulier | Koen | Bestelformulier gestyled in Cozy Brew-stijl, inclusief darkmode en mobiel; productkaarten uitgelijnd en prijzen in euro-notatie |
+| Darkmode | Koen | Darkmode-keuze onthouden met localStorage |
+| Reserveren | Koen | Reserveringspagina met formulier: datum vanaf vandaag, tijden per openingsdag, gesloten dagen, controles, bevestiging en reset |
+| Werken bij en openingstijden | Matthieu | Pagina "Werken bij" gevuld; open/gesloten-melding toegevoegd aan alle pagina's |
+| Contactpagina | Yannick | Structuur, styling en knopgedrag van het contactformulier |
+| Opruimen code | Yannick | Mappenstructuur gerepareerd, afbeeldingslinks hersteld (#36), `innerHTML` vervangen door `textContent` in `bestellen.js` (#12) |
+| Homepagina | Debora | Slideshow met negen foto's op de homepagina (#55) |
+| Bestelformulier | Debora | Winkelmandje met bewerkbare aantallen, responsive layout en verbeterde validatie (branch `debora/next-gen`) |
+| Menu-data | Mitchell | Menu werkend gemaakt met JSON |
+| Semantiek | Koen | `<main>` toegevoegd aan menu- en over-ons-pagina (#38) |
+| Functioneel ontwerp | Debora | Functioneel ontwerp voor Cozy Brew uitgeschreven (branch `debora/next-gen`) |
+| Functioneel ontwerp | Yannick | FO, wireframes, testoverzichten en UML samengebracht in `docs/`; FR-08 en UC-05 (contactformulier) toegevoegd |
+| Technisch ontwerp | Koen, Yannick | Koen: opzet, inleiding, bestandsstructuur, API-verwerking en gebruikte technieken (#35); Yannick: localStorage in 3.1, 3.2 en 5.2 |
+| UML | Koen | Use-case diagram opnieuw getekend voor Cozy Brew met UC-nummers (#16); sequentiediagram week 7 opnieuw getekend (#17) |
+| Ondernemingsplan | Koen | Hoofdstuk 1, 2 en 9 aangepast aan Cozy Brew, opmaak gelijkgetrokken, persona's verplaatst naar hoofdstuk 2 (#22) |
+| Hulpmiddel | Koen | Script `md-naar-pdf` gemaakt om markdown naar pdf in Cozy Brew-stijl om te zetten (branch `Koen`) |
+| AI-terugblik | Koen, Yannick | Terugblik op AI-gebruik in week 10 geschreven |
+| GitHub-beheer | Mitchell, Yannick, Matthieu | Mitchell: PR #5–#9, #11 en #41 gemerged en oude mappen opgeruimd; Yannick: PR #10, #42, #43 en #45; Matthieu: PR #40 en #47 |
+
 - Controle: Eindcontrole + commit.
 
 ## 9. Eerste use-case-overzicht
