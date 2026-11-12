@@ -1,33 +1,3 @@
-const werkenbij = document.getElementById("werkenbij");
-if (werkenbij) {
-    werkenbij.style.color = "green";
-
-}
-
-
-function wisselOpmaak() {
-    document.getElementById("oefenen").classList.toggle("uitgelicht");
-
-}
-
-function draaifoto() {
-    document.getElementById("werkfoto").classList.add("gedraaid");
-}
-
-function fotorechtop() {
-    document.getElementById("werkfoto").classList.remove("gedraaid");
-}
-
-function berekeninhoud(lengte, breedte, hoogte) {
-    return lengte * breedte * hoogte;
-
-}
-
-const resultaat = berekeninhoud(8, 3, 2);
-if (document.getElementById("antwoord")) {
-    document.getElementById("antwoord").textContent = resultaat;
-}
-
 // Typewriter effect
 const words = [
     "CozyBrew",
@@ -150,7 +120,7 @@ async function laadProducten() {
 
 laadProducten();
 
-// darkmode 
+// Darkmode 
 
 const darkKnop = document.querySelector("#dark-knop");
 
@@ -211,10 +181,6 @@ const maandNummer = new Date().getMonth() + 1; //Maanden tellen vanaf 0, dus +1
 
 
 // Open of gesloten melding met openingstijden. 
-
-console.log("Het is vandaag " + dagNaam + " (" + datum + ").");
-
-
 let openGesloten;
 if (dagNummer === 1 && maandNummer === 1) {
     openGesloten = "Gesloten";
@@ -239,9 +205,10 @@ if (dagNummer === 1 && maandNummer === 1) {
 } else {
     openGesloten = "Er is iets misgegaan bij het berekenen van de dag.";
 }
-console.log(openGesloten);
+
 document.getElementById("openGesloten").innerHTML = openGesloten;
 
+// Contactformulier functionaliteit
 const contactSubmitForm = document.querySelector('#contact-form');
 
 if (contactSubmitForm) {
