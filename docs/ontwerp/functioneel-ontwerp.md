@@ -574,7 +574,7 @@ De acceptatiecriteria geven aan welke voorwaarden de website moet vervullen om a
 >
 > **Doel:** Controleren of de bestelpagina van Cozy Brew zich aanpast aan verschillende schermformaten.
 >
-> **Testgegevens:** Schermbreedtes van 1230 px (laptop), 768 px (tablet), 375 px en 320 px (klein mobiel scherm), getest met Chrome DevTools.
+> **Testgegevens:** Schermbreedtes van 1440 px (desktop), 768 px (tablet), 375 px en 320 px (klein mobiel scherm), getest met Chrome DevTools. De schermbreedte van 1230 px is tijdens eerdere tests gecontroleerd.
 >
 > **Teststappen:**
 >
@@ -586,9 +586,9 @@ De acceptatiecriteria geven aan welke voorwaarden de website moet vervullen om a
 >
 > **4.** Vergelijk de indeling bij de verschillende schermformaten.
 >
-> **Verwacht resultaat:** De belangrijkste onderdelen blijven zichtbaar en de indeling past zich aan de beschikbare schermbreedte aan.
+> **Verwacht resultaat:** Bij schermbreedtes van 1440 px, 768 px, 375 px en 320 px past de indeling zich aan de beschikbare ruimte aan. De navigatie, klantgegevens, productselectie, het winkelmandje en de bestelknoppen blijven zichtbaar en bruikbaar. De tekst blijft leesbaar en horizontaal scrollen is niet nodig.
 >
-> **Werkelijk resultaat:** De bestelpagina is getest op schermbreedtes van 1230 px, 768 px, 375 px en 320 px. De indeling paste zich aan de verschillende schermformaten. Op laptop werden de klantgegevens in drie kolommen weergegeven. Op tablet en mobiel bleven de belangrijkste onderdelen zichtbaar en werden de knoppen aangepast aan de beschikbare ruimte.
+> **Werkelijk resultaat:** De bestelpagina is getest op schermbreedtes van 1440 px, 768 px, 375 px en 320 px met Chrome DevTools. Bij alle vier de schermbreedtes paste de indeling zich correct aan. De navigatie, klantgegevens, productselectie, het winkelmandje en de bestelknoppen bleven zichtbaar en bruikbaar. De tekst bleef leesbaar en horizontaal scrollen was niet nodig. Ook de eerder uitgevoerde test op 1230 px was geslaagd.
 >
 > **Teststatus:** Geslaagd.
 
