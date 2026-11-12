@@ -12,22 +12,41 @@
 </head>
 
 <body>
-  <header>
-    <a href="index.html" alt="terug naar homepage">
-      <img src="../images/cozybrew_logo.png" alt="Logo van CozyBrew" class="logo">
 
+
+  <!-- Header Cozy Brew -->
+  <header class="header-home">
+
+    <!-- Openingstijden links -->
+    <div class="header-openingstijden">
+      <div id="openGesloten"></div>
+    </div>
+
+    <!-- Logo in het midden -->
+    <a href="index.html" class="header-logo" aria-label="Terug naar homepage">
+      <img src="../images/cozybrew_logo.png" alt="Logo van Cozy Brew" class="logo">
     </a>
-    <div id="openGesloten"></div>
-    <nav>
-      <a href="menu.html">Menu</a>
-      <a href="contact.html">Contact us</a>
-      <a href="reservering.html">Reservering</a>
-      <a href="werkenbij.html">Werken bij</a>
-      <a href="bestelling.html">Bestelling plaatsen</a>
-    </nav>
-    <button id="dark-knop" class="dark-knop">Dark-Mode</button>
-    <button id="accessibility-knop" class="dark-knop">Makkelijker lezen</button>
+
+    <!-- Knoppen rechts -->
+    <div class="header-knoppen">
+      <button id="dark-knop" class="dark-knop">Dark-Mode</button>
+
+      <button id="accessibility-knop" class="dark-knop">Makkelijker lezen</button>
+    </div>
+
   </header>
+
+  <!-- Navigatie onder de header -->
+  <nav class="koffie-navigatie" aria-label="Hoofdnavigatie">
+
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact us</a>
+    <a href="reservering.html">Reservering</a>
+    <a href="werkenbij.html">Werken bij</a>
+    <a href="bestelling.html">Bestelling plaatsen</a>
+  </nav>
+
 
   <main>
     <h2 class="bestellingTitel">🛒 Plaats je bestelling</h2>
@@ -151,29 +170,18 @@
 
       </div>
 
-
-
       <h3 class="formulierTitel">🛒 Jouw bestelling</h3>
 
       <ul id="winkelmandje"></ul>
 
-
-
-      <p id="totaalBestelling">
-        Totaal bestelling: €0.00
-      </p>
-
+      <p id="totaalBestelling">Totaal bestelling: €0.00</p>
 
 
       <div class="bestelActies">
 
-        <button type="button" id="controleerBtn">
-          👀 Controleer bestelling
-        </button>
+        <button type="button" id="controleerBtn">Controleer bestelling</button>
 
-        <button type="submit" id="bestelBtn">
-          🛒 Bestelling plaatsen
-        </button>
+        <button type="submit" id="bestelBtn">Bestelling plaatsen</button>
 
       </div>
 
@@ -187,7 +195,7 @@
   </main>
 
   <footer>
-    &copy;CozyBrew
+    &copy;CozyBrew 
   </footer>
 </body>
 
