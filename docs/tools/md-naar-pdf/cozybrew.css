@@ -1,0 +1,160 @@
+/* CozyBrew-thema voor de PDF's.
+   Nieuwe opmaak? Pas dan vooral de variabelen in :root aan. */
+:root {
+  --bruin-donker: #4B2915;
+  --bruin: #6B3D20;
+  --creme: #EAD8BE;
+  --beige: #D5B797;
+  --karamel: #b9804f;
+  --olijf: #7A8450;
+  --wit: #FFFFFF;
+  --lettertype: "Comic Neue", cursive;
+}
+
+/* Papierformaat en marges voor de PDF (fase 5) */
+@page {
+  size: A4;
+  margin: 18mm 16mm;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: var(--lettertype);
+  font-size: 11pt;
+  line-height: 1.6;
+  color: var(--bruin-donker);
+  background-color: var(--wit);
+  /* zorgt dat achtergrondkleuren ook in de PDF komen */
+  print-color-adjust: exact;
+  -webkit-print-color-adjust: exact;
+}
+
+/* Kop met logo */
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 16px 24px 20px;
+  margin-bottom: 24px;
+  background-color: var(--beige);
+  border-bottom: 4px solid var(--karamel);
+  border-radius: 12px;
+}
+
+.logo {
+  width: 260px;
+  max-width: 70%;
+  height: auto;
+}
+
+.tagline {
+  margin: 4px 0 0;
+  font-style: italic;
+  color: var(--bruin);
+}
+
+/* Koppen */
+h1 {
+  margin: 8px 0 0;
+  font-size: 22pt;
+}
+
+h2 {
+  margin-top: 28px;
+  padding-bottom: 4px;
+  font-size: 16pt;
+  border-bottom: 2px solid var(--karamel);
+}
+
+h3 {
+  color: var(--olijf);
+}
+
+/* kop niet los onderaan een pagina laten staan */
+h2, h3 {
+  break-after: avoid;
+}
+
+/* Tekst */
+strong {
+  color: var(--bruin);
+}
+
+a {
+  color: var(--olijf);
+}
+
+ul, ol {
+  padding-left: 24px;
+}
+
+li::marker {
+  color: var(--karamel);
+}
+
+hr {
+  margin: 24px 0;
+  border: none;
+  border-top: 2px dashed var(--karamel);
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Tabellen */
+table {
+  width: 100%;
+  margin: 16px 0;
+  border-collapse: collapse;
+  break-inside: avoid;
+}
+
+th {
+  padding: 6px 10px;
+  text-align: left;
+  color: var(--creme);
+  background-color: var(--bruin-donker);
+}
+
+td {
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--beige);
+}
+
+tr:nth-child(even) td {
+  background-color: var(--creme);
+}
+
+/* Citaten en code */
+blockquote {
+  margin: 16px 0;
+  padding: 8px 16px;
+  background-color: var(--creme);
+  border-left: 4px solid var(--olijf);
+  border-radius: 0 8px 8px 0;
+}
+
+code {
+  padding: 1px 4px;
+  font-size: 0.9em;
+  background-color: var(--creme);
+  border-radius: 4px;
+}
+
+pre {
+  padding: 12px;
+  background-color: var(--creme);
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+pre code {
+  padding: 0;
+}
