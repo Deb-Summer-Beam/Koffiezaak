@@ -1,51 +1,27 @@
--
-# Koffiezaak project
-☕ Koffiezaak
+# Cozy Brew
 
-Welkom bij onze koffiezaak! Wij zijn een gezellige plek waar je kunt genieten van heerlijke koffie, verschillende soorten thee en lekker vers gebak.
+**Team 5 – Cozy Crew**
 
-Ons assortiment bestaat uit verschillende soorten koffie, thee, taarten, muffins, cupcakes, croissants, koekjes en kleine gebakjes. Of je nu zin hebt in een sterke espresso, een romige cappuccino of een lekker stukje cheesecake, er is voor iedereen iets lekkers.
+- Debora Rodriguez Montaldo
+- Mitchell van der Linden
+- Matthieu Hoogesteger
+- Cheyenne Trommelen
+- Yannick Veldhuisen
+- Koen van de Wouw
 
-Deze website is bedoeld voor bezoekers en potentiële klanten van de koffiezaak, die vooraf willen bekijken welke koffie, thee en gebak er te koop zijn en wat de prijzen zijn.
+## Projectbeschrijving
 
-📋 Menu
+Cozy Brew is een website voor (deeltijd)studenten en werkenden die in hun drukke leven een rustige koffiezaak zoeken. De site laat met een menu dat altijd actueel is zien wat Cozy Brew aanbiedt. De bezoeker kan via de site een tafel reserveren, een bestelling plaatsen en via een contactformulier contact opnemen.
 
-☕ Koffie
+## Aangeboden producten
 
-Product	Prijs
+Producten die we aanbieden met de bijbehorende prijzen zijn te vinden in onze [JSON](code/json/menu-groep.json). 
+Wanneer in de JSON de data zoals een prijs wordt aangepast, past het [menu](code/menu.html) zich automatisch aan.
 
+Momenteel wordt er aan gewerkt om onze [bestelpagina](code/bestelling.html) ook automatisch te laten updaten via de JSON, zie issue [#52](https://github.com/Deb-Summer-Beam/Koffiezaak/issues/52).
 
-- Espresso	€ 2,50
-
-
-- Americano	€ 3,00- -
-
-- Cappuccino	€ 3,50
-- Latte Macchiato	€ 3,75
-- Flat White	€ 3,75
-- IJskoffie	€ 3,75
-
--🍵 Thee
-
-
-Product	Prijs
-- Zwarte thee	€ 2,50
-- Groene thee	€ 3,00
-- Muntthee	€ 3,50
-- Kamillethee	€ 3,50
-- Chai Latte	€ 3,75
-- Vruchtenthee	€ 3,75
-
-- 
-🍰 Gebak & Zoetigheden
-Product	Prijs
-- Appeltaart	€ 4,00
-- Cheesecake	€ 5,00
-- Chocoladetaart	€ 5,00  
-- Muffin / Cupcake	€ 4,00
-- Croissant	€ 2,75
-- Koekjes	€ 3,00
-- Kleine gebakjes	€ 3,75
+Door gebruik te maken van een JSON hoeft een beheerder niet in HTML iets aan te passen, maar blijft alles centraal in de JSON. 
+ 
 
 
 🎯 Doel van het project
