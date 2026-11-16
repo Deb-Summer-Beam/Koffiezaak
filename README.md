@@ -40,14 +40,14 @@ Door gebruik te maken van een JSON hoeft een beheerder niet in HTML iets aan te 
 
 - **Datum controle:** 16-11-2026
 - **Wat gecontroleerd:** `code/css/style.css` via de [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_upload); de HTML-bestanden zie Controle week 1.
-- **Resultaat:** `style.css`: 0 errors, [aantal] warnings.
+- **Resultaat:** `style.css`: 0 errors, 0 warnings.
 - **Verbetering:** de `alt` gaat van de logolink naar de afbeelding en beschrijft het doel van de link ("Cozy Brew, naar de homepagina"). Een schermlezer leest dan voor waar de link naartoe gaat, in plaats van alleen "Logo van CozyBrew".
 - **Status:** gepland in [#72](https://github.com/Deb-Summer-Beam/Koffiezaak/issues/72); deze regel wordt bijgewerkt zodra #72 is gemerged.
 
 ## Ontwerp week 3
 
 - **Voor wie:** (deeltijd)studenten en werkenden met een druk leven, zie [Projectbeschrijving](#projectbeschrijving) en de persona's in [hoofdstuk 2 van het ondernemingsplan](docs/project/ondernemingsplan-en-informatieplan.md).
-- **Pagina's:** Home (`index.html`), Menu, Contact, Reservering, Werken bij, Bestelling plaatsen en Over ons (`about_us.html`).
+- **Pagina's:** Home (`index.html`), Menu, Contact, Reservering, Werken bij, Bestelling plaatsen en Over ons (`about_us.html`). Over ons is nog niet bereikbaar via de navigatie, zie [#21](https://github.com/Deb-Summer-Beam/Koffiezaak/issues/21).
 - **Navigatie:** iedere pagina heeft dezelfde `<nav>` in de header; het logo linkt terug naar de homepagina. Zie de [sitemap](docs/ontwerp/sitemap.png).
 - **Hoofdkleur:** donkerbruin `#4B2915` (tekst en knoppen), op de lichte achtergrond `#EAD8BE`.
 - **Aanvullende kleuren:** `#D5B797` (header) en `#DCC3A5` (navigatieknoppen en kaarten). In darkmode: `#F0E1CC` op `#1E1410`.
@@ -72,7 +72,7 @@ Door gebruik te maken van een JSON hoeft een beheerder niet in HTML iets aan te 
 ## API week 7
 
 - **Databron:** het eigen bestand [`code/json/menu-groep.json`](code/json/menu-groep.json), opgehaald met `fetch()` in `laadProducten()` in [`script.js`](code/javascript/script.js).
-- **Welke gegevens:** per product de naam, categorie, prijs en afbeelding. Dit past bij het project omdat het menu op één plek wordt bijgehouden (zie [Aangeboden producten](#aangeboden-producten)).
+- **Welke gegevens:** per product de naam, categorie, omschrijving, prijs en afbeelding. Dit past bij het project omdat het menu op één plek wordt bijgehouden (zie [Aangeboden producten](#aangeboden-producten)).
 - **Sleutel of limiet:** geen; het is een lokaal bestand in de repository. Er staan geen wachtwoorden of geheime sleutels in de code.
 - **Statussen:** tijdens het laden "Menu laden...", na succes het aantal geladen producten, bij een fout (`response.ok` is `false` of een netwerkfout) "Het menu kon niet worden geladen."
 - **Sequentiediagram:** [verzoek, antwoord en foutafhandeling](docs/uml/week07-sequence.png).
@@ -93,150 +93,43 @@ Door gebruik te maken van een JSON hoeft een beheerder niet in HTML iets aan te 
 | Sequentiediagram (week 7) | [docs/uml/week07-sequence.png](docs/uml/week07-sequence.png) |
 | Testoverzicht deel 1 | [docs/testing/deel1-testoverzicht.md](docs/testing/deel1-testoverzicht.md) |
 
+## Projectstructuur
 
-
-🎯 Doel van het project
-
-Het doel van dit project is het ontwikkelen van een overzichtelijke en gebruiksvriendelijke website voor een koffiezaak.
-
-
-De website kan bezoekers informeren over:
-
-☕ Ons koffieaanbod
-
-
-🍵 Verschillende soorten thee
-
-
-🍰 Het assortiment gebak
-
-
-
-
-🍪 Koekjes en kleine gebakjes
-💶 De prijzen van alle producten
-
-
-🛠️ Gebruikte technologieën
-
-Dit project wordt ontwikkeld met:
-
-HTML5 – voor de structuur van de website
-
-
-CSS3 – voor de styling en vormgeving
-
-
-JavaScript – voor interactieve functionaliteiten
-
-
-Visual Studio Code – als ontwikkelomgeving
-
-
-Git / GitHub – voor versiebeheer
-
-📁 Projectstructuur
-
-
-koffiezaak/
-
-
-
-
-
-├── index.html
-
-
+```text
+Koffiezaak/
 ├── README.md
+├── code/                 de website
+│   ├── *.html            de pagina's (index, menu, contact, reservering, bestelling, werkenbij, about_us)
+│   ├── css/style.css     opmaak voor alle pagina's
+│   ├── javascript/       script.js (algemeen), bestellen.js, reserveren.js
+│   └── json/             menu-groep.json: alle producten en prijzen
+├── images/               logo, foto's en productfoto's (images/Producten)
+├── design/wireframes/    wireframes van de home- en menupagina
+└── docs/
+    ├── project/          ondernemingsplan en informatieplan
+    ├── ontwerp/          functioneel ontwerp, moodboard en sitemap
+    ├── uml/              use-case-, activiteiten- en sequentiediagram
+    ├── testing/          testoverzichten deel 1 en 2
+    ├── ai-terugblik/     terugblik op AI-gebruik per teamlid
+    └── tools/            hulpmiddel md-naar-pdf
+```
 
+## Installatie en gebruik
 
-├── css/    
+1. Clone de repository:
+   ```bash
+   git clone https://github.com/Deb-Summer-Beam/Koffiezaak.git
+   ```
+2. Open de map `Koffiezaak` in Visual Studio Code.
+3. Installeer de extensie **Live Server** als je die nog niet hebt.
+4. Klik met de rechtermuisknop op `code/index.html` en kies **Open with Live Server**.
 
-   └── style.css
+Open de pagina's niet door te dubbelklikken in de Verkenner. Via `file://` blokkeert de browser het ophalen van `menu-groep.json`, en dan laadt het menu niet.
 
+## Geplande uitbreidingen
 
+- Producten en prijzen op de bestelpagina uit `menu-groep.json` halen ([#52](https://github.com/Deb-Summer-Beam/Koffiezaak/issues/52))
+- De knop "In winkelwagen" op de menukaart laten werken ([#60](https://github.com/Deb-Summer-Beam/Koffiezaak/issues/60))
+- Een AI-chatbot die vragen beantwoordt op basis van het actuele menu, zie [hoofdstuk 1 van het ondernemingsplan](docs/project/ondernemingsplan-en-informatieplan.md)
+- Bestellingen, reserveringen en contactberichten echt opslaan of versturen (back-end); dit valt nu buiten het project
 
-├── js/
-   
-
-└── script.js
-
-
-
-├── images/
-   
-
-├── koffie/
-   
-
-├── thee/
-   
-
-└── gebak/
-
-
-
-└── wireframes/
-
-
-    └── ...
-
-
-   🚀 Installatie en gebruik
-    
-
-
-1. Clone het project naar je computer:
-git clone < repository -url > 
-
-
-2. Open het project in VS Code
-
-3. Open de projectmap in Visual Studio Code.
-
-3. Start de website
-
-5. Open index.html in je browser.
-
-6. Je kunt eventueel de Live Server extensie in VS Code gebruiken om de website lokaal te bekijken.
-
-📌 Toekomstige uitbreidingen
-
-In de toekomst kan de website worden uitgebreid met:
-
-- Online bestellen
-
-
-- Winkelmandje
-
-
-- Online reserveren
-
-
-- Contactformulier
-
-
-- Openingstijden
-
-
-- Locatie en routebeschrijving
-
-
-- Foto's van de producten
-
-
-- Speciale aanbiedingen
-
-
-- Seizoensgebonden producten
-
-
-- Klantenreviews
-
-👩‍💻 Auteur
-
-Dit project is ontwikkeld als onderdeel van een webdevelopment-project.
-
-📄 Licentie
-
-Dit project is bedoeld voor educatieve doeleinden.
