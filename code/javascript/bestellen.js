@@ -173,7 +173,7 @@ controleerBtn.addEventListener("click", () => {
     appendControleOverzicht();
 
 });
-//hier voorkomen we dat bj het submitten de pagina opnieuw laadt
+//hier voorkomen we dat bij het submitten de pagina opnieuw laadt
 const bestelFormulier = document.getElementById("bestelFormulier");
 
 bestelFormulier.addEventListener("submit", (event) => {
