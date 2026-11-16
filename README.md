@@ -23,6 +23,28 @@ Momenteel wordt er aan gewerkt om onze [bestelpagina](code/bestelling.html) ook 
 Door gebruik te maken van een JSON hoeft een beheerder niet in HTML iets aan te passen, maar blijft alles centraal in de JSON. 
  
 
+## Controle week 1
+
+- **Datum controle:** 16-11-2026
+- **Wat gecontroleerd:** `index.html` en `menu.html` via de [W3C HTML Validator](https://validator.w3.org/#validate_by_upload)
+- **Resultaat:** `index.html`: 1 error, 1 warning (lege `<h1>`); `menu.html`: 1 error. De error is een `alt` op de link in plaats van op de afbeelding. Dezelfde code staat op alle 7 pagina's.
+  ```html
+  <a href="index.html" alt="terug naar homepage">
+  <img src="../images/cozybrew_logo.png" alt="Logo van CozyBrew" class="logo">
+  </a>
+  ```
+- **Links en afbeeldingen:** eerder getest, zie [testoverzicht week 3](docs/testing/deel1-testoverzicht.md): alle links werken en de homepagina is vanaf iedere pagina bereikbaar.
+- **Vervolg:** issue [#72](https://github.com/Deb-Summer-Beam/Koffiezaak/issues/72) aangemaakt.
+
+## Controle week 2
+
+- **Datum controle:** 16-11-2026
+- **Wat gecontroleerd:** `code/css/style.css` via de [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_upload); de HTML-bestanden zie Controle week 1.
+- **Resultaat:** `style.css`: 0 errors, [aantal] warnings.
+- **Verbetering:** de `alt` gaat van de logolink naar de afbeelding en beschrijft het doel van de link ("Cozy Brew, naar de homepagina"). Een schermlezer leest dan voor waar de link naartoe gaat, in plaats van alleen "Logo van CozyBrew".
+- **Status:** gepland in [#72](https://github.com/Deb-Summer-Beam/Koffiezaak/issues/72); deze regel wordt bijgewerkt zodra #72 is gemerged.
+
+
 
 🎯 Doel van het project
 
@@ -113,35 +135,6 @@ koffiezaak/
 
    🚀 Installatie en gebruik
     
-    
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 1. Clone het project naar je computer:
