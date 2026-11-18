@@ -55,32 +55,38 @@
 
         <div class="veld">
           <label for="naam">Naam:</label>
-          <input type="text" id="naam" name="naam" required>
+          <input type="text" id="naam" name="naam" required minlength="2" aria-describedby="naam-fout">
+          <span id="naam-fout" class="foutmelding" role="alert"></span>
         </div>
 
         <div class="veld">
           <label for="email">E-mailadres:</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" required aria-describedby="email-fout">
+          <span id="email-fout" class="foutmelding" role="alert"></span>
         </div>
 
         <div class="veld">
           <label for="telefoon">Telefoonnummer:</label>
-          <input type="tel" id="telefoon" name="telefoon" required>
+          <input type="tel" id="telefoon" name="telefoon" required aria-describedby="telefoon-fout">
+          <span id="telefoon-fout" class="foutmelding" role="alert"></span>
         </div>
 
         <div class="veld">
           <label for="adres">Adres:</label>
-          <input type="text" id="adres" name="adres" required>
+          <input type="text" id="adres" name="adres" required aria-describedby="adres-fout">
+          <span id="adres-fout" class="foutmelding" role="alert"></span>
         </div>
 
         <div class="veld">
           <label for="postcode">Postcode:</label>
-          <input type="text" id="postcode" name="postcode" required>
+          <input type="text" id="postcode" name="postcode" required aria-describedby="postcode-fout">
+          <span id="postcode-fout" class="foutmelding" role="alert"></span>
         </div>
 
         <div class="veld">
           <label for="plaats">Plaats:</label>
-          <input type="text" id="plaats" name="plaats" required>
+          <input type="text" id="plaats" name="plaats" required aria-describedby="plaats-fout">
+          <span id="plaats-fout" class="foutmelding" role="alert"></span> 
         </div>
       </div>
 
