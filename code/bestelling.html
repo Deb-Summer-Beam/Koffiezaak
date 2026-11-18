@@ -15,7 +15,6 @@
   <header>
     <a href="index.html" alt="terug naar homepage">
       <img src="../images/cozybrew_logo.png" alt="Logo van CozyBrew" class="logo">
-
     </a>
     <div id="openGesloten"></div>
     <nav>
@@ -30,27 +29,23 @@
   </header>
 
   <main>
-    <h2 class="bestellingTitel">🛒 Plaats je bestelling</h2>
+    <h2 class="bestellingTitel">Plaats je bestelling</h2>
 
     <form id="bestelFormulier">
       <div class="sterren boven">
         ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦
       </div>
-
       <div class="sterren onder">
         ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦
       </div>
-
       <div class="sterren links">
         ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦
       </div>
-
       <div class="sterren rechts">
         ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦
       </div>
 
-
-      <h3>👤 Klantgegevens</h3>
+      <h3>Klantgegevens</h3>
       <div class="klantgegevens">
 
         <div class="veld">
@@ -84,17 +79,11 @@
         </div>
       </div>
 
-      <h3 class="formulierTitel">☕ Kies je product</h3>
-
+      <h3 class="formulierTitel">Kies je product</h3>
       <div class="productRij">
-
-
         <div class="productVeld">
-
           <label for="product">Product:</label>
-
           <select id="product" name="product">
-
             <option value="">-- Kies een product --</option>
 
             <optgroup label="☕ Koffie">
@@ -124,68 +113,41 @@
               <option value="koekjes">Koekjes - €3,00</option>
               <option value="gebakjes">Kleine gebakjes - €3,75</option>
             </optgroup>
-
           </select>
-
         </div>
-
-
 
         <div class="productVeld">
-
           <label for="aantal">Aantal:</label>
-
           <input type="number" id="aantal" name="aantal" min="1" value="1">
-
         </div>
-
       </div>
-
 
       <!-- Berekenen het totaal en toevoegen -->
       <div class="actieRij">
-
         <button type="button" id="toevoegenBtn">
-          🛒 Toevoegen aan bestelling
+        Toevoegen aan bestelling
         </button>
-
       </div>
 
-
-
-      <h3 class="formulierTitel">🛒 Jouw bestelling</h3>
-
+      <h3 class="formulierTitel">Jouw bestelling</h3>
       <ul id="winkelmandje"></ul>
-
-
-
       <p id="totaalBestelling">
         Totaal bestelling: €0.00
       </p>
 
-
-
       <div class="bestelActies">
-
         <button type="button" id="controleerBtn">
-          👀 Controleer bestelling
+         Controleer bestelling
         </button>
-
         <button type="submit" id="bestelBtn">
-          🛒 Bestelling plaatsen
+         Bestelling plaatsen
         </button>
-
       </div>
-
 
       <!-- Dit is het controleoverzicht -->
       <div id="controleOverzicht"></div>
-
-
     </form>
-
   </main>
-
   <footer>
     &copy;CozyBrew
   </footer>
