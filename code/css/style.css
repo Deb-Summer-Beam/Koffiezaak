@@ -260,6 +260,7 @@ main {
   text-align: center;
   vertical-align: middle;
   display: inline-block;
+  white-space: pre-line;
 }
 
 /*darkmode */
