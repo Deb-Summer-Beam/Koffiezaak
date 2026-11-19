@@ -126,6 +126,7 @@ De gegevens worden met `textContent` in de DOM geplaatst, zodat ingevoerde tekst
 |---|---|---|---|---|
 | XSS-01 | `anna<test>` | De tekens `<` en `>` blijven zichtbaar als tekst. | De tekst verscheen letterlijk in het controleoverzicht. | Geslaagd |
 | XSS-02 | `Anna "Test" & Co` | Aanhalingstekens en `&` blijven zichtbaar als tekst. | De tekst verscheen letterlijk in het controleoverzicht. | Geslaagd |
+| XSS-03 | `<img src="fout" onerror="alert('Hallo')">` | De HTML-code blijft zichtbaar als tekst en er verschijnt geen pop-up. | De volledige invoer verscheen letterlijk in het controleoverzicht; er verscheen geen pop-up. | Geslaagd |
 
 ### 3.3 Bewijsmateriaal
 
@@ -133,16 +134,21 @@ De screenshots zijn opgeslagen in `docs/testing/`:
 
 - `week13-xss-test-speciale-tekens.png`
 - `week13-xss-test-aanhalingstekens-ampersand.png`
+- `test18-xss-img-onerror.png`
 
 ### 3.4 Conclusie
 
-Beide tests zijn geslaagd.
+Alle drie de XSS-tests zijn geslaagd.
 
 De onderzochte speciale tekens werden als gewone tekst weergegeven in het controleoverzicht.
 
 Dit bevestigt dat de onderzochte DOM-uitvoer correct werkt met `textContent`.
 
 Deze tests vormen geen volledige garantie tegen XSS. Ook andere invoerbronnen en eventuele serververwerking moeten veilig worden behandeld.
+
+Bij XSS-03 is ook een HTML-element met een JavaScript-event
+(onerror) getest. De volledige invoer werd als gewone tekst
+weergegeven en er werd geen JavaScript uitgevoerd.
 
 ### 3.5 Controle van de browserconsole
 
