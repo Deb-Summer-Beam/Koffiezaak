@@ -254,3 +254,33 @@ function submitButton(event) {
     contactSubmitForm.reset();
     document.querySelector('#contact-form-status').textContent = "Bericht is succesvol verzonden";
 }
+
+const koffieFoto = document.querySelector(".koffie-foto");
+
+const koffieAfbeeldingen = [
+    "../images/cozybrew-coffeetruck.png",
+    "../images/cozybrewcoffeebag.png",
+    "../images/cozycupcakes.png"
+];
+
+let huidigeKoffieFoto = 0;
+
+function wisselKoffieFoto() {
+    koffieFoto.classList.add("vervagen");
+
+    setTimeout(() => {
+    huidigeKoffieFoto++;
+
+    if (huidigeKoffieFoto >= koffieAfbeeldingen.length) {
+        huidigeKoffieFoto = 0;
+    }
+
+    koffieFoto.src = koffieAfbeeldingen[huidigeKoffieFoto];
+
+    koffieFoto.classList.remove("vervagen");
+     }, 600);
+}
+
+if (koffieFoto) {
+    setInterval(wisselKoffieFoto, 5000);
+}
