@@ -243,14 +243,18 @@ main {
   transition: background-color 0.2s ease;
 
 }
-
 .winkelwagen-knop:hover {
   background-color: #6B3D20;
 }
-
-.werkenBij {
-  text-align: center;
+.werkenbij-pagina .werkenBij {
+    max-width: 850px;
+    margin: 0 auto 20px;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: left;
+    line-height: 1.6;
 }
+
 
 #openGesloten {
   font-size: 1rem;
@@ -482,7 +486,7 @@ html.accessibility body {
   padding: 45px 50px;
   box-sizing: border-box;
   background-color: #dcc3a5;
-  border: 2px solid #b9804f;
+  border: 2px solid #795548;
   border-radius: 19px;
   box-shadow: 0 4px 6px rgba(75, 41, 21, 0.18);
 }
@@ -492,7 +496,7 @@ html.accessibility body {
   position: absolute;
   overflow: hidden;
   white-space: nowrap;
-  color: #b9804f;
+  color: #795548;
   font-family: Arial, sans-serif;
   font-size: 13px;
   pointer-events: none;
@@ -1341,4 +1345,114 @@ body:has(#reserveerFormulier) main > h1 {
     padding: 10px 20px;
     margin-top: 0;
     margin-bottom: 10px;
+}
+/* Achtergrond Werken bij CozyBrew */
+body:has(.werkenbij-pagina) {
+    background-color: #d8b99b;
+}
+
+body:has(.werkenbij-pagina) main {
+    background-color: #d8b99b;
+}
+/* Hoofdtitel Werken bij */
+/* Compacte titels op de pagina Werken bij */
+.werkenbij-pagina h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 10px 20px;
+    margin: 0 0 20px;
+}
+
+.werkenbij-pagina h2 {
+    font-size: 1.3rem;
+    text-align: center;
+    padding: 0;
+    margin: 20px 0 12px;
+}
+.werkenbij-pagina a {
+    color: #6b3d20;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.werkenbij-pagina a:hover {
+    color: #8b5a35;
+}
+/* Achtergrond contactpagina */
+body:has(#contact-page),
+body:has(#contact-page) main {
+    background-color: #d8b99b;
+}
+/* Compacte hoofdtitel contactpagina */
+body:has(#contact-page) h1 {
+    font-size: 1.8rem;
+    padding: 10px 20px;
+    margin: 0 0 20px;
+}
+/* Invoervelden contactformulier */
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #fff8ee;
+    border: 2px solid #4B2915;
+    border-radius: 10px;
+    padding: 12px;
+    font-family: inherit;
+    font-size: 1rem;
+}
+/* Verstuurknop contactpagina */
+#contact-form .knop {
+    background-color: #795548;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    padding: 14px 28px;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+/* Contactkaders in CozyBrew-stijl */
+#contact-page .contact-card {
+    border: 2px solid #795548;
+}
+
+/* E-maillink in CozyBrew-stijl */
+#contact-page a,
+#contact-page a:visited {
+    color: #795548;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    font-weight: 700;
+}
+/* Achtergrond bestelpagina */
+body:has(#bestelFormulier),
+body:has(#bestelFormulier) main {
+    background-color: #d8b99b;
+}
+/* Compacte CozyBrew footer */
+.cozy-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    background-color: #f5e9dc;
+    color: #4b2915;
+    padding: 12px 30px;
+    text-align: center;
+}
+
+.cozy-footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.cozy-footer a {
+    color: #795548;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.cozy-footer span {
+    font-size: 1rem;
 }
