@@ -117,8 +117,6 @@ nav a:hover {
   text-decoration: underline;
 }
 
-
-
 h1 {
   font-size: 2.5rem;
   text-align: center;
@@ -127,6 +125,11 @@ h1 {
 h1.typewriter {
     font-size: 1.8rem;
     padding: 20px;
+}
+body:has(.productenoverzicht) main h1 {
+    padding: 10px 20px;
+    margin-top: 0;
+    font-size: 1.8rem;
 }
 
 .cursor {
@@ -175,19 +178,14 @@ h2 {
 main {
   max-width: 1150px;
   margin: 0 auto;
-  padding: 60px 24px;
+  padding: 20px 24px;
 
 }
 
-
-.productenoverzicht {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 20px 60px;
-
+.producten-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
 }
 
 .kaart {
@@ -203,6 +201,9 @@ main {
 .kaart .prijs {
   font-size: 1.1rem;
   font-weight: 700;
+  margin-top: auto;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 
@@ -240,7 +241,7 @@ main {
   padding: 12px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  margin-top: auto;
+
 }
 
 .winkelwagen-knop:hover {
@@ -754,7 +755,7 @@ body.donker #bestelFormulier .verwijderBtn:hover {
 
 .reserveerIntro {
   max-width: 700px;
-  margin: 0 auto 30px;
+  margin: 0 auto 15px;
   text-align: center;
 }
 
@@ -1301,4 +1302,43 @@ body.donker #reserveerFormulier button:hover {
     .koffie-carrousel {
         --foto-breedte: 100vw;
     }
+}
+
+.menu-categorie {
+    background-color: #f5e9dc;
+    border: 2px solid #b98250;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+.menu-categorie h2 {
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+#menuStatus {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+body:has(.productenoverzicht) main {
+    background-color: #d8b99b;
+}
+body:has(.productenoverzicht) {
+    background-color: #d8b99b;
+}
+body:has(#reserveerFormulier),
+body:has(#reserveerFormulier) main {
+    background-color: #d8b99b;
+}
+body:has(#reserveerFormulier) main > h1 {
+    font-size: 1.8rem;
+    padding: 10px 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
 }

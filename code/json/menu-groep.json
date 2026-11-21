@@ -49,6 +49,13 @@
     "prijs": 3.75
   },
   {
+    "naam": "Cortado",
+    "categorie": "Koffie",
+    "afbeelding": "cortado.png",
+    "omschrijving": "Een krachtige espresso met een kleine hoeveelheid warme, zijdezachte melk.",
+    "prijs": 3.25
+  },
+  {
     "naam": "Groene thee",
     "categorie": "Thee",
     "afbeelding": "groene-thee.png",
@@ -140,6 +147,20 @@
     "prijs": 2.50
   },
   {
+    "naam": "Huisgemaakte limonade",
+    "categorie": "Dranken",
+    "afbeelding": "huisgemaakte-limonade.png",
+    "omschrijving": "Frisse limonade met citroen, munt en ijsblokjes.",
+    "prijs": 3.50
+  },
+  {
+    "naam": "Mango-passievrucht smoothie",
+    "categorie": "Dranken",
+    "afbeelding": "mango-passievrucht-smoothie.png",
+    "omschrijving": "Een romige, tropische smoothie met mango en passievrucht.",
+    "prijs": 4.25
+  },
+  {
     "naam": "Appeltaart",
     "categorie": "Gebak",
     "afbeelding": "appeltaart.png",
@@ -201,6 +222,27 @@
     "afbeelding": "veganistische-cookie.png",
     "omschrijving": "Krokante, plantaardige cookie met een frisse smaak.",
     "prijs": 2.50
+  },
+  {
+    "naam": "Citroen-meringuetaart",
+    "categorie": "Gebak",
+    "afbeelding": "citroen-meringuetaart.png",
+    "omschrijving": "Frisse citroentaart met een luchtige, licht geroosterde meringuelaag.",
+    "prijs": 4.75
+  },
+  {
+    "naam": "Cinnamon roll",
+    "categorie": "Gebak",
+    "afbeelding": "cinnamon-roll.png",
+    "omschrijving": "Zacht kaneelbroodje met een romige glazuurlaag.",
+    "prijs": 3.75
+  },
+  {
+    "naam": "Pistache-frambozentaartje",
+    "categorie": "Gebak",
+    "afbeelding": "pistache-frambozentaartje.png",
+    "omschrijving": "Een verfijnd taartje met romige pistache en frisse frambozen.",
+    "prijs": 4.95
   },
   {
     "naam": "Warme chocolademelk",

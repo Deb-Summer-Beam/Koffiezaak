@@ -137,9 +137,21 @@ async function laadProducten() {
 
         const producten = await response.json();
 
-        producten.forEach(function (product) {
-            productenOverzicht.appendChild(maakProductKaart(product));
-        });
+       producten.forEach(function (product) {
+    let categorie = product.categorie;
+
+    if (categorie === "Andere dranken") {
+        categorie = "Dranken";
+    }
+
+    const productenGrid = document.querySelector(
+        `.menu-categorie[data-categorie="${categorie}"] .producten-grid`
+    );
+
+    if (productenGrid) {
+        productenGrid.appendChild(maakProductKaart(product));
+    }
+});
 
         menuStatus.textContent = producten.length + " producten geladen";
     } catch (error) {
