@@ -143,3 +143,85 @@ VS CODE = WERKPLAATS, GITHUB
 STATUS: Opmaakverbeteringen en uniforme footer afgerond.
 VOLGENDE FASE: Testen en kwaliteitscontrole.
 
+
+## 11. Testen en kwaliteitscontrole — CozyBrew Upgrade 1.0
+
+### 11.1 Dark-Mode
+- Dark-Mode gecontroleerd op alle zes pagina's:
+  - Homepage
+  - Menu
+  - Contact
+  - Reservering
+  - Werken bij
+  - Bestelling plaatsen
+- Achtergrondkleuren en contrasten verbeterd.
+- Invoervelden op de reserverings- en bestelpagina beter leesbaar gemaakt.
+- Tekstkleur van het berichtveld op de contactpagina gecorrigeerd.
+
+STATUS: Geslaagd.
+
+### 11.2 Makkelijker lezen
+- De functie Makkelijker lezen op alle zes pagina's getest.
+- De functie werkt op alle gecontroleerde pagina's.
+
+STATUS: Geslaagd.
+
+### 11.3 Bestelformulier — JavaScript
+- Producten toevoegen aan de winkelwagen getest.
+- Aantallen rechtstreeks wijzigen in de winkelwagen toegevoegd.
+- Productprijzen en totaalbedrag worden automatisch herberekend.
+- Ongeldige aantallen worden afgewezen.
+- Product verwijderen na een aantalwijziging getest.
+- Controleoverzicht wordt gewist wanneer de bestelling verandert.
+- Controleoverzicht kan opnieuw worden opgebouwd met de actuele bestelling.
+- Test met meerdere verschillende producten uitgevoerd.
+- Emoji's uit de koppen van het controleoverzicht verwijderd.
+
+STATUS: Uitgevoerde tests geslaagd.
+
+### 11.4 Bestelformulier — Vormgeving
+- Aantalveld toegevoegd aan iedere winkelwagenregel.
+- Aantalvelden compacter gemaakt.
+- Winkelwagenregels ingedeeld met CSS Grid.
+- Productnamen, aantalvelden en verwijderknoppen uitgelijnd.
+- Bestaande vormgeving en kleuren behouden.
+
+STATUS: Desktopweergave gecontroleerd en goedgekeurd.
+
+### 11.5 Knopanimaties
+- Zwevende hoverbeweging toegevoegd.
+- Gouden Pulse-animatie toegevoegd.
+- Klikanimatie toegevoegd.
+- Hoverkleur verfijnd met Koninklijk Goud (#D4AF37).
+- Animaties toegepast op:
+  - Toevoegen aan bestelling
+  - Bestelling plaatsen
+  - Reservering plaatsen
+  - Verstuur op de contactpagina
+- Afwijkende hoverkleur van de contactknop gecorrigeerd.
+
+STATUS: Animaties getest en voorlopig goedgekeurd.
+VERBETERPUNT: Definitieve kleur- en animatieafwerking kan later plaatsvinden.
+
+### 11.6 Testdocumentatie
+- Aantal wijzigen van 1 naar 3 cappuccino's: € 10,50.
+- Aantal wijzigen van 3 naar 2 cappuccino's: € 7,00.
+- Product verwijderen na aantalwijziging: totaal € 0,00.
+- Meerdere producten: 3 cappuccino's en 1 espresso, totaal € 13,00.
+- Na verwijderen espresso: totaal € 10,50.
+- Screenshots vastgelegd:
+  - Test_Aantal_Wijzigen_Voor.png
+  - Test_Aantal_Wijzigen_Na.png
+
+STATUS: Uitgevoerde tests geslaagd en screenshots vastgelegd.
+
+### 11.7 Nog te doen
+- Responsive weergave op mobiele schermen controleren.
+- Winkelwagen met CSS Grid op kleinere schermformaten testen.
+- Overige functionele eindtests uitvoeren.
+- Formuliergedrag en toegankelijkheid verder controleren.
+- Eventuele laatste visuele verbeteringen uitvoeren.
+- Git-wijzigingen controleren, committen en pushen naar de eigen branch.
+
+STATUS: Functionele verbeteringen en uitgevoerde controles geslaagd.
+VOLGENDE FASE: Responsive eindcontrole en GitHub-update.

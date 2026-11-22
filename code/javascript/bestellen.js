@@ -50,7 +50,7 @@ toevoegenBtn.addEventListener("click", () => {
     }
 
     const prijs = prijzen[gekozenProduct];
-    const totaal = berekenTotaal(prijs, gekozenAantal);
+    let totaal = berekenTotaal(prijs, gekozenAantal);
     
     const regel = document.createElement("li");
     const regelSpan = document.createElement('span');
@@ -63,6 +63,40 @@ toevoegenBtn.addEventListener("click", () => {
         totaal.toFixed(2);
     
     regelSpan.classList.add('regelSpan');
+    // Invoerveld om het aantal in de winkelwagen aan te passen
+    const aantalInput = document.createElement("input");
+    aantalInput.type = "number";
+    aantalInput.min = "1";
+    aantalInput.step = "1";
+    aantalInput.value = gekozenAantal;
+    aantalInput.classList.add("winkelmandAantal");
+    aantalInput.setAttribute("aria-label", "Aantal " + gekozenProduct);
+
+    regel.appendChild(aantalInput);
+    aantalInput.addEventListener("change", () => {
+    const nieuwAantal = Number(aantalInput.value);
+
+    if (!Number.isInteger(nieuwAantal) || nieuwAantal < 1) {
+        alert("Kies een geldig heel aantal vanaf 1.");
+        aantalInput.value = totaal / prijs;
+        return;
+    }
+
+    const nieuwTotaal = berekenTotaal(prijs, nieuwAantal);
+
+    winkelmandTotaal = winkelmandTotaal - totaal + nieuwTotaal;
+    totaal = nieuwTotaal;
+
+    regelSpan.textContent =
+        nieuwAantal + " x " + gekozenProduct +
+        " - €" + totaal.toFixed(2);
+
+    totaalBestelling.textContent =
+        "Totaal bestelling: €" + winkelmandTotaal.toFixed(2);
+
+    controleOverzicht.textContent = "";
+});
+
 
     const verwijderBtn = document.createElement("button");
     verwijderBtn.type = "button";
@@ -75,11 +109,14 @@ toevoegenBtn.addEventListener("click", () => {
     regel.remove();
     winkelmandTotaal = winkelmandTotaal - totaal;
 
-        totaalBestelling.textContent =
-            "Totaal bestelling: €" + winkelmandTotaal.toFixed(2);
+    totaalBestelling.textContent =
+        "Totaal bestelling: €" + winkelmandTotaal.toFixed(2);
+
+    controleOverzicht.textContent = "";
 
 });
     regel.appendChild(verwijderBtn);
+
 
     winkelmandje.appendChild(regel);//voeg nieuwe regel-node toe als kind van de winkelmandje-node
 
@@ -237,7 +274,7 @@ controleerBtn.addEventListener("click", () => {
         controleOverzicht.textContent = "";
 
         const titel = document.createElement('h3');
-        titel.textContent = '👤 Controleer je gegevens';
+        titel.textContent = 'Controleer je gegevens';
 
         const naamE = document.createElement('p');
         naamE.textContent = `Naam: ${naam} `;
@@ -258,7 +295,7 @@ controleerBtn.addEventListener("click", () => {
         plaatsE.textContent = `Plaats: ${plaats} `;
 
         const bestellingE = document.createElement('h3');
-        bestellingE.textContent = '🛒 Jouw bestelling';
+        bestellingE.textContent = 'Jouw bestelling';
 
         const totaalE = document.createElement('p');
         totaalE.textContent = `Totaal bestelling: €${winkelmandTotaal.toFixed(2)}`;

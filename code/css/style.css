@@ -636,7 +636,8 @@ html.accessibility body {
 }
 
 #winkelmandje li {
-  display: flex;
+  display: grid;
+  grid-template-columns:  minmax(0, 1fr) 100px 140px;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
@@ -658,7 +659,17 @@ html.accessibility body {
 #bestelFormulier .verwijderBtn:hover {
   background-color: #c9a681;
 }
-
+/* Aantal aanpassen in de winkelwagen */
+#bestelFormulier .winkelmandAantal {
+    width: 75px;
+    min-width: 75px;
+    flex: 0 0 75px;
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #C9A681;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
 #totaalBestelling {
   margin: 15px 0;
   font-size: 1.3rem;
@@ -696,6 +707,13 @@ body.donker #controleOverzicht:not(:empty) {
   color: #F0E1CC;
   background-color: #2E1F17;
   border-color: #C9A681;
+}
+/* Bestelpagina dark-mode lichte invoervelden */
+body.donker #bestelFormulier input,
+body.donker #bestelFormulier select {
+    color: #2E1F17;
+    background-color: #FFF8EE;
+    border-color: #C9A681;
 }
 
 body.donker #bestelFormulier button {
@@ -881,17 +899,24 @@ body.donker #reserveerFormulier {
   border-color: #C9A681;
 }
 
+/* Reservering dark-mode invoervelden */
 body.donker #reserveerFormulier input,
 body.donker #reserveerFormulier select,
-body.donker #reserveerFormulier textarea,
+body.donker #reserveerFormulier textarea {
+    color: #2E1F17;
+    background-color: #FFF8EE;
+    border-color: #C9A681;
+}
+
+/* Reservering dark-mode bevestiging */
 body.donker #reserveerBevestiging:not(:empty) {
-  color: #F0E1CC;
-  background-color: #2E1F17;
-  border-color: #C9A681;
+    color: #F0E1CC;
+    background-color: #2E1F17;
+    border-color: #C9A681;
 }
 
 body.donker #reserveerFormulier input[type="date"] {
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body.donker #reserveerFormulier button {
@@ -1315,6 +1340,16 @@ body.donker #reserveerFormulier button:hover {
     padding: 30px;
     margin-bottom: 40px;
 }
+/* Menu categorieën dark-mode */
+body.donker .menu-categorie {
+    background-color: #3A271E;
+    border-color: #C9A681;
+    color: #F0E1CC;
+}
+
+body.donker .menu-categorie h2 {
+    color: #F0E1CC;
+}
 .menu-categorie h2 {
     margin-bottom: 15px;
     margin-top: 0;
@@ -1336,9 +1371,19 @@ body:has(.productenoverzicht) main {
 body:has(.productenoverzicht) {
     background-color: #d8b99b;
 }
+/* Menupagina dark-mode */
+body.donker:has(.productenoverzicht),
+body.donker:has(.productenoverzicht) main {
+    background-color: #1E1410;
+}
 body:has(#reserveerFormulier),
 body:has(#reserveerFormulier) main {
     background-color: #d8b99b;
+}
+/* Reserveringspagina dark-mode achtergrond */
+body.donker:has(#reserveerFormulier),
+body.donker:has(#reserveerFormulier) main {
+    background-color: #1E1410;
 }
 body:has(#reserveerFormulier) main > h1 {
     font-size: 1.8rem;
@@ -1350,7 +1395,14 @@ body:has(#reserveerFormulier) main > h1 {
 body:has(.werkenbij-pagina) {
     background-color: #d8b99b;
 }
+/* Werken bij dark-mode achtergrond */
+body.donker:has(.werkenbij-pagina) {
+    background-color: #1E1410;
+}
 
+body.donker:has(.werkenbij-pagina) main {
+    background-color: #1E1410;
+}
 body:has(.werkenbij-pagina) main {
     background-color: #d8b99b;
 }
@@ -1378,10 +1430,24 @@ body:has(.werkenbij-pagina) main {
 .werkenbij-pagina a:hover {
     color: #8b5a35;
 }
+/* Werken bij e-maillink dark-mode */
+body.donker .werkenbij-pagina a,
+body.donker .werkenbij-pagina a:visited {
+    color: #D9A06B;
+}
+
+body.donker .werkenbij-pagina a:hover {
+    color: #F0E1CC;
+}
 /* Achtergrond contactpagina */
 body:has(#contact-page),
 body:has(#contact-page) main {
     background-color: #d8b99b;
+}
+/* Contactpagina dark-mode achtergrond */
+body.donker:has(#contact-page),
+body.donker:has(#contact-page) main {
+    background-color: #1E1410;
 }
 /* Compacte hoofdtitel contactpagina */
 body:has(#contact-page) h1 {
@@ -1426,10 +1492,20 @@ body:has(#contact-page) h1 {
     text-underline-offset: 3px;
     font-weight: 700;
 }
+/* Contact e-maillink dark-mode */
+body.donker #contact-page a,
+body.donker #contact-page a:visited {
+    color: #D9A06B;
+}
 /* Achtergrond bestelpagina */
 body:has(#bestelFormulier),
 body:has(#bestelFormulier) main {
     background-color: #d8b99b;
+}
+/* Bestelpagina dark-mode achtergrond */
+body.donker:has(#bestelFormulier),
+body.donker:has(#bestelFormulier) main {
+    background-color: #1E1410;
 }
 /* Compacte CozyBrew footer */
 .cozy-footer {
@@ -1455,4 +1531,57 @@ body:has(#bestelFormulier) main {
 
 .cozy-footer span {
     font-size: 1rem;
+}
+/* CozyBrew - Zwevende knop met gouden Pulse */
+#toevoegenBtn,
+#bestelBtn,
+#reserveerBtn,
+#contact-form .knop {
+    transition:
+        transform 0.45s ease-in-out,
+        box-shadow 0.45s ease-in-out;
+}
+
+#toevoegenBtn:hover,
+#bestelBtn:hover,
+#reserveerBtn:hover,
+#contact-form .knop:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(201, 166, 129, 0.35);
+    animation: cozyPulse 1.2s ease-out infinite;
+    background-color: #D4AF37;
+}
+#toevoegenBtn:active,
+#bestelBtn:active,
+#reserveerBtn:active,
+#contact-form .knop:active {
+    transform: translateY(1px) scale(0.98);
+}
+/* CozyBrew - Intense gouden Pulse */
+@keyframes cozyPulse {
+    0% {
+        box-shadow:
+            0 0 8px 3px #FFD700,
+            0 0 0 0 rgba(255, 215, 0, 0.9);
+    }
+
+    70% {
+        box-shadow:
+            0 0 18px 5px #FFD700,
+            0 0 0 14px rgba(255, 215, 0, 0);
+    }
+
+    100% {
+        box-shadow:
+            0 0 8px 3px #FFD700,
+            0 0 0 0 rgba(255, 215, 0, 0);
+    }
+}
+/* Contactpagina - leesbare berichttekst in dark-mode */
+body.donker #contact-form textarea {
+    color: #2E1F17;
+}
+/* Contactpagina - donkere knop met gouden Pulse */
+#contact-form .knop:hover {
+    background-color: #6D3B1F;
 }
