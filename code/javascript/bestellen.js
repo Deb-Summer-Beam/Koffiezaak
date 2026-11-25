@@ -54,16 +54,9 @@ haalMenuProductenOp().then(function (producten) {
         console.log("Centrale productlijst beschikbaar:", menuProducten.length);
 
         vulProductKeuzelijst(menuProducten);
-        haalMenuProductenOp().then(function (producten) {
-    if (producten) {
-        menuProducten = producten;
-        console.log("Centrale productlijst beschikbaar:", menuProducten.length);
-
-        vulProductKeuzelijst(menuProducten);
 
         voegOpgeslagenProductenToe();
-    }
-});
+
         // Issue #56 - Opgeslagen producten controleren
 const opgeslagenWinkelwagen = haalOpgeslagenWinkelwagenOp();
 
@@ -99,8 +92,7 @@ const aantal = document.getElementById("aantal");
 function vulProductKeuzelijst(producten) {
     console.log("Keuzelijst voorbereiden voor:", producten.length, "producten");
 
-    // Bestaande opties vervangen
-    product.innerHTML = "";
+    product.textContent = "";
 
     // Standaardoptie toevoegen
     const standaardOptie = document.createElement("option");
@@ -138,8 +130,26 @@ toevoegenBtn.addEventListener("click", () => {
     const gekozenProduct = product.value;
     const gekozenAantal = Number(aantal.value);
 
-    // Issue #56 - Alleen handmatig toegevoegde producten opslaan
-    if (!winkelwagenWordtGeladen) {
+
+    if (gekozenProduct === "") {
+    alert("Kies eerst een product.");
+    return;
+    }
+    if (!Number.isInteger(gekozenAantal) || gekozenAantal < 1) {
+    alert("Kies een geldig heel aantal vanaf 1.");
+    return;
+    }
+
+    const gekozenItem = menuProducten.find(function (item) {
+    return item.naam === gekozenProduct;
+});
+
+if (!gekozenItem) {
+    alert("Dit product is niet gevonden in de menukaart.");
+    return;
+}
+// Issue #56 - Alleen handmatig toegevoegde producten opslaan
+if (!winkelwagenWordtGeladen) {
     const opgeslagenWinkelwagen = haalOpgeslagenWinkelwagenOp();
 
     const bestaandProduct = opgeslagenWinkelwagen.find(function (item) {
@@ -160,39 +170,26 @@ toevoegenBtn.addEventListener("click", () => {
         JSON.stringify(opgeslagenWinkelwagen)
     );
 }
-
-    if (gekozenProduct === "") {
-    alert("Kies eerst een product.");
-    return;
-    }
-    if (!Number.isInteger(gekozenAantal) || gekozenAantal < 1) {
-    alert("Kies een geldig heel aantal vanaf 1.");
-    return;
-    }
-
-    const gekozenItem = menuProducten.find(function (item) {
-    return item.naam === gekozenProduct;
-});
-
-if (!gekozenItem) {
-    alert("Dit product is niet gevonden in de menukaart.");
-    return;
-}
-
 const prijs = gekozenItem.prijs;
     const totaal = berekenTotaal(prijs, gekozenAantal);
-    
+
     const regel = document.createElement("li");
 
-    regel.textContent =
-        gekozenAantal + " x " +
-        gekozenProduct +
-        " - €" +
-        totaal.toFixed(2);
+    const regelSpan = document.createElement("span");
+
+    regelSpan.textContent =
+    gekozenAantal + " x " +
+    gekozenProduct +
+    " - €" +
+    totaal.toFixed(2);
+
+    regelSpan.classList.add("regelSpan");
+
+    regel.appendChild(regelSpan);
 
     const verwijderBtn = document.createElement("button");
     verwijderBtn.type = "button";
-    
+
     verwijderBtn.textContent = "❌ Verwijderen";
     verwijderBtn.classList.add("verwijderBtn");
 
@@ -202,8 +199,16 @@ const prijs = gekozenItem.prijs;
     // Issue #56 - Product ook verwijderen uit sessionStorage
     const opgeslagenWinkelwagen = haalOpgeslagenWinkelwagenOp();
 
-    const bijgewerkteWinkelwagen = opgeslagenWinkelwagen.filter(function (item) {
-    return item.naam !== gekozenProduct;
+const bestaandProduct = opgeslagenWinkelwagen.find(function (item) {
+    return item.naam === gekozenProduct;
+});
+
+if (bestaandProduct) {
+    bestaandProduct.aantal -= gekozenAantal;
+}
+
+const bijgewerkteWinkelwagen = opgeslagenWinkelwagen.filter(function (item) {
+    return item.aantal > 0;
 });
 
 sessionStorage.setItem(
@@ -233,8 +238,8 @@ controleerBtn.addEventListener("click", () => {
     if (winkelmandTotaal === 0) {
     alert("Voeg eerst een product toe aan je bestelling.");
     return;//test eerst als het een lege winkelwagen is
-    }    
-   
+    }
+
 
     const naam = document.getElementById("naam").value;
     const email = document.getElementById("email").value;
@@ -257,38 +262,70 @@ controleerBtn.addEventListener("click", () => {
 
     const producten = winkelmandje.querySelectorAll("li");//alle <li>'s  uit winkelmaandje verzameld
 
-    let productenTekst = "";//lege text waarin straks de bestelling wordt verzameld
+    function productRegels(product) {
+    const productRegel = document.createElement("p");
+    productRegel.textContent =
+        product.querySelector(".regelSpan").textContent;
+    controleOverzicht.appendChild(productRegel);
+}
 
-    producten.forEach((product) => {//voor ieder product gevonden voer de code uit
-        const kopie = product.cloneNode(true);//kopie van het origineel in winkelmaandje
-                                            //true omdat pakt al de nodes, false zou allen de <li>'s pakken
-    kopie.querySelector(".verwijderBtn").remove();
-    productenTekst = productenTekst + "<p>" + kopie.textContent + "</p>";//<p> zorgt dat iedere bestelde product netjes op een eigen regel komt
+// Controleoverzicht veilig opbouwen
+function appendControleOverzicht() {
+    controleOverzicht.textContent = "";
 
-}); 
+    const titel = document.createElement("h3");
+    titel.textContent = "👤 Controleer je gegevens";
 
+    const naamE = document.createElement("p");
+    naamE.textContent = `Naam: ${naam}`;
 
-    controleOverzicht.innerHTML =
-        "<h3>👤 Controleer je gegevens</h3>" +
-        "<p>Naam: " + naam + "</p>" +
-        "<p>E-mail: " + email + "</p>" +
-        "<p>Telefoon: " + telefoon + "</p>" +
-        "<p>Adres: " + adres + "</p>" +
-        "<p>Postcode: " + postcode + "</p>" +
-        "<p>Plaats: " + plaats + "</p>" +
+    const emailE = document.createElement("p");
+    emailE.textContent = `E-mail: ${email}`;
 
-         "<h3>🛒 Jouw bestelling</h3>" +
-        productenTekst +
+    const telefoonE = document.createElement("p");
+    telefoonE.textContent = `Telefoon: ${telefoon}`;
 
-        "<p>Totaal bestelling: €" + winkelmandTotaal.toFixed(2) + "</p>";
+    const adresE = document.createElement("p");
+    adresE.textContent = `Adres: ${adres}`;
+
+    const postcodeE = document.createElement("p");
+    postcodeE.textContent = `Postcode: ${postcode}`;
+
+    const plaatsE = document.createElement("p");
+    plaatsE.textContent = `Plaats: ${plaats}`;
+
+    const bestellingE = document.createElement("h3");
+    bestellingE.textContent = "🛒 Jouw bestelling";
+
+    const totaalE = document.createElement("p");
+    totaalE.textContent =
+        `Totaal bestelling: €${winkelmandTotaal.toFixed(2)}`;
+
+    controleOverzicht.appendChild(titel);
+    controleOverzicht.appendChild(naamE);
+    controleOverzicht.appendChild(emailE);
+    controleOverzicht.appendChild(telefoonE);
+    controleOverzicht.appendChild(adresE);
+    controleOverzicht.appendChild(postcodeE);
+    controleOverzicht.appendChild(plaatsE);
+    controleOverzicht.appendChild(bestellingE);
+
+    producten.forEach(productRegels);
+
+    controleOverzicht.appendChild(totaalE);
+}
+
+appendControleOverzicht();
+
 });
+
 //hier voorkomen we dat bj het submitten de pagina opnieuw laadt
 const bestelFormulier = document.getElementById("bestelFormulier");
 
 bestelFormulier.addEventListener("submit", (event) => {
 
     event.preventDefault();//deze voorkomt dat de pagina opnieuw verzend of herlaadt
-                            // hier neemt javascript over 
+                            // hier neemt javascript over
 
     if (winkelmandTotaal === 0) {
         alert("Voeg eerst een product toe aan je bestelling.");
@@ -316,16 +353,16 @@ if (
 
     alert("☕ Bedankt voor je bestelling!");//anders krijgt dit
 
-    
+
     bestelFormulier.reset();// verwijder de klantgegevens voor de volgende klant
     // Issue #56 - Opgeslagen winkelwagen leegmaken na succesvolle bestelling
     sessionStorage.removeItem("winkelwagen");
-    
-    winkelmandje.innerHTML = "";//leegt winkelwagen
+
+    winkelmandje.textContent = "";//leegt winkelwagen
     winkelmandTotaal = 0;
     totaalBestelling.textContent = "Totaal bestelling: €0.00";//leegt totaal bestellingen
-    controleOverzicht.innerHTML = "";//controleoverzicht leegmaken
-    
+   controleOverzicht.textContent = "";//controleoverzicht leegmaken
+
 
 
 
