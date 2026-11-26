@@ -189,24 +189,24 @@ if (dagNummer === 1 && maandNummer === 1) {
 } else if (dagNummer === 26 && maandNummer === 12) {
     openGesloten = "Gesloten";
 } else if (dagNaam === "maandag") {
-    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van\n12:00 tot 18:00.";
 } else if (dagNaam === "dinsdag") {
-    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van\n12:00 tot 18:00.";
 } else if (dagNaam === "woensdag") {
-    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van\n12:00 tot 18:00.";
 } else if (dagNaam === "donderdag") {
-    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 21:00.";
+    openGesloten = "Vandaag zijn we open van\n12:00 tot 21:00.";
 } else if (dagNaam === "vrijdag") {
-    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van\n12:00 tot 18:00.";
 } else if (dagNaam === "zaterdag") {
-    openGesloten = "Vandaag zijn we open van <br> 09:00 tot 16:00.";
+    openGesloten = "Vandaag zijn we open van\n09:00 tot 16:00.";
 } else if (dagNaam === "zondag") {
-    openGesloten = "Vandaag zijn we open van <br> 10:00 tot 16:00.";
+    openGesloten = "Vandaag zijn we open van\n10:00 tot 16:00.";
 } else {
     openGesloten = "Er is iets misgegaan bij het berekenen van de dag.";
 }
-
-document.getElementById("openGesloten").innerHTML = openGesloten;
+console.log(openGesloten);
+document.getElementById("openGesloten").textContent = openGesloten;
 
 // Contactformulier functionaliteit
 const contactSubmitForm = document.querySelector('#contact-form');
