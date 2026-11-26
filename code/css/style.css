@@ -185,14 +185,30 @@ footer {
 }
 
 .productenoverzicht {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 24px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px 20px 60px;
-
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 20px 60px;
 }
+
+.categorie-kader {
+    padding: 20px;
+    border: 2px solid #6b4226;
+    border-radius: 15px;
+}
+
+.categorie-kader h2 {
+    margin-bottom: 20px;
+}
+
+.categorie-producten {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+    gap: 24px;
+}
+
 
 .kaart {
   display: flex;
@@ -1317,4 +1333,13 @@ body.donker #reserveerFormulier button:hover {
     .koffie-carrousel {
         --foto-breedte: 100vw;
     }
+}
+/* Issue #56 - Ruimte boven menukaart verkleinen */
+.menu-pagina {
+    padding-top: 0;
+}
+
+.menu-pagina h1 {
+    padding: 0 10px 5px;
+    margin: 0;
 }
