@@ -591,7 +591,29 @@ De acceptatiecriteria geven aan welke voorwaarden de website moet vervullen om a
 > **Werkelijk resultaat:** De bestelpagina is getest op schermbreedtes van 1440 px, 768 px, 375 px en 320 px met Chrome DevTools. Bij alle vier de schermbreedtes paste de indeling zich correct aan. De navigatie, klantgegevens, productselectie, het winkelmandje en de bestelknoppen bleven zichtbaar en bruikbaar. De tekst bleef leesbaar en horizontaal scrollen was niet nodig. Ook de eerder uitgevoerde test op 1230 px was geslaagd.
 >
 > **Teststatus:** Geslaagd.
-
+>
+> **Testscenario 11 – Veilige weergave van gebruikersinvoer (NFR-05)**
+>
+> **Doel:** Controleren of HTML-code die een bezoeker invoert als gewone tekst wordt weergegeven en niet als HTML wordt uitgevoerd.
+>
+> **Testgegevens:** De HTML-code `<b>test</b>` wordt ingevuld in het naamveld van het bestelformulier.
+>
+> **Teststappen:**
+>
+> **1.** Open de bestelpagina van Cozy Brew in Chrome.
+>
+> **2.** Vul in het naamveld letterlijk `<b>test</b>` in.
+>
+> **3.** Vul de overige verplichte klantgegevens in en voeg een product toe aan het winkelmandje.
+>
+> **4.** Open het besteloverzicht en controleer hoe de ingevoerde naam wordt weergegeven.
+>
+> **Verwacht resultaat:** De ingevoerde HTML-code `<b>test</b>` wordt letterlijk als gewone tekst weergegeven in het besteloverzicht. De browser voert de HTML-code niet uit en het woord 'test' verschijnt niet als vetgedrukte tekst.
+>
+> **Werkelijk resultaat:** De HTML-code `<b>test</b>` is ingevuld in het naamveld van het bestelformulier. In het besteloverzicht werd de volledige invoer letterlijk als gewone tekst weergegeven. De HTML-code werd niet uitgevoerd en het woord 'test' verscheen niet als vetgedrukte tekst. De overige klantgegevens en de cappuccino werden correct weergegeven.
+>
+> **Teststatus:** Geslaagd.
+>
 # Literatuurlijst
 
 Wikipedia-bijdragers. (2026, mei 27). *MoSCoW-methode*. Opgeroepen op oktober 19, 2026, van Wikipedia: https://nl.wikipedia.org/wiki/MoSCoW-methode
