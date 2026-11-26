@@ -88,6 +88,100 @@ toevoegenBtn.addEventListener("click", () => {
     totaalBestelling.textContent =
         "Totaal bestelling: €" + winkelmandTotaal.toFixed(2);
 });
+// Toon een veldgerichte foutmelding
+function toonVeldFout(veldId, melding) {
+    const veld = document.getElementById(veldId);
+    const fout = document.getElementById(veldId + "-fout");
+
+    fout.textContent = melding;
+    veld.setAttribute("aria-invalid", "true");
+    veld.focus();
+
+    return false;
+}
+// Verwijder eerdere foutmeldingen van alle klantgegevensvelden
+function wisVeldFouten() {
+    const velden = [
+        "naam",
+        "email",
+        "telefoon",
+        "adres",
+        "postcode",
+        "plaats"
+    ];
+
+    velden.forEach((veldId) => {
+        document.getElementById(veldId + "-fout").textContent = "";
+        document.getElementById(veldId).removeAttribute("aria-invalid");
+    });
+}
+// Centrale validatie voor beide bestelknoppen
+function valideerKlantgegevens() {
+    wisVeldFouten();
+
+    const naam = document.getElementById("naam").value.trim();
+    const emailVeld = document.getElementById("email");
+    const telefoon = document.getElementById("telefoon").value.trim();
+    const adres = document.getElementById("adres").value.trim();
+    const postcode = document.getElementById("postcode").value.trim();
+    const plaats = document.getElementById("plaats").value.trim();
+
+    // Naam controleren
+    if (naam.length < 2) {
+        return toonVeldFout("naam",
+            "Vul een naam in met minimaal 2 tekens.");
+    }
+
+    // E-mailadres controleren
+    if (!emailVeld.validity.valid) {
+        return toonVeldFout("email",
+            "Vul een geldig e-mailadres in.");
+    }
+
+    // Telefoonnummer controleren
+    if (telefoon === "") {
+        return toonVeldFout("telefoon",
+            "Vul je telefoonnummer in.");
+    }
+
+    if (!/^[0-9+\s()-]+$/.test(telefoon)) {
+        return toonVeldFout("telefoon",
+            "Gebruik alleen cijfers en toegestane telefoontekens.");
+    }
+
+    const telefoonCijfers = telefoon.replace(/\D/g, "");
+
+    if (telefoonCijfers.length < 10 || telefoonCijfers.length > 15) {
+        return toonVeldFout("telefoon",
+            "Vul een telefoonnummer in met 10 tot 15 cijfers.");
+    }
+
+    // Adres controleren
+    const adresPatroon = /^(?=.{5,}$)(?=.*[a-zA-ZÀ-ÿ]{3,})(?=.*\d)[a-zA-ZÀ-ÿ0-9\s.'-]+$/;
+
+    if (!adresPatroon.test(adres)) {
+        return toonVeldFout("adres",
+            "Vul een geldig adres in, bijvoorbeeld Kerkstraat 12.");
+    }
+
+    // Postcode controleren
+    const postcodePatroon = /^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/;
+
+    if (!postcodePatroon.test(postcode)) {
+        return toonVeldFout("postcode",
+            "Vul een geldige postcode in, bijvoorbeeld 4811AB.");
+    }
+
+    // Plaatsnaam controleren
+    const plaatsPatroon = /^[a-zA-ZÀ-ÿ]{2,}(?:[\s'-]+[a-zA-ZÀ-ÿ]{2,})*$/;
+
+    if (!plaatsPatroon.test(plaats)) {
+        return toonVeldFout("plaats",
+            "Vul een geldige plaatsnaam in, bijvoorbeeld Breda of Den Haag.");
+    }
+
+    return true;
+}
 const controleerBtn = document.getElementById("controleerBtn");
 const controleOverzicht = document.getElementById("controleOverzicht");
 
@@ -109,120 +203,17 @@ controleerBtn.addEventListener("click", () => {
     alert("Voeg eerst een product toe aan je bestelling.");
     return;//test eerst als het een lege winkelwagen is
     }    
-   
+   // Gebruik de centrale validatiefunctie
+if (!valideerKlantgegevens()) {
+    return;
+}
 
     const naam = document.getElementById("naam").value;
     const email = document.getElementById("email").value;
     const telefoon = document.getElementById("telefoon").value;
     const adres = document.getElementById("adres").value;
-
-    const adresPatroon = /^(?=.{5,}$)(?=.*[a-zA-ZÀ-ÿ]{3,})(?=.*\d)[a-zA-ZÀ-ÿ0-9\s.'-]+$/;
-
-    if (!adresPatroon.test(adres.trim())) {
-    alert("Vul een geldig adres in, bijvoorbeeld Kerkstraat 12.");
-    return;
-}
     const postcode = document.getElementById("postcode").value;
     const plaats = document.getElementById("plaats").value;
-    const plaatsPatroon = /^[a-zA-ZÀ-ÿ]{2,}(?:[\s'-]+[a-zA-ZÀ-ÿ]{2,})*$/;
-
-    if (!plaatsPatroon.test(plaats.trim())) {
-    alert("Vul een geldige plaatsnaam in, bijvoorbeeld Breda of Den Haag.");
-    return;
-}
-    const telefoonVeld = document.getElementById("telefoon");
-    const telefoonFout = document.getElementById("telefoon-fout");
-
-    telefoonFout.textContent = "";
-    telefoonVeld.removeAttribute("aria-invalid");
-
-    if (telefoon.trim() === "") {
-    telefoonFout.textContent = "Vul je telefoonnummer in.";
-    telefoonVeld.setAttribute("aria-invalid", "true");
-    telefoonVeld.focus();
-    return;
-}
-
-    // Controleer of het telefoonnummer geldige tekens bevat
-    if (!/^[0-9+\s()-]+$/.test(telefoon.trim())) {
-    telefoonFout.textContent =
-        "Gebruik alleen cijfers en toegestane telefoontekens.";
-    telefoonVeld.setAttribute("aria-invalid", "true");
-    telefoonVeld.focus();
-    return;
-}
-
-    // Controleer of het telefoonnummer voldoende cijfers bevat
-    const telefoonCijfers = telefoon.replace(/\D/g, "");
-
-    if (telefoonCijfers.length < 10 || telefoonCijfers.length > 15) {
-    telefoonFout.textContent =
-        "Vul een telefoonnummer in met minimaal 10 tot 15 cijfers.";
-    telefoonVeld.setAttribute("aria-invalid", "true");
-    telefoonVeld.focus();
-    return;
-}
-    // Controleer of de naam minimaal 2 tekens bevat
-    const naamVeld = document.getElementById("naam");
-    const naamFout = document.getElementById("naam-fout");
-
-    // Verwijder een eventuele vorige foutmelding
-    naamFout.textContent = "";
-    naamVeld.removeAttribute("aria-invalid");
-
-    if (naam.trim().length < 2) {
-    naamFout.textContent = "Vul een naam in met minimaal 2 tekens.";
-    naamVeld.setAttribute("aria-invalid", "true");
-    naamVeld.focus();
-    return;
-}
-    // Controleer of het e-mailadres geldig is
-    const emailVeld = document.getElementById("email");
-    const emailFout = document.getElementById("email-fout");
-
-    // Verwijder een eventuele vorige foutmelding
-    emailFout.textContent = "";
-    emailVeld.removeAttribute("aria-invalid");
-
-    if (!emailVeld.validity.valid) {
-    emailFout.textContent = "Vul een geldig e-mailadres in.";
-    emailVeld.setAttribute("aria-invalid", "true");
-    emailVeld.focus();
-    return;
-}
-    // Controleer het Nederlandse postcodeformaat
-    const postcodePatroon = /^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/;// mag geen 0 zijn, daarna 3 cijfers volgen, mag een spatie bevatten, mag hoofdletters of kleine letters bevatten en 2 letters bevatten
-
-    const postcodeVeld = document.getElementById("postcode");
-    const postcodeFout = document.getElementById("postcode-fout");
-
-    // Verwijder de vorige foutmelding
-    postcodeFout.textContent = "";
-    postcodeVeld.removeAttribute("aria-invalid");
-
-    if (!postcodePatroon.test(postcode.trim())) {
-    postcodeFout.textContent =
-        "Vul een geldige postcode in, bijvoorbeeld 4811AB.";
-
-    postcodeVeld.setAttribute("aria-invalid", "true");
-    postcodeVeld.focus();
-    return;
-
-}  
-
-   if (
-    naam.trim() === "" ||
-    email.trim() === "" ||
-    telefoon.trim() === "" ||
-    adres.trim() === "" ||
-    postcode.trim() === "" ||
-    plaats.trim() === ""
-) {
-
-
-    alert("Vul eerst alle klantgegevens in.");
-    return;//alert geven als een van de gegevens ontbreekt
-}
 
     const producten = winkelmandje.querySelectorAll("li");//alle <li>'s  uit winkelmaandje verzameld
 
@@ -291,68 +282,13 @@ bestelFormulier.addEventListener("submit", (event) => {
         alert("Voeg eerst een product toe aan je bestelling.");
         return;//als de winkelwagen nog 0 is,de functie stopt hier
     }
-
-
-
-    const naam = document.getElementById("naam").value;
-const email = document.getElementById("email").value;
-const telefoon = document.getElementById("telefoon").value;
-const adres = document.getElementById("adres").value;
-const postcode = document.getElementById("postcode").value;
-const plaats = document.getElementById("plaats").value;
-
-const adresPatroon = /^(?=.{5,}$)(?=.*[a-zA-ZÀ-ÿ]{3,})(?=.*\d)[a-zA-ZÀ-ÿ0-9\s.'-]+$/;
-
-if (!adresPatroon.test(adres.trim())) {
-    alert("Vul een geldig adres in, bijvoorbeeld Kerkstraat 12.");
-    return;
-}
-
-    const postcodePatroon = /^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/;
-
-if (!postcodePatroon.test(postcode.trim())) {
-    alert("Vul een geldige postcode in, bijvoorbeeld 4811AB.");
-    return;
-}
-
-const telefoonCijfers = telefoon.replace(/\D/g, "");//haalt alle tekens weg die geen cijfers zijn
-
-if (
-    !/^[0-9+\s()-]+$/.test(telefoon.trim()) ||
-    telefoonCijfers.length < 10 ||
-    telefoonCijfers.length > 15
-) {
-    alert("Vul een geldig telefoonnummer in met 10 tot 15 cijfers.");
-    return;
-}
-
-if (naam.trim().length < 2) {
-    alert("Vul een naam in met minimaal 2 tekens.");
-    return;
-}
-
-const plaatsPatroon = /^[a-zA-ZÀ-ÿ]{2,}(?:[\s'-]+[a-zA-ZÀ-ÿ]{2,})*$/;
-
-if (!plaatsPatroon.test(plaats.trim())) {
-    alert("Vul een geldige plaatsnaam in, bijvoorbeeld Breda of Den Haag.");
-    return;
-}
-
-if (
-    naam.trim() === "" ||
-    email.trim() === "" ||
-    telefoon.trim() === "" ||
-    adres.trim() === "" ||
-    postcode.trim() === "" ||
-    plaats.trim() === ""
-) {
-    alert("Vul eerst alle klantgegevens in.");
+// Gebruik de centrale validatiefunctie
+if (!valideerKlantgegevens()) {
     return;
 }
 
     alert("☕ Bedankt voor je bestelling!");//anders krijgt dit
 
-    
     bestelFormulier.reset();// verwijder de klantgegevens voor de volgende klant
 
     winkelmandje.textContent = "";//leegt winkelwagen
@@ -360,7 +296,4 @@ if (
     totaalBestelling.textContent = "Totaal bestelling: €0.00";//leegt totaal bestellingen
     controleOverzicht.textContent = "";//controleoverzicht leegmaken
     
-
-
-
 });
