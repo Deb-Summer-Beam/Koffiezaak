@@ -12,27 +12,48 @@
 </head>
 
 <body>
-  <header>
-    <a href="index.html" alt="terug naar homepage">
-      <img src="../images/cozybrew_logo.png" alt="Logo van CozyBrew" class="logo">
 
+
+  <!-- Header Cozy Brew -->
+  <header class="header-home">
+
+    <!-- Openingstijden links -->
+    <div class="header-openingstijden">
+      <div id="openGesloten"></div>
+    </div>
+
+    <!-- Logo in het midden -->
+    <a href="index.html" class="header-logo" aria-label="Terug naar homepage">
+      <img src="../images/cozybrew_logo.png" alt="Logo van Cozy Brew" class="logo">
     </a>
-    <div id="openGesloten"></div>
-    <nav>
-      <a href="menu.html">Menu</a>
-      <a href="contact.html">Contact us</a>
-      <a href="reservering.html">Reservering</a>
-      <a href="werkenbij.html">Werken bij</a>
-      <a href="bestelling.html">Bestelling plaatsen</a>
-    </nav>
-    <button id="dark-knop" class="dark-knop">Dark-Mode</button>
-    <button id="accessibility-knop" class="dark-knop">Makkelijker lezen</button>
+
+    <!-- Knoppen rechts -->
+    <div class="header-knoppen">
+      <button id="dark-knop" class="dark-knop">Dark-Mode</button>
+
+      <button id="accessibility-knop" class="dark-knop">Makkelijker lezen</button>
+    </div>
+
   </header>
+
+  <!-- Navigatie onder de header -->
+  <nav class="koffie-navigatie" aria-label="Hoofdnavigatie">
+
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="contact.html">Contact us</a>
+    <a href="reservering.html">Reservering</a>
+    <a href="werkenbij.html">Werken bij</a>
+    <a href="bestelling.html">Bestelling plaatsen</a>
+  </nav>
+
 
   <main>
     <h2 class="bestellingTitel">🛒 Plaats je bestelling</h2>
 
-    <form id="bestelFormulier">
+    <form id="bestelFormulier" novalidate>
+
+
       <div class="sterren boven">
         ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦
       </div>
@@ -55,32 +76,38 @@
 
         <div class="veld">
           <label for="naam">Naam:</label>
-          <input type="text" id="naam" name="naam" required>
+          <input type="text" id="naam" name="naam" required minlength="2" aria-describedby="naam-fout">
+          <span id="naam-fout" class="foutmelding" role="alert"></span>
         </div>
 
         <div class="veld">
           <label for="email">E-mailadres:</label>
-          <input type="email" id="email" name="email" required>
+          <input type="email" id="email" name="email" required aria-describedby="email-fout">
+          <span id="email-fout" class="foutmelding" role="alert"></span>
         </div>
 
         <div class="veld">
           <label for="telefoon">Telefoonnummer:</label>
-          <input type="tel" id="telefoon" name="telefoon" required>
+          <input type="tel" id="telefoon" name="telefoon" required aria-describedby="telefoon-fout">
+          <span id="telefoon-fout" class="foutmelding" role="alert"></span>
         </div>
 
         <div class="veld">
           <label for="adres">Adres:</label>
-          <input type="text" id="adres" name="adres" required>
+          <input type="text" id="adres" name="adres" required aria-describedby="adres-fout">
+          <span id="adres-fout" class="foutmelding" role="alert"></span>
         </div>
 
         <div class="veld">
           <label for="postcode">Postcode:</label>
-          <input type="text" id="postcode" name="postcode" required>
+          <input type="text" id="postcode" name="postcode" required aria-describedby="postcode-fout">
+          <span id="postcode-fout" class="foutmelding" role="alert"></span>
         </div>
 
         <div class="veld">
           <label for="plaats">Plaats:</label>
-          <input type="text" id="plaats" name="plaats" required>
+          <input type="text" id="plaats" name="plaats" required aria-describedby="plaats-fout">
+          <span id="plaats-fout" class="foutmelding" role="alert"></span> 
         </div>
       </div>
 
@@ -151,29 +178,18 @@
 
       </div>
 
-
-
       <h3 class="formulierTitel">🛒 Jouw bestelling</h3>
 
       <ul id="winkelmandje"></ul>
 
-
-
-      <p id="totaalBestelling">
-        Totaal bestelling: €0.00
-      </p>
-
+      <p id="totaalBestelling">Totaal bestelling: €0.00</p>
 
 
       <div class="bestelActies">
 
-        <button type="button" id="controleerBtn">
-          👀 Controleer bestelling
-        </button>
+        <button type="button" id="controleerBtn">Controleer bestelling</button>
 
-        <button type="submit" id="bestelBtn">
-          🛒 Bestelling plaatsen
-        </button>
+        <button type="submit" id="bestelBtn">Bestelling plaatsen</button>
 
       </div>
 
@@ -187,7 +203,7 @@
   </main>
 
   <footer>
-    &copy;CozyBrew
+    &copy;CozyBrew 
   </footer>
 </body>
 

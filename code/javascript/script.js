@@ -1,33 +1,3 @@
-const werkenbij = document.getElementById("werkenbij");
-if (werkenbij) {
-    werkenbij.style.color = "green";
-
-}
-
-
-function wisselOpmaak() {
-    document.getElementById("oefenen").classList.toggle("uitgelicht");
-
-}
-
-function draaifoto() {
-    document.getElementById("werkfoto").classList.add("gedraaid");
-}
-
-function fotorechtop() {
-    document.getElementById("werkfoto").classList.remove("gedraaid");
-}
-
-function berekeninhoud(lengte, breedte, hoogte) {
-    return lengte * breedte * hoogte;
-
-}
-
-const resultaat = berekeninhoud(8, 3, 2);
-if (document.getElementById("antwoord")) {
-    document.getElementById("antwoord").textContent = resultaat;
-}
-
 // Typewriter effect
 const words = [
     "CozyBrew",
@@ -150,7 +120,7 @@ async function laadProducten() {
 
 laadProducten();
 
-// darkmode 
+// Darkmode 
 
 const darkKnop = document.querySelector("#dark-knop");
 
@@ -211,10 +181,6 @@ const maandNummer = new Date().getMonth() + 1; //Maanden tellen vanaf 0, dus +1
 
 
 // Open of gesloten melding met openingstijden. 
-
-console.log("Het is vandaag " + dagNaam + " (" + datum + ").");
-
-
 let openGesloten;
 if (dagNummer === 1 && maandNummer === 1) {
     openGesloten = "Gesloten";
@@ -223,25 +189,26 @@ if (dagNummer === 1 && maandNummer === 1) {
 } else if (dagNummer === 26 && maandNummer === 12) {
     openGesloten = "Gesloten";
 } else if (dagNaam === "maandag") {
-    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van\n12:00 tot 18:00.";
 } else if (dagNaam === "dinsdag") {
-    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van\n12:00 tot 18:00.";
 } else if (dagNaam === "woensdag") {
-    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van\n12:00 tot 18:00.";
 } else if (dagNaam === "donderdag") {
-    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 21:00.";
+    openGesloten = "Vandaag zijn we open van\n12:00 tot 21:00.";
 } else if (dagNaam === "vrijdag") {
-    openGesloten = "Vandaag zijn we open van <br> 12:00 tot 18:00.";
+    openGesloten = "Vandaag zijn we open van\n12:00 tot 18:00.";
 } else if (dagNaam === "zaterdag") {
-    openGesloten = "Vandaag zijn we open van <br> 09:00 tot 16:00.";
+    openGesloten = "Vandaag zijn we open van\n09:00 tot 16:00.";
 } else if (dagNaam === "zondag") {
-    openGesloten = "Vandaag zijn we open van <br> 10:00 tot 16:00.";
+    openGesloten = "Vandaag zijn we open van\n10:00 tot 16:00.";
 } else {
     openGesloten = "Er is iets misgegaan bij het berekenen van de dag.";
 }
 console.log(openGesloten);
-document.getElementById("openGesloten").innerHTML = openGesloten;
+document.getElementById("openGesloten").textContent = openGesloten;
 
+// Contactformulier functionaliteit
 const contactSubmitForm = document.querySelector('#contact-form');
 
 if (contactSubmitForm) {
@@ -254,3 +221,38 @@ function submitButton(event) {
     contactSubmitForm.reset();
     document.querySelector('#contact-form-status').textContent = "Bericht is succesvol verzonden";
 }
+// =========================================
+// COZY BREW - BEWEGENDE KOFFIE-BANNER
+// Issue #55
+// =========================================
+
+const koffieFoto = document.querySelector(".koffie-foto");
+
+const koffieAfbeeldingen = [
+    "../images/cozybrew-coffeetruck.png",
+    "../images/cozybrewcoffeebag.png",
+    "../images/cozycupcakes.png"
+];
+
+let huidigeKoffieFoto = 0;
+
+function wisselKoffieFoto() {
+    koffieFoto.classList.add("vervagen");
+
+    setTimeout(() => {
+    huidigeKoffieFoto++;
+
+    if (huidigeKoffieFoto >= koffieAfbeeldingen.length) {
+        huidigeKoffieFoto = 0;
+    }
+
+    koffieFoto.src = koffieAfbeeldingen[huidigeKoffieFoto];
+
+    koffieFoto.classList.remove("vervagen");
+     }, 600);
+}
+
+if (koffieFoto) {
+    setInterval(wisselKoffieFoto, 5000);
+}
+
