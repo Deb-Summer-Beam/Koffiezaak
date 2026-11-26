@@ -54,7 +54,32 @@ function typeWriter() {
 if (textElement) {
     typeWriter();
 }
+//issue #56 - Productgegevens ophalen uit JSON
+function bewaarProductInWinkelwagen(product) {
+    const winkelwagen = JSON.parse(
+        sessionStorage.getItem("winkelwagen") || "[]"
+    );
 
+    const bestaandProduct = winkelwagen.find(function (item) {
+        return item.naam === product.naam;
+    });
+
+    if (bestaandProduct) {
+        bestaandProduct.aantal += 1;
+    } else {
+        winkelwagen.push({
+            naam: product.naam,
+            aantal: 1
+        });
+    }
+
+    sessionStorage.setItem(
+        "winkelwagen",
+        JSON.stringify(winkelwagen)
+    );
+
+    console.log("Winkelwagen opgeslagen:", winkelwagen);
+}
 // Functie om productkaart te maken
 function maakProductKaart(product) {
     const kaart = document.createElement("article");
@@ -80,10 +105,18 @@ function maakProductKaart(product) {
     prijs.textContent = product.prijs.toLocaleString("nl-NL", { style: "currency", currency: "EUR" });
     kaart.appendChild(prijs);
 
-    const knop = document.createElement("button");
+   const knop = document.createElement("button");
+    knop.type = "button";
     knop.className = "winkelwagen-knop";
     knop.textContent = "In winkelwagen";
-    kaart.appendChild(knop);
+
+    knop.addEventListener("click", function () {
+    bewaarProductInWinkelwagen(product);
+
+    alert(product.naam + " is toegevoegd aan je winkelwagen!");
+});
+
+kaart.appendChild(knop);
 
     return kaart;
 }
@@ -107,16 +140,45 @@ async function laadProducten() {
 
         const producten = await response.json();
 
-        producten.forEach(function (product) {
-            productenOverzicht.appendChild(maakProductKaart(product));
+        const categorieen = [
+    "Koffie",
+    "Thee",
+    "Dranken",
+    "Gebak",
+    "Andere dranken"
+];
+
+categorieen.forEach(function (categorie) {
+    const kader = document.createElement("section");
+    kader.className = "categorie-kader";
+
+    const titel = document.createElement("h2");
+    titel.textContent = categorie;
+    kader.appendChild(titel);
+
+    const productGrid = document.createElement("div");
+    productGrid.className = "categorie-producten";
+
+    producten
+        .filter(function (product) {
+            return product.categorie === categorie;
+        })
+        .forEach(function (product) {
+            productGrid.appendChild(maakProductKaart(product));
         });
 
-        menuStatus.textContent = producten.length + " producten geladen";
-    } catch (error) {
-        console.error(error);
-        menuStatus.textContent = "Het menu kon niet worden geladen.";
-    }
+    kader.appendChild(productGrid);
+    productenOverzicht.appendChild(kader);
+});
+    menuStatus.textContent = producten.length + " producten geladen";
+
+} catch (error) {
+    console.error(error);
+    menuStatus.textContent = "Het menu kon niet worden geladen.";
 }
+}
+
+
 
 laadProducten();
 
