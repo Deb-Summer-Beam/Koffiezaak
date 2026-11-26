@@ -744,3 +744,98 @@ weergegeven in het controleoverzicht.
 
 De resultaten en resterende aandachtspunten zijn
 vastgelegd in dit securitytestverslag.
+
+## Koppeling met bestaande requirements en testdocumentatie
+
+### Functionele en niet-functionele requirements
+
+De securitycheck sluit aan op de bestaande requirements
+uit `docs/ontwerp/functioneel-ontwerp.md`.
+
+| Requirement | Koppeling met Week 13 |
+|---|---|
+| FR-04 | Klantgegevens en bestelling controleren en corrigeren |
+| NFR-03 | Toetsenbordbediening, Tab, Enter en focus |
+| NFR-05 | Veilige verwerking en weergave van gebruikersinvoer |
+
+### Koppeling met het functioneel ontwerp
+
+- Paragraaf 3.4: Gebruikersroute Producten bestellen.
+- UC-04: Producten bestellen en bestelling controleren.
+- Paragraaf 6.7: Bestelpagina en winkelmandje.
+
+### Koppeling met bestaande testscenario's
+
+De securitycheck bouwt voort op de testscenario's
+uit hoofdstuk 7 van het functioneel ontwerp,
+in het bijzonder scenario 6 en 7.
+
+Daarnaast zijn bestaande functionele tests uit
+`docs/testing/deel2-testoverzicht.md` hergebruikt
+en waar nodig uitgebreid.
+
+De oorspronkelijke testresultaten blijven behouden.
+
+### Afwijking van het bestaande ontwerp
+
+Testscenario 8 en 9 beschrijven een verplichte
+controle van de bestelling vóór definitieve bevestiging.
+
+In de huidige securitybranch kan een bestelling
+met geldige gegevens ook rechtstreeks worden geplaatst.
+
+Deze afwijking moet met het projectteam worden
+besproken en afgestemd op FR-04.
+
+### Afbakening
+
+De specifieke ontwerpdocumentatie van Week 12
+is nog niet afzonderlijk geverifieerd.
+
+De uitgevoerde securitycheck betreft client-side
+validatie en veilige DOM-verwerking.
+
+### Koppeling met het activiteitendiagram
+
+Het bestaande procesontwerp is vastgelegd in:
+
+`docs/uml/activity-bestelproces-volledig.png`
+
+Het activiteitendiagram beschrijft onder andere:
+
+- Controle op een leeg winkelmandje.
+- Controle op volledige klantgegevens.
+- Tonen van foutmeldingen bij ongeldige invoer.
+- Tonen van het controleoverzicht.
+- Plaatsen van de bestelling.
+- Tonen van de bedankmelding.
+- Resetten van het formulier.
+
+De Week 13-securitycheck sluit aan op deze
+processtappen en breidt de invoercontrole uit
+met specifieke validatieregels, veldgerichte
+foutmeldingen en veilige DOM-verwerking.
+
+De eerder beschreven afwijking rondom de
+verplichte bestelcontrole geldt ook voor
+dit activiteitendiagram.
+
+De herkomst van het diagram als specifiek
+Week 12-ontwerp is nog niet bevestigd.
+
+## Registratie van bevindingen in GitHub
+
+| Issue | Onderwerp | Status |
+|---|---|---|
+| #59 | Klantvalidatie | Uitgevoerd, wacht op review |
+| #32 | Verplichte bestelcontrole | Afstemming met het team nodig |
+| #85 | Performancewaarschuwing submit-handler | Backlog, nader onderzoek nodig |
+
+De uitgevoerde securityverbeteringen zijn
+beschikbaar voor review in pull request #84.
+
+De resterende bevindingen worden afzonderlijk
+behandeld, zodat de huidige securitycheck
+niet onnodig wordt uitgebreid.
+
+Er is nog geen merge naar main uitgevoerd.
