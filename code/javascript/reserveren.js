@@ -7,7 +7,7 @@ const reserveerBevestiging = document.getElementById("reserveerBevestiging");
 const vandaag = new Date();
 
 const jaar = vandaag.getFullYear();
-const maand = vandaag.getMonth() + 1;
+const maand = vandaag.getMonth() + 1; //Maanden tellen vanaf 0, dus +1
 const dag = vandaag.getDate();
 
 
@@ -113,3 +113,4 @@ reserveerFormulier.addEventListener("submit", (event) => {
   tijdVeld.appendChild(startOptie);
   tijdVeld.disabled = true;
 });
+
