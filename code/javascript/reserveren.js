@@ -113,3 +113,4 @@ reserveerFormulier.addEventListener("submit", (event) => {
   tijdVeld.appendChild(startOptie);
   tijdVeld.disabled = true;
 });
+
