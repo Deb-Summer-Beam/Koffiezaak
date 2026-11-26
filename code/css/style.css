@@ -107,8 +107,6 @@ nav a {
   border-radius: 10px;
   flex: 1 1 0;
   text-align: center;
-
-
 }
 
 nav a:hover {
@@ -148,6 +146,14 @@ h2 {
   text-align: center;
 }
 
+p {
+  text-align: center;
+}
+
+address {
+  text-align: center;
+}
+
 .uitgelicht {
   background-color: #d5b797;
   padding: 16px;
@@ -172,9 +178,11 @@ main {
   max-width: 1150px;
   margin: 0 auto;
   padding: 60px 24px;
-
 }
 
+footer {
+  text-align: center;
+}
 
 .productenoverzicht {
   display: grid;
@@ -296,17 +304,21 @@ body.donker .werkfoto {
 
 
 .dark-knop {
-    cursor: pointer;
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: bold;
-    color: white;
-    background-color: #7b4f3f;
-    border: 1px solid #7b4f3f;
-    border-radius: 12px;
-    padding: 10px 20px;
-    transition: background-color 0.3s ease,
-                transform 0.3s ease;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.25rem;
+  color: #4B2915;
+  background-color: #DCC3A5;
+  border: 1px solid #60371F;
+  border-radius: 10px;
+  padding: 25px 25px;
+  margin: 15px;
+}
+
+.dark-knop:hover {
+  color: #4b2915;
+  background-color: #c9a681;
+  text-decoration: underline;
 }
 
 .dark-knop:hover {
@@ -553,6 +565,7 @@ html.accessibility body {
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 20px;
+  text-align: center;
 }
 
 #bestelFormulier label {
@@ -928,7 +941,7 @@ body.donker #reserveerFormulier button:hover {
 
 /* Contact opmaak */
 .contact-card {
-  text-align: left;
+  text-align: center;
   flex: 1 1 300px;
   border-radius: 10px;
   border: 2px solid #b9804f;
@@ -936,7 +949,7 @@ body.donker #reserveerFormulier button:hover {
 }
 
 .contact-card h2 {
-  text-align: left;
+  text-align: center;
   padding: 0px;
   margin-bottom: 10px;
   margin-top: 10px;
@@ -982,6 +995,7 @@ body.donker #reserveerFormulier button:hover {
 
 .veld {
   margin-bottom: 5px;
+  text-align: center;
 }
 /* COZY BREW - NIEUWE HOMEPAGE HEADER
    Issue #55 */
