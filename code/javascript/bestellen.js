@@ -1,30 +1,10 @@
 // Issue #56 - Centrale productgegevens uit JSON
 let menuProducten = [];
 // Issue #56 - Voorkomen dat automatisch geladen producten dubbel worden opgeslagen
-let winkelwagenWordtGeladen = false;//de klant voegt zelf de product toe
-const prijzen = {                   //met true Js.laadt automatisch vanuit sessionStorage de producten in
-    espresso: 2.50,
-    americano: 3.00,
-    cappuccino: 3.50,
-    latte: 3.75,
-    flatwhite: 3.75,
-    ijskoffie: 3.75,
+// false:de klant voegt zelf de product toe
+//met true Js.laadt automatisch vanuit sessionStorage de producten in
+let winkelwagenWordtGeladen = false;
 
-    zwartethee: 2.50,
-    groenethee: 3.00,
-    muntthee: 3.50,
-    kamillethee: 3.50,
-    chailatte: 3.75,
-    vruchtenthee: 3.75,
-
-    appeltaart: 4.00,
-    cheesecake: 5.00,
-    chocoladetaart: 5.00,
-    muffin: 4.00,
-    croissant: 2.75,
-    koekjes: 3.00,
-    gebakjes: 3.75
-};
 function berekenTotaal(prijs, aantal) {
     return prijs * aantal;
 }
@@ -45,6 +25,11 @@ async function haalMenuProductenOp() {
 
     } catch (error) {
         console.error("Fout bij ophalen producten:", error);
+
+        //issue #52- Zichtbare foutmelding voor de klant
+        const productFout= document.getElementById("product-fout");
+        productFout.textContent= "De producten konden niet worden geladen. Probeer de pagina opnieuw op te laden";
+
         return null;
     }
 }

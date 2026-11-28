@@ -614,6 +614,94 @@ De acceptatiecriteria geven aan welke voorwaarden de website moet vervullen om a
 >
 > **Teststatus:** Geslaagd.
 >
+>
+> **Testscenario 12 – Centrale productgegevens en prijsberekening (Issue #52)**
+>
+> **Doel:** Controleren of de bestelpagina de producten en prijzen uit één centrale JSON-bron ophaalt en het totaalbedrag correct berekent.
+>
+> **Testgegevens:** 34 producten uit `menu-groep.json`, twee cappuccino's van € 3,50 en drie espresso's van € 2,50 per stuk.
+>
+> **Teststappen:**
+>
+> **1.** Open de bestelpagina van Cozy Brew.
+>
+> **2.** Controleer of alle 34 producten in de productkeuzelijst beschikbaar zijn.
+>
+> **3.** Voeg twee cappuccino's toe aan het winkelmandje.
+>
+> **4.** Voeg drie espresso's toe aan het winkelmandje.
+>
+> **5.** Controleer de afzonderlijke bedragen en het totaalbedrag.
+>
+> **Verwacht resultaat:** Alle 34 producten worden vanuit de centrale JSON-bron geladen. De twee cappuccino's kosten samen € 7,00 en de drie espresso's kosten samen € 7,50. Het totaalbedrag bedraagt € 14,50.
+>
+> **Werkelijk resultaat:** Alle 34 producten werden correct geladen. De producten, aantallen, prijzen en het totaalbedrag werden correct weergegeven.
+>
+> **Teststatus:** Geslaagd.
+>
+> **Testbewijs:** [Testverslag Issue #52](../testing/issue-52-centrale-productgegevens/issue-52-testverslag.md)
+>
+> **Testscenario 13 – Foutafhandeling en herstel bij JSON-laadfout (Issue #52)**
+>
+> **Doel:** Controleren of de bezoeker een begrijpelijke foutmelding krijgt wanneer de centrale productgegevens niet kunnen worden geladen en of de bestelpagina zich na herstel correct gedraagt.
+>
+> **Testgegevens:** Het bestand `menu-groep.json` en Chrome DevTools.
+>
+> **Teststappen:**
+>
+> **1.** Open de bestelpagina van Cozy Brew.
+>
+> **2.** Blokkeer tijdelijk het netwerkverzoek naar `menu-groep.json` via Chrome DevTools.
+>
+> **3.** Vernieuw de bestelpagina.
+>
+> **4.** Controleer de productkeuzelijst en de zichtbaarheid van de foutmelding.
+>
+> **5.** Schakel de netwerkblokkering uit en vernieuw de bestelpagina opnieuw.
+>
+> **6.** Controleer of de producten opnieuw worden geladen en de foutmelding verdwijnt.
+>
+> **Verwacht resultaat:** Wanneer de productgegevens niet beschikbaar zijn, verschijnt een begrijpelijke foutmelding onder de productkeuzelijst. Alleen de standaardoptie blijft beschikbaar. Na herstel worden de producten opnieuw geladen en verdwijnt de foutmelding.
+>
+> **Werkelijk resultaat:** Tijdens de netwerkblokkering verscheen de foutmelding correct onder de productkeuzelijst. Na het uitschakelen van de blokkering werden de producten opnieuw geladen en werkte de bestelpagina weer correct.
+>
+> **Teststatus:** Geslaagd.
+>
+> **Testbewijs:** [Testverslag Issue #52 – Test 7 en Test 8](../testing/issue-52-centrale-productgegevens/issue-52-testverslag.md)
+## 7.2 Acceptatiecriteria
+
+De algemene acceptatiecriteria zijn vastgelegd bij de functionele en
+niet-functionele requirements in hoofdstuk 2.
+
+### 7.2.1 Aanvullende acceptatiecriteria – Issue #52
+
+Issue #52 ondersteunt de bestaande requirements FR-01 en FR-04.
+Het doel is om de productgegevens en prijzen vanuit één centrale
+JSON-bron te beheren en prijsverschillen te voorkomen.
+
+| ID | Acceptatiecriterium | Testbewijs | Status |
+| --- | --- | --- | --- |
+| AC-52-01 | De vaste product- en prijslijst is verwijderd uit bestellen.js. | Codecontrole | Geslaagd |
+| AC-52-02 | De bestelpagina haalt de producten en prijzen op uit menu-groep.json. | Testscenario 12 | Geslaagd |
+| AC-52-03 | De productkeuzelijst bevat alle 34 producten uit de centrale JSON-bron. | Testscenario 12 | Geslaagd |
+| AC-52-04 | De klant krijgt een begrijpelijke foutmelding wanneer de productgegevens niet kunnen worden geladen. | Testscenario 13 | Geslaagd |
+| AC-52-05 | Na herstel worden de productgegevens opnieuw correct geladen. | Testscenario 13 | Geslaagd |
+| AC-52-06 | Het toevoegen en verwijderen van producten en het berekenen van het totaalbedrag blijven correct functioneren. | Testverslag Issue #52 | Geslaagd |
+| AC-52-07 | De bestaande bestelprocedure blijft correct functioneren na de aanpassing. | Testverslag Issue #52 | Geslaagd |
+
+### Conclusie Issue #52
+
+Op basis van de uitgevoerde lokale tests is vastgesteld dat de
+centrale productgegevens correct worden geladen en verwerkt.
+De foutafhandeling werkt zoals verwacht en de geteste onderdelen
+van de bestelprocedure blijven functioneren.
+
+De uitgevoerde tests en het bijbehorende testbewijs zijn opgenomen
+in het onderstaande testverslag.
+
+[Testverslag Issue #52](../testing/issue-52-centrale-productgegevens/issue-52-testverslag.md)
+
+
 # Literatuurlijst
 
 Wikipedia-bijdragers. (2026, mei 27). *MoSCoW-methode*. Opgeroepen op oktober 19, 2026, van Wikipedia: https://nl.wikipedia.org/wiki/MoSCoW-methode
